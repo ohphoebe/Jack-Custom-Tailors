@@ -1,0 +1,2254 @@
+/*background color of webpage*/
+html {
+    scroll-behavior: smooth;
+    background-color: var(--color);
+}
+
+/* width of body to be full screen to device width and centralised */
+body {
+    max-width: 100vw;
+    /* background-color: white; */
+}
+
+/* header full width of body */
+header {
+    width: 100%;
+    display: block;
+    background-color: var(--bgcolor);
+}
+
+/* navbar to be at the front of image header and at top of header. */
+header section.navbar nav {
+    padding: 0.5em 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 3;
+    width: 100%;
+    border-bottom: 0.4px solid rgba(221, 193, 147, 0.3);
+}
+
+/*LEFT NAV MENU*/
+/*align left nav menu with hamburger and close icon*/
+header section.navbar>nav>div.menuleft {
+    display: flex;
+    /* justify-content: flex-start; */
+    justify-content: start;
+    align-items: center;
+    width: 35%;
+    margin-left: 0.5em;
+}
+
+/*resize hamburger icon*/
+header section.navbar>nav>div.menuleft>div.menu-hamburger {
+    width: 6%;
+    display: none;
+}
+
+/*align left nav menu items excluding icons*/
+header section.navbar>nav>div.menuleft>ul.navleft {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    margin-left: 0.5em;
+    background: transparent;
+    transition: all 0.3 ease;
+    text-align: center;
+}
+
+/*font properties for left nav menu*/
+header section.navbar>nav>div.menuleft>ul.navleft>li a {
+    font-family: var(--sansserif);
+    font-size: 0.8em;
+    margin: 0.6em;
+    letter-spacing: 0.1em;
+    transition: opacity 0.2s ease;
+}
+
+/*properties for a href: link, visited*/
+header section.navbar>nav>div.menuleft>ul.navleft>li a:link,
+header section.navbar>nav>div.menuleft>ul.navleft>li a:visited {
+    color: var(--color);
+}
+
+/*properties for a href: hover*/
+header section.navbar>nav>div.menuleft>ul.navleft>li a:hover {
+    opacity: 0.6;
+}
+
+/*navleft bar to appear at max-width 720px and lower*/
+@media screen and (max-width: 720px) {
+    header section.navbar>nav>div.menuleft>div.menu-hamburger {
+        display: block;
+        width: 15%;
+        position: relative;
+        top: 0;
+        left: 0;
+        z-index: 9;
+    }
+
+    header section.navbar>nav>div.menuleft>div.menu-hamburger>img.openmenu {
+        display: block;
+    }
+
+    header section.navbar>nav>div.menuleft>div.menu-hamburger>#menuopen.hide {
+        display: none;
+    }
+
+    header section.navbar>nav>div.menuleft>div.menu-hamburger>img.openmenu:hover {
+        cursor: pointer;
+    }
+
+    header section.navbar>nav>div.menuleft>div.menu-hamburger>#menuclose {
+        display: none;
+        width: 100%;
+    }
+
+    header section.navbar>nav>div.menuleft>div.menu-hamburger>#menuclose.show {
+        display: block;
+    }
+
+    header section.navbar>nav>div.menuleft>div.menu-hamburger>img.closemenu:hover {
+        cursor: pointer;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar {
+        background: var(--color);
+        position: fixed;
+        z-index: 8;
+        top: 0%;
+        height: 100vh;
+        left: -100%;
+        width: 25%;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        padding-top: 3em;
+        margin: 0;
+        transition: 0.2s;
+    }
+
+    header section.navbar>nav>div.menuleft>ul.navleft>li.top {
+        padding-top: 2em;
+    }
+
+    header section.navbar>nav>div.menuleft>ul.navleft>li {
+        margin: 0.7em;
+    }
+
+    header section.navbar>nav>div.menuleft>ul.navleft>li a {
+        transition: opacity 0.2s ease;
+    }
+
+    header section.navbar>nav>div.menuleft>ul.navleft>li a:link,
+    header section.navbar>nav>div.menuleft>ul.navleft>li a:visited {
+        color: #0c2c24;
+    }
+
+    header section.navbar>nav>div.menuleft>ul.navleft>li a:hover {
+        opacity: 0.3;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar.open {
+        background: var(--color);
+        position: fixed;
+        top: 0%;
+        height: 100vh;
+        left: 0%;
+        width: 25%;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        padding-top: 3em;
+        margin: 0;
+        transition: 0.2s;
+    }
+}
+
+/*RIGHT NAV BAR MENU*/
+/*align right nav menu*/
+header section.navbar>nav>ul.navright {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 33.3%;
+    margin-right: 0.5em;
+}
+
+/*resize right nav menu icons*/
+header section.navbar>nav>ul.navright li {
+    padding: 0.5em;
+    width: 5%;
+    transition: opacity 0.2s ease;
+}
+
+/*properties for right nav menu icons: hover*/
+header section.navbar>nav>ul.navright li:hover {
+    opacity: 0.6;
+}
+
+/*header h1 title*/
+header>section.pagetitle>h1 {
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    padding: 3em;
+    color: var(--color);
+    font-family: var(--serif);
+    letter-spacing: 0.1em;
+    font-weight: 150;
+    font-size: 1.3em;
+}
+
+
+/* nav bar to be responsive*/
+/*max-width: 2048px*/
+@media screen and (max-width: 2048px) {
+    header section.BookAppt>div {
+        width: 90%;
+        top: 140px;
+        left: 50%;
+        z-index: 1;
+    }
+
+    header section.BookAppt>div>button {
+        margin-top: 40px;
+    }
+
+    header section.BookAppt>div>div.scroll-wrapper {
+        margin: 70px auto 0px auto;
+        width: 3%;
+    }
+
+}
+
+/*max-width: 1080px*/
+@media screen and (max-width: 1080px) {
+    header section.navbar>nav>div.logo>a>img {
+        display: block;
+        max-width: 100%;
+    }
+
+    header section.navbar>nav>div.menuleft>div.menu-hamburger {
+        width: 10%;
+        position: relative;
+        z-index: 9;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar.open {
+        z-index: 8;
+        width: 45%;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar li {
+        display: block;
+        width: 100%;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar li a {
+        margin: 0;
+    }
+
+    header section.navbar>nav>ul.navright li {
+        width: 6%;
+        margin: 0.2em;
+        padding: 0.1em;
+    }
+}
+
+/*max-width: 992px*/
+@media screen and (max-width: 992px) {
+    header section.navbar>nav>div.logo>a>img {
+        display: block;
+        max-width: 100%;
+    }
+
+    header section.navbar>nav>div.menuleft>div.menu-hamburger {
+        width: 10%;
+        position: relative;
+        z-index: 9;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar.open {
+        z-index: 8;
+        width: 45%;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar li {
+        display: block;
+        width: 100%;
+    }
+
+    header section.navbar>nav>ul.navright li {
+        width: 6%;
+        margin: 0.2em;
+        padding: 0.1em;
+    }
+}
+
+/*max-width: 720px*/
+@media screen and (max-width: 720px) {
+    header section.navbar>nav>div.logo>a>img {
+        display: block;
+        max-width: 100%;
+    }
+
+    header section.navbar>nav>div.menuleft>div.menu-hamburger {
+        width: 15%;
+        position: relative;
+        z-index: 9;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar.open {
+        z-index: 8;
+        width: 45%;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar li {
+        display: block;
+        width: 100%;
+    }
+
+    header section.navbar>nav>ul.navright li {
+        width: 9%;
+        margin: 0.2em;
+        padding: 0.1em;
+    }
+}
+
+/*max-width: 540px*/
+@media screen and (max-width: 540px) {
+    header section.navbar>nav>div.logo>a>img {
+        display: block;
+        max-width: 80%;
+    }
+
+    header section.navbar>nav>div.menuleft>div.menu-hamburger {
+        width: 20%;
+        position: relative;
+        z-index: 9;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar.open {
+        z-index: 8;
+        width: 45%;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar li {
+        display: block;
+        width: 100%;
+    }
+
+    header section.navbar>nav>ul.navright li {
+        width: 10%;
+        margin: 0.2em;
+    }
+}
+
+/*max-width: 300px*/
+@media screen and (max-width: 300px) {
+    header section.navbar>nav>div.logo>a>img {
+        display: block;
+        max-width: 80%;
+    }
+
+
+    header section.navbar>nav>div.menuleft>div.menu-hamburger {
+        width: 25%;
+        position: relative;
+        z-index: 9;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar.open {
+        z-index: 8;
+        width: 45%;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar li {
+        display: block;
+        width: 100%;
+    }
+
+    header section.navbar>nav>ul.navright li {
+        width: 35%;
+        margin: 0.2em;
+    }
+}
+
+/*background color of main section*/
+main {
+    background-color: white;
+    padding: 3em 0 3em 0;
+}
+
+/*main: bag section width*/
+main>section.bag {
+    width: 80%;
+    margin: 0 auto;
+    padding: 3em 0;
+}
+
+/*main: bag section title*/
+main>section.bag>div.bagtitle>h1 {
+    font-family: var(--serif);
+    color: var(--bgcolor);
+    font-size: 1.3em;
+    letter-spacing: 0.1em;
+    margin-bottom: 1em;
+}
+
+/*main: bag section width of group of items*/
+main>section.bag>div.itemgroup {
+    width: 100%;
+    background-color: rgba(221, 196, 147, 0.4);
+    border: 1px solid var(--color);
+}
+
+/*main: bag section of 1 item*/
+main>section.bag>div.itemgroup>div.itemcontainer {
+    display: grid;
+    grid-template-columns: 3% 22% 50% 10% 13%;
+    padding: 1em;
+    position: relative;
+}
+
+/*main: bag section of 1 item*/
+main>section.bag>div.itemgroup>div.itemcontainer>div.emptycontainer {
+    display: block;
+    position: absolute;
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+    background-color: #c4c4c4;
+    border: 2px solid #727272;
+    display: none;
+}
+
+/*main: bag section's empty bag message*/
+main>section.bag>div.itemgroup>div.itemcontainer>div.emptycontainer.appear {
+    display: block;
+    position: absolute;
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+    background-color: #e6e8e8;
+    border: 2px solid #a8a8a8;
+    display: block;
+}
+
+/*main: bag section's empty bag message text*/
+main>section.bag>div.itemgroup>div.itemcontainer>div.emptycontainer>h3 {
+    width: 40%;
+    margin: 0 auto;
+    position: relative;
+    top: 50%;
+    font-family: var(--serif);
+    letter-spacing: 0.05em;
+    text-align: center;
+    height: inherit;
+}
+
+/*main: bag section's close icon*/
+main>section.bag>div.itemgroup>div.itemcontainer>img.closeicon {
+    width: 70%;
+    grid-column: 1;
+    cursor: pointer;
+}
+
+/*main: bag section's product thumbnail'*/
+main>section.bag>div.itemgroup>div.itemcontainer>img.productthumbnail {
+    width: 90%;
+    grid-column: 2;
+}
+
+/*main: bag section's product details and name*/
+main>section.bag>div.itemgroup>div.itemcontainer>div.item {
+    width: 100%;
+    text-align: left;
+    grid-column: 3;
+    height: 25%;
+    margin: auto 0;
+}
+
+/*main: bag section's product name*/
+main>section.bag>div.itemgroup>div.itemcontainer>div.item>h3 {
+    font-family: var(--serif);
+    font-size: 1em;
+    color: var(--bgcolor);
+    margin-bottom: 0.8em;
+}
+
+/*main: bag section's product details*/
+main>section.bag>div.itemgroup>div.itemcontainer>div.item p {
+    font-family: var(--sansserif);
+    font-size: 0.9em;
+    line-height: 1.3em;
+}
+
+/*main: bag section's input stepper container*/
+main>section.bag>div.itemgroup>div.itemcontainer>div.inputstepper {
+    text-align: center;
+    grid-column: 4;
+    height: 20%;
+    margin: auto 0;
+}
+
+/*main: bag section's input stepper*/
+main>section.bag>div.itemgroup>div.itemcontainer>div.inputstepper>div.inputwrap {
+    width: 100%;
+    background-color: transparent;
+    border: 2px solid var(--bgcolor);
+    padding: 0.3em 0;
+}
+
+/*main: bag section's input stepper number*/
+main>section.bag>div.itemgroup>div.itemcontainer>div.inputstepper>div.inputwrap>input[type="number"] {
+    text-align: center;
+    background-color: transparent;
+    color: var(--bgcolor);
+    border: none;
+    font-size: 0.9em;
+    margin: 0 auto;
+    font-family: var(--serif);
+}
+
+/*main: bag section's input stepper - hide default buttons*/
+main>section.bag>div.itemgroup>div.itemcontainer>div.inputstepper>div.inputwrap>input[type="number"]::-webkit-outer-spin-button,
+main>section.bag>div.itemgroup>div.itemcontainer>div.inputstepper>div.inputwrap>input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/*main: bag section's input stepper buttons*/
+main>section.bag>div.itemgroup>div.itemcontainer>div.inputstepper button {
+    background-color: transparent;
+    color: var(--bgcolor);
+    border: none;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+/*main: bag section's price container*/
+main>section.bag>div.itemgroup>div.itemcontainer>div.pricecontainer {
+    width: 100%;
+    grid-column: 5;
+    text-align: right;
+    height: 20%;
+    margin: auto 0;
+    line-height: 1.2em;
+}
+
+/*main: bag section's actual price*/
+main>section.bag>div.itemgroup>div.itemcontainer>div.pricecontainer>p.actualprice {
+    font-family: var(--sansserif);
+    font-size: 0.9em;
+    text-decoration: line-through;
+    color: var(--bgcolor);
+}
+
+/*main: bag section's discount price*/
+main>section.bag>div.itemgroup>div.itemcontainer>div.pricecontainer>p.discountprice {
+    font-family: var(--sansserif);
+    font-size: 0.9em;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--bgcolor);
+}
+
+/*main: bag section's checkout container*/
+main>section.bag>div.bagfooter {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-rows: 1fr 1fr;
+    width: 100%;
+    margin-top: 1.5em;
+}
+
+/*main: bag section's continue shopping button*/
+main>section.bag>div.bagfooter>div.backtoprevious {
+    grid-column: 1;
+    grid-row: 1;
+    text-align: left;
+    width: 50%;
+}
+
+/*main: bag section's continue shopping button arrow img*/
+main>section.bag>div.bagfooter>div.backtoprevious img {
+    width: 5%;
+}
+
+/*main: bag section's continue shopping button link*/
+main>section.bag>div.bagfooter>div.backtoprevious a {
+    font-size: 1.1em;
+    color: var(--bgcolor);
+    display: flex;
+    align-items: center;
+    font-family: var(--serif);
+    letter-spacing: 0.05em;
+    transition: transform 0.2s ease;
+}
+
+/*main: bag section's continue shopping button a:link,hover, visited*/
+main>section.bag>div.bagfooter>div.backtoprevious a:link,
+main>section.bag>div.bagfooter>div.backtoprevious a:hover,
+main>section.bag>div.bagfooter>div.backtoprevious a:visited {
+    text-decoration: none;
+}
+
+/*main: bag section's continue shopping button link hover effect*/
+main>section.bag>div.bagfooter>div.backtoprevious a:hover {
+    text-decoration: none;
+    transform: translateX(-0.7em);
+    opacity: 0.5;
+}
+
+/*main: bag section's subtotal price*/
+main>section.bag>div.bagfooter>div.subtotal {
+    grid-column: 2;
+    grid-row: 1;
+    text-align: right;
+    line-height: 1.1em;
+}
+
+/*main: bag section's subtotal price - title*/
+main>section.bag>div.bagfooter>div.subtotal>p.subtotaltitle {
+    font-weight: bold;
+    font-family: var(--sansserif);
+    font-size: 0.9em;
+}
+
+/*main: bag section's subtotal price - price*/
+main>section.bag>div.bagfooter>div.subtotal>p.subtotalprice {
+    font-family: var(--sansserif);
+    font-size: 0.9em;
+}
+
+/*main: bag section's checkout container*/
+main>section.bag>div.bagfooter>div.checkoutcontainer {
+    grid-column: 2;
+    grid-row: 2;
+    text-align: right;
+}
+
+/*main: bag section's checkout - small text*/
+main>section.bag>div.bagfooter>div.checkoutcontainer>div.smalltext {
+    font-family: var(--sansserif);
+    font-size: 0.8em;
+    margin-top: 0.8em;
+}
+
+
+/*main: bag section's checkout - checkout button*/
+main>section.bag>div.bagfooter>div.checkoutcontainer>div.buttonwrap>button {
+    margin-top: 0.4em;
+    border: 2px solid var(--bgcolor);
+    border-radius: 0.2em;
+    color: var(--color);
+    background: var(--bgcolor);
+    padding: 0.4em;
+    width: 70%;
+    font-size: 1.1em;
+    letter-spacing: 0.1em;
+    font-family: var(--sansserif);
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/*main: bag section's checkout - checkout button (first layer of shine)*/
+main>section.bag>div.bagfooter>div.checkoutcontainer>div.buttonwrap>button::before {
+    content: '';
+    display: block;
+    position: absolute;
+    background: rgba(255, 255, 255, 1);
+    width: 9px;
+    height: 100%;
+    top: 0;
+    filter: blur(12px);
+    transform: translateX(-100px) skewX(-20deg);
+}
+
+/*main: bag section's checkout - checkout button (second layer of shine)*/
+main>section.bag>div.bagfooter>div.checkoutcontainer>div.buttonwrap>button::after {
+    content: '';
+    display: block;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.5);
+    width: 12px;
+    height: 100%;
+    top: 0;
+    filter: blur(6px);
+    transform: translateX(-100px) skewX(-20deg);
+}
+
+/*main: bag section's checkout - checkout button hover effect*/
+main>section.bag>div.bagfooter>div.checkoutcontainer>div.buttonwrap>button:hover {
+    background-color: var(--bgcolor);
+    border: 2px solid var(--bgcolor);
+    color: var(--color);
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    box-shadow: 3px 3px 5px rgba(0, 42, 42, 0.4);
+    -webkit-box-shadow: 3px 3px 5px rgba(0, 42, 42, 0.4);
+    -moz-box-shadow: 3px 3px 5px rgba(0, 42, 42, 0.4);
+}
+
+/*main: bag section's checkout - checkout button (shine translate effect)*/
+main>section.bag>div.bagfooter>div.checkoutcontainer>div.buttonwrap>button:hover::before,
+main>section.bag>div.bagfooter>div.checkoutcontainer>div.buttonwrap>button:hover::after {
+    transform: translateX(250px) skewX(-20deg);
+    transition: 0.6s ease;
+}
+
+
+/*main to be responsive*/
+/*max-width: 1080px*/
+@media screen and (max-width: 1080px) {
+
+    /*background color of main section*/
+    main {
+        padding: 2em;
+    }
+
+    /*main: bag section*/
+    main>section.bag {
+        padding-top: 1.4em;
+
+    }
+
+    /*main: bag section title*/
+    main>section.bag>div.bagtitle>h1 {
+        font-size: 1.1em;
+        letter-spacing: 0.1em;
+        margin-bottom: 1em;
+    }
+
+    /*main: bag section of 1 item*/
+    main>section.bag>div.itemgroup>div.itemcontainer {
+        display: grid;
+        grid-template-columns: 5% 20% 45% 15% 15%;
+        grid-template-rows: auto;
+        padding: 0.6em;
+        position: relative;
+        margin: 0 auto;
+    }
+
+    /*main: bag section's empty bag message text*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.emptycontainer>h3 {
+        width: 80%;
+        font-size: 0.9em;
+        height: 15%;
+    }
+
+
+    /*main: bag section's close icon*/
+    main>section.bag>div.itemgroup>div.itemcontainer>img.closeicon {
+        grid-column: 1;
+        grid-row: 1;
+        width: 60%;
+    }
+
+    /*main: bag section's product thumbnail'*/
+    main>section.bag>div.itemgroup>div.itemcontainer>img.productthumbnail {
+        width: 100%;
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    /*main: bag section's product details and name*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.item {
+        width: 100%;
+        grid-column: 3;
+        grid-row: 1;
+        padding-left: 1em;
+    }
+
+    /*main: bag section's product name*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.item>h3 {
+        font-size: 0.9em;
+        margin-bottom: 0.5em;
+        line-height: 1.2em;
+    }
+
+    /*main: bag section's product details*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.item p {
+        font-size: 0.8em;
+        line-height: 1.2em;
+    }
+
+    /*main: bag section's input stepper container*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.inputstepper {
+        text-align: center;
+        grid-column: 4;
+        grid-row: 1;
+        width: 60%;
+        margin: auto 0;
+    }
+
+    /*main: bag section's input stepper*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.inputstepper>div.inputwrap {
+        width: 100%;
+        background-color: transparent;
+        border: 2px solid var(--bgcolor);
+        padding: 0.2em 0;
+        margin: auto 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /*main: bag section's input stepper number*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.inputstepper>div.inputwrap>input[type="number"] {
+        font-size: 0.8em;
+        margin: 0;
+        padding: 0;
+    }
+
+    /*main: bag section's input stepper buttons*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.inputstepper button {
+        font-size: 0.9em;
+        margin: 0;
+        padding: 0;
+    }
+
+    /*main: bag section's price container*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.pricecontainer {
+        width: 75%;
+        grid-column: 5;
+        grid-row: 1;
+        height: 20%;
+        margin: auto 0;
+        line-height: 0.9em;
+    }
+
+    /*main: bag section's actual price*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.pricecontainer>p.actualprice {
+        font-size: 0.8em;
+    }
+
+    /*main: bag section's discount price*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.pricecontainer>p.discountprice {
+        font-size: 0.8em;
+    }
+
+
+    /*main: bag section's checkout container*/
+    main>section.bag>div.bagfooter {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 2em 2em 2em;
+        width: 100%;
+        margin-top: 0.7em;
+    }
+
+    /*main: bag section's continue shopping button*/
+    main>section.bag>div.bagfooter>div.backtoprevious {
+        text-align: left;
+        width: 100%;
+        display: grid;
+        grid-column: 1;
+        grid-row: 1;
+        height: 50%;
+    }
+
+    /*main: bag section's continue shopping button arrow img*/
+    main>section.bag>div.bagfooter>div.backtoprevious img {
+        width: 3%;
+    }
+
+    /*main: bag section's continue shopping button link*/
+    main>section.bag>div.bagfooter>div.backtoprevious a {
+        font-size: 1em;
+    }
+
+    /*main: bag section's subtotal price*/
+    main>section.bag>div.bagfooter>div.subtotal {
+        grid-column: 1;
+        grid-row: 2;
+        width: 100%;
+        height: 50%;
+        text-align: right;
+        line-height: 1.1em;
+    }
+
+    /*main: bag section's subtotal price - title*/
+    main>section.bag>div.bagfooter>div.subtotal>p.subtotaltitle {
+        font-weight: bold;
+        font-family: var(--sansserif);
+        font-size: 1em;
+    }
+
+    /*main: bag section's subtotal price - price*/
+    main>section.bag>div.bagfooter>div.subtotal>p.subtotalprice {
+        font-family: var(--sansserif);
+        font-size: 1em;
+    }
+
+    /*main: bag section's checkout container*/
+    main>section.bag>div.bagfooter>div.checkoutcontainer {
+        grid-column: 1;
+        grid-row: 3;
+        text-align: right;
+        height: 50%;
+    }
+
+    /*main: bag section's checkout - small text*/
+    main>section.bag>div.bagfooter>div.checkoutcontainer>div.smalltext {
+        font-family: var(--sansserif);
+        font-size: 0.7em;
+        margin-top: 0.8em;
+    }
+
+
+    /*main: bag section's checkout - checkout button*/
+    main>section.bag>div.bagfooter>div.checkoutcontainer>div.buttonwrap>button {
+        margin-top: 0.4em;
+        width: 25%;
+        font-size: 0.9em;
+        letter-spacing: 0.1em;
+    }
+
+}
+/*max-width: 992px*/
+@media screen and (max-width: 992px) {
+
+    /*background color of main section*/
+    main {
+        padding: 2em;
+    }
+
+    /*main: bag section*/
+    main>section.bag {
+        padding-top: 1.4em;
+
+    }
+
+    /*main: bag section title*/
+    main>section.bag>div.bagtitle>h1 {
+        font-size: 1.1em;
+        letter-spacing: 0.1em;
+        margin-bottom: 1em;
+    }
+
+    /*main: bag section of 1 item*/
+    main>section.bag>div.itemgroup>div.itemcontainer {
+        display: grid;
+        grid-template-columns: 5% 20% 38% 17% 20%;
+        grid-template-rows: auto;
+        padding: 0.6em;
+        position: relative;
+        margin: 0 auto;
+    }
+
+    /*main: bag section's empty bag message text*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.emptycontainer>h3 {
+        width: 80%;
+        font-size: 0.7em;
+        height: 15%;
+    }
+
+
+    /*main: bag section's close icon*/
+    main>section.bag>div.itemgroup>div.itemcontainer>img.closeicon {
+        grid-column: 1;
+        grid-row: 1;
+        width: 60%;
+    }
+
+    /*main: bag section's product thumbnail'*/
+    main>section.bag>div.itemgroup>div.itemcontainer>img.productthumbnail {
+        width: 100%;
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    /*main: bag section's product details and name*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.item {
+        width: 100%;
+        grid-column: 3;
+        grid-row: 1;
+        padding-left: 1em;
+    }
+
+    /*main: bag section's product name*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.item>h3 {
+        font-size: 0.9em;
+        margin-bottom: 0.5em;
+        line-height: 1.2em;
+    }
+
+    /*main: bag section's product details*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.item p {
+        font-size: 0.8em;
+        line-height: 1.2em;
+    }
+
+    /*main: bag section's input stepper container*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.inputstepper {
+        text-align: center;
+        grid-column: 4;
+        grid-row: 1;
+        width: 60%;
+        margin: auto 0;
+    }
+
+    /*main: bag section's input stepper*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.inputstepper>div.inputwrap {
+        width: 100%;
+        background-color: transparent;
+        border: 2px solid var(--bgcolor);
+        padding: 0.2em 0;
+        margin: auto 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /*main: bag section's input stepper number*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.inputstepper>div.inputwrap>input[type="number"] {
+        font-size: 0.8em;
+        margin: 0;
+        padding: 0;
+    }
+
+    /*main: bag section's input stepper buttons*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.inputstepper button {
+        font-size: 0.9em;
+        margin: 0;
+        padding: 0;
+    }
+
+    /*main: bag section's price container*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.pricecontainer {
+        width: 75%;
+        grid-column: 5;
+        grid-row: 1;
+        height: 20%;
+        margin: auto 0;
+        line-height: 0.9em;
+    }
+
+    /*main: bag section's actual price*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.pricecontainer>p.actualprice {
+        font-size: 0.8em;
+    }
+
+    /*main: bag section's discount price*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.pricecontainer>p.discountprice {
+        font-size: 0.8em;
+    }
+
+
+    /*main: bag section's checkout container*/
+    main>section.bag>div.bagfooter {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 2em 2em 2em;
+        width: 100%;
+        margin-top: 0.7em;
+    }
+
+    /*main: bag section's continue shopping button*/
+    main>section.bag>div.bagfooter>div.backtoprevious {
+        text-align: left;
+        width: 100%;
+        display: grid;
+        grid-column: 1;
+        grid-row: 1;
+        height: 50%;
+    }
+
+    /*main: bag section's continue shopping button arrow img*/
+    main>section.bag>div.bagfooter>div.backtoprevious img {
+        width: 3%;
+    }
+
+    /*main: bag section's continue shopping button link*/
+    main>section.bag>div.bagfooter>div.backtoprevious a {
+        font-size: 0.9em;
+    }
+
+    /*main: bag section's subtotal price*/
+    main>section.bag>div.bagfooter>div.subtotal {
+        grid-column: 1;
+        grid-row: 2;
+        width: 100%;
+        height: 50%;
+        text-align: right;
+        line-height: 1em;
+    }
+
+    /*main: bag section's subtotal price - title*/
+    main>section.bag>div.bagfooter>div.subtotal>p.subtotaltitle {
+        font-weight: bold;
+        font-family: var(--sansserif);
+        font-size: 0.9em;
+    }
+
+    /*main: bag section's subtotal price - price*/
+    main>section.bag>div.bagfooter>div.subtotal>p.subtotalprice {
+        font-family: var(--sansserif);
+        font-size: 0.9em;
+    }
+
+    /*main: bag section's checkout container*/
+    main>section.bag>div.bagfooter>div.checkoutcontainer {
+        grid-column: 1;
+        grid-row: 3;
+        text-align: right;
+        height: 50%;
+    }
+
+    /*main: bag section's checkout - small text*/
+    main>section.bag>div.bagfooter>div.checkoutcontainer>div.smalltext {
+        font-family: var(--sansserif);
+        font-size: 0.7em;
+        margin-top: 0.8em;
+    }
+
+
+    /*main: bag section's checkout - checkout button*/
+    main>section.bag>div.bagfooter>div.checkoutcontainer>div.buttonwrap>button {
+        margin-top: 0.4em;
+        width: 25%;
+        font-size: 0.9em;
+        letter-spacing: 0.1em;
+    }
+
+}
+/*max-width: 720px*/
+@media screen and (max-width: 720px) {
+
+    /*background color of main section*/
+    main {
+        padding: 0.5em;
+    }
+
+    /*main: bag section*/
+    main>section.bag {
+        padding-top: 1.4em;
+
+    }
+
+    /*main: bag section title*/
+    main>section.bag>div.bagtitle>h1 {
+        font-size: 0.9em;
+        letter-spacing: 0;
+        margin-bottom: 1em;
+    }
+
+    /*main: bag section of 1 item*/
+    main>section.bag>div.itemgroup>div.itemcontainer {
+        display: grid;
+        grid-template-columns: 6% 50% 44%;
+        grid-template-rows: auto auto auto;
+        padding: 0.6em;
+        position: relative;
+        margin: 0 auto;
+    }
+
+    /*main: bag section's empty bag message text*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.emptycontainer>h3 {
+        width: 80%;
+        font-size: 0.7em;
+        height: 15%;
+    }
+
+
+    /*main: bag section's close icon*/
+    main>section.bag>div.itemgroup>div.itemcontainer>img.closeicon {
+        grid-column: 1;
+        grid-row: 1;
+        width: 60%;
+    }
+
+    /*main: bag section's product thumbnail'*/
+    main>section.bag>div.itemgroup>div.itemcontainer>img.productthumbnail {
+        width: 100%;
+        grid-column: 2;
+        grid-row: 1 / 4;
+    }
+
+    /*main: bag section's product details and name*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.item {
+        width: 100%;
+        grid-column: 3;
+        grid-row: 1 / 2;
+        height: 15%;
+        padding-left: 1em;
+    }
+
+    /*main: bag section's product name*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.item>h3 {
+        font-size: 0.7em;
+        margin-bottom: 0.5em;
+        line-height: 1.2em;
+    }
+
+    /*main: bag section's product details*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.item p {
+        font-size: 0.6em;
+        line-height: 1.2em;
+    }
+
+    /*main: bag section's input stepper container*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.inputstepper {
+        text-align: center;
+        grid-column: 3;
+        grid-row: 2/3;
+        width: 25%;
+        margin: 0.6em 0;
+        padding-left: 1em;
+    }
+
+    /*main: bag section's input stepper*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.inputstepper>div.inputwrap {
+        width: 100%;
+        background-color: transparent;
+        border: 2px solid var(--bgcolor);
+        padding: 0.2em 0;
+        margin: auto 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /*main: bag section's input stepper number*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.inputstepper>div.inputwrap>input[type="number"] {
+        font-size: 0.6em;
+        margin: 0;
+        padding: 0;
+    }
+
+    /*main: bag section's input stepper buttons*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.inputstepper button {
+        font-size: 0.7em;
+        margin: 0;
+        padding: 0;
+    }
+
+    /*main: bag section's price container*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.pricecontainer {
+        width: 75%;
+        grid-column: 3;
+        grid-row: 3/4;
+        height: 20%;
+        margin: 0;
+        line-height: 0.9em;
+    }
+
+    /*main: bag section's actual price*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.pricecontainer>p.actualprice {
+        font-size: 0.6em;
+    }
+
+    /*main: bag section's discount price*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.pricecontainer>p.discountprice {
+        font-size: 0.7em;
+    }
+
+
+    /*main: bag section's checkout container*/
+    main>section.bag>div.bagfooter {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 2em 2em 2em;
+        width: 100%;
+        margin-top: 0.7em;
+    }
+
+    /*main: bag section's continue shopping button*/
+    main>section.bag>div.bagfooter>div.backtoprevious {
+        text-align: left;
+        width: 100%;
+        display: grid;
+        grid-column: 1;
+        grid-row: 1;
+        height: 50%;
+    }
+
+    /*main: bag section's continue shopping button arrow img*/
+    main>section.bag>div.bagfooter>div.backtoprevious img {
+        width: 3%;
+    }
+
+    /*main: bag section's continue shopping button link*/
+    main>section.bag>div.bagfooter>div.backtoprevious a {
+        font-size: 0.8em;
+    }
+
+    /*main: bag section's subtotal price*/
+    main>section.bag>div.bagfooter>div.subtotal {
+        grid-column: 1;
+        grid-row: 2;
+        width: 100%;
+        height: 50%;
+        text-align: right;
+        line-height: 1em;
+    }
+
+    /*main: bag section's subtotal price - title*/
+    main>section.bag>div.bagfooter>div.subtotal>p.subtotaltitle {
+        font-weight: bold;
+        font-family: var(--sansserif);
+        font-size: 0.8em;
+    }
+
+    /*main: bag section's subtotal price - price*/
+    main>section.bag>div.bagfooter>div.subtotal>p.subtotalprice {
+        font-family: var(--sansserif);
+        font-size: 0.8em;
+    }
+
+    /*main: bag section's checkout container*/
+    main>section.bag>div.bagfooter>div.checkoutcontainer {
+        grid-column: 1;
+        grid-row: 3;
+        text-align: right;
+        height: 50%;
+    }
+
+    /*main: bag section's checkout - small text*/
+    main>section.bag>div.bagfooter>div.checkoutcontainer>div.smalltext {
+        font-family: var(--sansserif);
+        font-size: 0.6em;
+        margin-top: 0.8em;
+    }
+
+
+    /*main: bag section's checkout - checkout button*/
+    main>section.bag>div.bagfooter>div.checkoutcontainer>div.buttonwrap>button {
+        margin-top: 0.4em;
+        width: 30%;
+        font-size: 0.8em;
+        letter-spacing: 0.1em;
+    }
+
+}
+/*max-width: 540px*/
+@media screen and (max-width: 540px) {
+
+    /*background color of main section*/
+    main {
+        padding: 0.5em;
+    }
+
+    /*main: bag section*/
+    main>section.bag {
+        padding-top: 1.4em;
+
+    }
+
+    /*main: bag section title*/
+    main>section.bag>div.bagtitle>h1 {
+        font-size: 0.9em;
+        letter-spacing: 0;
+        margin-bottom: 1em;
+    }
+
+    /*main: bag section of 1 item*/
+    main>section.bag>div.itemgroup>div.itemcontainer {
+        display: grid;
+        grid-template-columns: 8% 50% 42%;
+        grid-template-rows: auto auto auto;
+        padding: 0.6em;
+        position: relative;
+        margin: 0 auto;
+    }
+
+    /*main: bag section's empty bag message text*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.emptycontainer>h3 {
+        width: 80%;
+        font-size: 0.7em;
+        height: 15%;
+    }
+
+
+    /*main: bag section's close icon*/
+    main>section.bag>div.itemgroup>div.itemcontainer>img.closeicon {
+        grid-column: 1;
+        grid-row: 1;
+        width: 70%;
+    }
+
+    /*main: bag section's product thumbnail'*/
+    main>section.bag>div.itemgroup>div.itemcontainer>img.productthumbnail {
+        width: 100%;
+        grid-column: 2;
+        grid-row: 1 / 4;
+    }
+
+    /*main: bag section's product details and name*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.item {
+        width: 90%;
+        grid-column: 3;
+        grid-row: 1 / 2;
+        height: 15%;
+        padding-left: 1em;
+    }
+
+    /*main: bag section's product name*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.item>h3 {
+        font-size: 0.7em;
+        margin-bottom: 0.5em;
+        line-height: 1.2em;
+    }
+
+    /*main: bag section's product details*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.item p {
+        font-size: 0.6em;
+        line-height: 1.2em;
+    }
+
+    /*main: bag section's input stepper container*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.inputstepper {
+        text-align: center;
+        grid-column: 3;
+        grid-row: 2/3;
+        width: 30%;
+        margin: 0.6em 0;
+        padding-left: 1em;
+    }
+
+    /*main: bag section's input stepper*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.inputstepper>div.inputwrap {
+        width: 100%;
+        background-color: transparent;
+        border: 2px solid var(--bgcolor);
+        padding: 0.2em 0;
+        margin: auto 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /*main: bag section's input stepper number*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.inputstepper>div.inputwrap>input[type="number"] {
+        font-size: 0.6em;
+        margin: 0;
+        padding: 0;
+    }
+
+    /*main: bag section's input stepper buttons*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.inputstepper button {
+        font-size: 0.7em;
+        margin: 0;
+        padding: 0;
+    }
+
+    /*main: bag section's price container*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.pricecontainer {
+        width: 75%;
+        grid-column: 3;
+        grid-row: 3/4;
+        height: 20%;
+        margin: 0;
+        line-height: 0.9em;
+        padding-left: 1em;
+    }
+
+    /*main: bag section's actual price*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.pricecontainer>p.actualprice {
+        font-size: 0.6em;
+    }
+
+    /*main: bag section's discount price*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.pricecontainer>p.discountprice {
+        font-size: 0.7em;
+    }
+
+
+    /*main: bag section's checkout container*/
+    main>section.bag>div.bagfooter {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 2em 2em 2em;
+        width: 100%;
+        margin-top: 0.7em;
+    }
+
+    /*main: bag section's continue shopping button*/
+    main>section.bag>div.bagfooter>div.backtoprevious {
+        text-align: left;
+        width: 100%;
+        display: grid;
+        grid-column: 1;
+        grid-row: 1;
+        height: 50%;
+    }
+
+    /*main: bag section's continue shopping button arrow img*/
+    main>section.bag>div.bagfooter>div.backtoprevious img {
+        width: 5%;
+    }
+
+    /*main: bag section's continue shopping button link*/
+    main>section.bag>div.bagfooter>div.backtoprevious a {
+        font-size: 0.8em;
+    }
+
+    /*main: bag section's subtotal price*/
+    main>section.bag>div.bagfooter>div.subtotal {
+        grid-column: 1;
+        grid-row: 2;
+        width: 100%;
+        height: 50%;
+        text-align: right;
+        line-height: 1em;
+    }
+
+    /*main: bag section's subtotal price - title*/
+    main>section.bag>div.bagfooter>div.subtotal>p.subtotaltitle {
+        font-weight: bold;
+        font-family: var(--sansserif);
+        font-size: 0.8em;
+    }
+
+    /*main: bag section's subtotal price - price*/
+    main>section.bag>div.bagfooter>div.subtotal>p.subtotalprice {
+        font-family: var(--sansserif);
+        font-size: 0.8em;
+    }
+
+    /*main: bag section's checkout container*/
+    main>section.bag>div.bagfooter>div.checkoutcontainer {
+        grid-column: 1;
+        grid-row: 3;
+        text-align: right;
+        height: 50%;
+    }
+
+    /*main: bag section's checkout - small text*/
+    main>section.bag>div.bagfooter>div.checkoutcontainer>div.smalltext {
+        font-family: var(--sansserif);
+        font-size: 0.6em;
+        margin-top: 0.8em;
+    }
+
+
+    /*main: bag section's checkout - checkout button*/
+    main>section.bag>div.bagfooter>div.checkoutcontainer>div.buttonwrap>button {
+        margin-top: 0.4em;
+        width: 100%;
+        font-size: 0.8em;
+        letter-spacing: 0.1em;
+    }
+
+}
+/*max-width: 300px*/
+@media screen and (max-width: 300px) {
+
+    /*background color of main section*/
+    main {
+        padding: 0;
+    }
+
+    /*main: bag section*/
+    main>section.bag {
+        padding-top: 1.4em;
+
+    }
+
+    /*main: bag section title*/
+    main>section.bag>div.bagtitle>h1 {
+        font-size: 1em;
+        letter-spacing: 0;
+        margin-bottom: 1em;
+    }
+
+    /*main: bag section of 1 item*/
+    main>section.bag>div.itemgroup>div.itemcontainer {
+        display: grid;
+        grid-template-columns: 10% 45% 45%;
+        grid-template-rows: auto auto auto;
+        padding: 0.6em;
+        position: relative;
+    }
+
+    /*main: bag section's empty bag message text*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.emptycontainer>h3 {
+        width: 80%;
+        font-size: 0.8em;
+        height: 15%;
+    }
+
+
+    /*main: bag section's close icon*/
+    main>section.bag>div.itemgroup>div.itemcontainer>img.closeicon {
+        grid-column: 1;
+        grid-row: 1;
+
+    }
+
+    /*main: bag section's product thumbnail'*/
+    main>section.bag>div.itemgroup>div.itemcontainer>img.productthumbnail {
+        width: 100%;
+        grid-column: 2;
+        grid-row: 1 / 3;
+    }
+
+    /*main: bag section's product details and name*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.item {
+        width: 90%;
+        grid-column: 3;
+        grid-row: 1 / 2;
+        height: 15%;
+        margin: 0;
+        padding-left: 0.8em;
+    }
+
+    /*main: bag section's product name*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.item>h3 {
+        font-size: 0.8em;
+        margin-bottom: 0.6em;
+        line-height: 1.3em;
+    }
+
+    /*main: bag section's product details*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.item p {
+        font-size: 0.6em;
+        line-height: 1.2em;
+    }
+
+    /*main: bag section's input stepper container*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.inputstepper {
+        text-align: center;
+        grid-column: 3;
+        grid-row: 2/3;
+        width: 60%;
+        margin: 0.6em 0;
+        padding-left: 0.8em;
+    }
+
+    /*main: bag section's input stepper*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.inputstepper>div.inputwrap {
+        width: 100%;
+        background-color: transparent;
+        border: 2px solid var(--bgcolor);
+        padding: 0.2em 0;
+        margin: auto 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /*main: bag section's input stepper number*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.inputstepper>div.inputwrap>input[type="number"] {
+        font-size: 0.6em;
+        margin: 0;
+        padding: 0;
+    }
+
+    /*main: bag section's input stepper buttons*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.inputstepper button {
+        font-size: 0.7em;
+        margin: 0;
+        padding: 0;
+    }
+
+    /*main: bag section's price container*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.pricecontainer {
+        width: 90%;
+        grid-column: 3;
+        grid-row: 3/4;
+        height: 20%;
+        margin: 0;
+        line-height: 0.9em;
+    }
+
+    /*main: bag section's actual price*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.pricecontainer>p.actualprice {
+        font-size: 0.6em;
+    }
+
+    /*main: bag section's discount price*/
+    main>section.bag>div.itemgroup>div.itemcontainer>div.pricecontainer>p.discountprice {
+        font-size: 0.7em;
+    }
+
+
+    /*main: bag section's checkout container*/
+    main>section.bag>div.bagfooter {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 2em 2em 2em;
+        width: 100%;
+        margin-top: 0.7em;
+    }
+
+    /*main: bag section's continue shopping button*/
+    main>section.bag>div.bagfooter>div.backtoprevious {
+        text-align: left;
+        width: 100%;
+        display: grid;
+        grid-column: 1;
+        grid-row: 1;
+        height: 50%;
+    }
+
+    /*main: bag section's continue shopping button arrow img*/
+    main>section.bag>div.bagfooter>div.backtoprevious img {
+        width: 8%;
+    }
+
+    /*main: bag section's continue shopping button link*/
+    main>section.bag>div.bagfooter>div.backtoprevious a {
+        font-size: 0.8em;
+    }
+
+    /*main: bag section's subtotal price*/
+    main>section.bag>div.bagfooter>div.subtotal {
+        grid-column: 1;
+        grid-row: 2;
+        width: 100%;
+        height: 50%;
+        text-align: right;
+        line-height: 1em;
+    }
+
+    /*main: bag section's subtotal price - title*/
+    main>section.bag>div.bagfooter>div.subtotal>p.subtotaltitle {
+        font-weight: bold;
+        font-family: var(--sansserif);
+        font-size: 0.8em;
+    }
+
+    /*main: bag section's subtotal price - price*/
+    main>section.bag>div.bagfooter>div.subtotal>p.subtotalprice {
+        font-family: var(--sansserif);
+        font-size: 0.8em;
+    }
+
+    /*main: bag section's checkout container*/
+    main>section.bag>div.bagfooter>div.checkoutcontainer {
+        grid-column: 1;
+        grid-row: 3;
+        text-align: right;
+        height: 50%;
+    }
+
+    /*main: bag section's checkout - small text*/
+    main>section.bag>div.bagfooter>div.checkoutcontainer>div.smalltext {
+        font-family: var(--sansserif);
+        font-size: 0.6em;
+        margin-top: 0.8em;
+    }
+
+
+    /*main: bag section's checkout - checkout button*/
+    main>section.bag>div.bagfooter>div.checkoutcontainer>div.buttonwrap>button {
+        margin-top: 0.4em;
+        width: 100%;
+        font-size: 0.8em;
+        letter-spacing: 0.1em;
+    }
+
+}
+
+/* footer */
+footer {
+    background-color: var(--color);
+    width: 100%;
+}
+
+/* footer width and centered */
+div.footercontainer {
+    width: 80%;
+    margin: 0 auto;
+    padding: 3em 0;
+    display: grid;
+    grid-template-columns: 3fr 3fr 2fr;
+    grid-template-rows: auto auto;
+}
+
+/* footer titles */
+div.footercontainer>div h3.footertitle {
+    font-family: var(--serif);
+    letter-spacing: 0.1em;
+    font-size: 1em;
+    text-transform: uppercase;
+    color: var(--bgcolor);
+    margin-bottom: 1em;
+}
+
+/* footer titles */
+div.footercontainer>div.companyfooter ul {
+    list-style-type: none;
+}
+
+/* footer list items */
+div.footercontainer>div.companyfooter ul li {
+    font-family: var(--sansserif);
+    letter-spacing: 0.1em;
+    font-size: 0.9em;
+    line-height: 1.75em;
+    font-weight: 150;
+}
+
+div.footercontainer>div.companyfooter ul li a {
+    color: var(--bgcolor);
+    transition: opacity 0.1s ease;
+}
+
+/* footer list items link look */
+div.footercontainer>div.companyfooter ul li a:link,
+div.footercontainer>div.companyfooter ul li a:visited,
+div.footercontainer>div.companyfooter ul li a:active {
+    text-decoration: none;
+}
+
+div.footercontainer>div.companyfooter ul li a:hover {
+    opacity: 0.5;
+}
+
+div.footercontainer>div.subscribefooter {
+    margin-right: 6em;
+}
+
+div.footercontainer>div.subscribefooter>form {
+    position: relative;
+    width: 100%;
+}
+
+
+/* footer paragraph text */
+div.footercontainer>div.subscribefooter>form>p {
+    font-family: var(--sansserif);
+    letter-spacing: 0.1em;
+    font-size: 0.9em;
+    font-weight: 150;
+    width: 80%;
+    margin: 0 auto 1em 0;
+}
+
+/* footer input email subscription */
+div.footercontainer>div.subscribefooter>form>input {
+    background-color: var(--bgcolor);
+    color: var(--color);
+    padding: 1em;
+    width: 100%;
+    border: none;
+    border-radius: 0.2em;
+}
+
+/* footer input email placeholder */
+div.footercontainer>div.subscribefooter>form>input::-webkit-input-placeholder {
+    color: var(--color);
+    opacity: 0.5;
+    letter-spacing: 0.1em;
+}
+
+div.footercontainer>div.subscribefooter>form>input:-moz-placeholder {
+    color: var(--color);
+    opacity: 0.5;
+    letter-spacing: 0.1em;
+}
+
+div.footercontainer>div.subscribefooter>form>input::-ms-placeholder {
+    color: var(--color);
+    opacity: 0.5;
+    letter-spacing: 0.1em;
+}
+
+
+div.footercontainer>div.subscribefooter>form>input::placeholder {
+    color: var(--color);
+    opacity: 0.5;
+    letter-spacing: 0.1em;
+}
+
+/* footer input email required */
+div.footercontainer>div.subscribefooter>form>input:required {
+    background: url("../images/icons_emailrequired-01.svg") no-repeat right;
+    background-color: var(--bgcolor);
+    color: var(--color);
+}
+
+/* footer input email focus */
+div.footercontainer>div.subscribefooter>form>input:focus {
+    background-color: var(--bgcolor);
+    color: var(--color);
+}
+
+/* footer input email autofill */
+div.footercontainer>div.subscribefooter>form>input:autofill {
+    background-color: var(--bgcolor);
+    color: var(--color);
+}
+
+div.footercontainer>div.subscribefooter>form>input:-webkit-autofill {
+    background-color: var(--bgcolor);
+    color: var(--color);
+}
+
+/* footer input email valid */
+div.footercontainer>div.subscribefooter>form>input:valid {
+    background: url("../images/icons_emailvalid.svg") no-repeat right;
+    background-color: var(--bgcolor);
+    color: var(--color);
+}
+
+/* footer input email invalid */
+div.footercontainer>div.subscribefooter>form>input:invalid {
+    background: url("../images/icons_emailinvalid-01.svg") no-repeat right;
+    background-color: var(--bgcolor);
+    color: var(--color);
+}
+
+/* footer input email subscribe button */
+div.footercontainer>div.subscribefooter>form>button {
+    margin-top: 1.5em;
+    border: 2px solid var(--bgcolor);
+    border-radius: 0.2em;
+    color: var(--color);
+    background: var(--bgcolor);
+    padding: 1em;
+    width: 30%;
+    font-size: 0.7em;
+    letter-spacing: 0.1em;
+    font-family: var(--sansserif);
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* footer input email button shine creation first layer */
+div.footercontainer>div.subscribefooter>form>button::before {
+    content: '';
+    display: block;
+    position: absolute;
+    background: rgba(255, 255, 255, 1);
+    width: 9px;
+    height: 100%;
+    top: 0;
+    filter: blur(12px);
+    transform: translateX(-100px) skewX(-20deg);
+}
+
+/* footer input email button shine creation second layer */
+div.footercontainer>div.subscribefooter>form>button::after {
+    content: '';
+    display: block;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.5);
+    width: 12px;
+    height: 100%;
+    top: 0;
+    filter: blur(6px);
+    transform: translateX(-100px) skewX(-20deg);
+}
+
+/* footer input email button hover */
+div.footercontainer>div.subscribefooter>form>button:hover {
+    background-color: var(--bgcolor);
+    border: 2px solid var(--bgcolor);
+    color: var(--color);
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    box-shadow: 3px 3px 5px rgba(0, 42, 42, 0.4);
+    -webkit-box-shadow: 3px 3px 5px rgba(0, 42, 42, 0.4);
+    -moz-box-shadow: 3px 3px 5px rgba(0, 42, 42, 0.4);
+
+}
+
+/* footer input email button hover shine effect*/
+div.footercontainer>div.subscribefooter>form>button:hover::before,
+div.footercontainer>div.subscribefooter>form>button:hover::after {
+    transform: translateX(250px) skewX(-20deg);
+    transition: 1s ease;
+}
+
+/* footer subscription button will not work until form is valid */
+div.footercontainer>div.subscribefooter>form:invalid [type="submit"] {
+    pointer-events: none;
+    border: 2px solid var(--bgcolor);
+    border-radius: 0.2em;
+    color: var(--color);
+    background: var(--bgcolor);
+    padding: 1em;
+    font-size: 0.7em;
+    letter-spacing: 0.1em;
+    font-family: var(--sansserif);
+    transition: all 0.2s ease;
+}
+
+/* footer social width */
+div.footercontainer>div.socials>div.socialcontainer {
+    width: 30%;
+    display: flex;
+    justify-content: start;
+}
+
+/* footer social image width */
+div.footercontainer>div.socials>div.socialcontainer a.linkedin img {
+    display: block;
+    width: 100%;
+}
+
+/* footer social image width */
+div.footercontainer>div.socials>div.socialcontainer a.facebook img {
+    display: block;
+    width: 100%;
+    height: 45%;
+}
+
+/* footer social hover effect */
+div.footercontainer>div.socials>div.socialcontainer a:hover {
+    opacity: 50%;
+}
+
+/* footer social image width */
+div.footercontainer>div.copyright {
+    font-family: var(--sansserif);
+    letter-spacing: 0.1em;
+    font-size: 0.8em;
+    line-height: 1em;
+    color: var(--bgcolor);
+    margin-top: 3em;
+}
+
+/*footer to be responsive*/
+
+/*max-width: 1080px*/
+@media screen and (max-width: 1080px) {
+
+    /* footer titles */
+    div.footercontainer>div h3.footertitle {
+        font-size: 1.1em;
+    }
+
+    /* footer paragraph text */
+    div.footercontainer>div.subscribefooter>form>p {
+        width: 100%;
+        font-size: 0.8em;
+    }
+
+    /* footer input email subscribe button */
+    div.footercontainer>div.subscribefooter>form>button {
+        margin-top: 0.9em;
+        width: 50%;
+    }
+
+    /* footer social width */
+    div.footercontainer>div.socials>div.socialcontainer {
+        width: 35%;
+        display: flex;
+        justify-content: start;
+    }
+
+
+    /* footer list items */
+    div.footercontainer>div.companyfooter ul li {
+        font-size: 0.8em;
+    }
+}
+
+/*max-width: 992px*/
+@media screen and (max-width: 992px) {
+
+    /*subscribe footer*/
+    div.footercontainer>div.subscribefooter {
+        margin-right: 3em;
+    }
+
+    /* footer titles */
+    div.footercontainer>div h3.footertitle {
+        font-size: 1.1em;
+        line-height: 1.2em;
+    }
+
+    /* footer paragraph text */
+    div.footercontainer>div.subscribefooter>form>p {
+        width: 100%;
+        line-height: 1.3em;
+        font-size: 1em;
+    }
+
+    /* footer input email subscribe button */
+    div.footercontainer>div.subscribefooter>form>button {
+        margin-top: 1em;
+        width: 40%;
+    }
+
+    /* footer social image width */
+    div.footercontainer>div.copyright {
+        margin-top: 3em;
+        width: 100%;
+        line-height: 1.2em;
+        grid-column: 1/3;
+        font-size: 0.7em;
+    }
+
+
+    /* footer social width */
+    div.footercontainer>div.socials>div.socialcontainer {
+        width: 50%;
+        display: flex;
+        justify-content: start;
+    }
+
+
+    /* footer list items */
+    div.footercontainer>div.companyfooter ul li {
+        font-size: 1em;
+    }
+}
+
+/*max-width: 720px*/
+@media screen and (max-width: 720px) {
+
+    /* footer titles */
+    div.footercontainer>div h3.footertitle {
+        margin: 2em 0 1em 0;
+        font-size: 0.9em;
+        line-height: 1.3em;
+    }
+
+    /*subscribe footer*/
+    div.footercontainer>div.subscribefooter {
+        margin-right: 3em;
+    }
+
+
+    /* footer paragraph text */
+    div.footercontainer>div.subscribefooter>form>p {
+        width: 100%;
+        line-height: 1.3em;
+        font-size: 0.8em;
+    }
+
+    /* footer input email subscribe button */
+    div.footercontainer>div.subscribefooter>form>button {
+        margin-top: 1em;
+        width: 60%;
+    }
+
+    /* footer social image width */
+    div.footercontainer>div.copyright {
+        margin-top: 3em;
+        width: 100%;
+        line-height: 1.2em;
+        grid-column: 1/3;
+        font-size: 0.6em;
+    }
+
+
+    /* footer social width */
+    div.footercontainer>div.socials>div.socialcontainer {
+        width: 50%;
+        display: flex;
+        justify-content: start;
+    }
+
+
+    /* footer list items */
+    div.footercontainer>div.companyfooter ul li {
+        font-size: 0.8em;
+    }
+}
+
+/*max-width: 540px*/
+@media screen and (max-width: 540px) {
+
+    /* footer width and centered */
+    div.footercontainer {
+        width: 85%;
+        margin: 0 auto;
+        padding: 3em 0;
+        display: block;
+    }
+
+    /* footer titles */
+    div.footercontainer>div h3.footertitle {
+        margin: 3em 0 1em 0;
+        font-size: 0.9em;
+        line-height: 1.2em;
+    }
+
+    /*subscribe footer*/
+    div.footercontainer>div.subscribefooter {
+        margin-right: 2em;
+    }
+
+
+    /* footer paragraph text */
+    div.footercontainer>div.subscribefooter>form>p {
+        width: 100%;
+        line-height: 1.3em;
+        font-size: 0.8em;
+    }
+
+    /* footer input email subscribe button */
+    div.footercontainer>div.subscribefooter>form>button {
+        margin-top: 1.1em;
+        width: 30%;
+    }
+
+    /* footer social image width */
+    div.footercontainer>div.copyright {
+        margin-top: 0em;
+        width: 60%;
+        line-height: 1.2em;
+        font-size: 0.7em;
+    }
+
+    /* footer social width */
+    div.footercontainer>div.socials>div.socialcontainer {
+        width: 25%;
+        display: flex;
+        justify-content: start;
+    }
+
+
+    /* footer list items */
+    div.footercontainer>div.companyfooter ul li {
+        font-size: 0.8em;
+    }
+}
+
+/*max-width: 300px*/
+@media screen and (max-width: 300px) {
+
+    /* footer width and centered */
+    div.footercontainer {
+        width: 85%;
+        margin: 0 auto;
+        padding: 3em 0;
+        display: block;
+    }
+
+    /* footer titles */
+    div.footercontainer>div h3.footertitle {
+        margin: 2em 0 1em 0;
+        line-height: 1.2em;
+    }
+
+    /*subscribe footer*/
+    div.footercontainer>div.subscribefooter {
+        margin-right: 2em;
+    }
+
+
+    /* footer paragraph text */
+    div.footercontainer>div.subscribefooter>form>p {
+        width: 100%;
+        line-height: 1.5em;
+    }
+
+    /* footer input email subscribe button */
+    div.footercontainer>div.subscribefooter>form>button {
+        margin-top: 1.1em;
+        width: 50%;
+    }
+
+    /* footer social image width */
+    div.footercontainer>div.copyright {
+        margin-top: 0em;
+        width: 60%;
+        line-height: 1.2em;
+        font-size: 0.6em;
+    }
+}

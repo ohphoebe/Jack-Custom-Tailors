@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--meta data: Charset used-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--meta data: Responsive Website-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--meta data: Description of Website-->
+    <meta name="description"
+        content="Here are the products listed for our promotion and deals. Jack Custom Tailors specialises in high quality, individually designed and beautifully hand-sewn suits and dresses. Jack who is the founder of the company. He was first trained at Savile Row, in London's elite Mayfair district. Since then, he has acquired many years of experience. His prestigious clientele includes politicians, industry leaders and international leading figures in media. There are many selection of fabrics, colourings, patterns, weights and designs to choose from. The suits are woven with genuine quality materials which include cashmere, mohair, silk, linen, lambswool and cotton. Book an appointment today for your custom suit tailoring session.">
+    <!--meta data: Keywords of Website-->
+    <meta name="keywords"
+        content="promotion, deals, products, list, Jack, Custom, Tailors, bespoke, suits, tuxedo, hand-basted, tailoring, dresses, woven, high, quality, Singapore">
+    <title>Jack Custom Tailors - Promotions and Deals</title>
+    <!--meta data: CSS of Website-->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/productlist.css">
+    <!--meta data: Favicon of Website-->
+    <link rel="icon" type="image/png" href="images/favicon3.png">
+</head>
+
+
+<body>
+    <!--the header-->
+    <header>
+        <!--top navigation bar-->
+        <section class="navbar">
+            <nav>
+                <!--left part of navigation bar-->
+                <div class="menuleft">
+                    <!--hamburger and close icon-->
+                    <div class="menu-hamburger" id="hamburger">
+                        <img class="openmenu" id="menuopen" src="images/icons_hamburger-01.svg" alt="open menu">
+                        <img class="closemenu" id="menuclose" src="images/icons_close-01.svg" alt="close menu">
+                    </div>
+                    <!--left menu-->
+                    <ul class="navleft" id="sideBar">
+                        <li class="top"><a href="underconstruction.html">About</a></li>
+                        <li><a href="productlist.html">Shop</a></li>
+                        <li><a href="underconstruction.html">Size Guide</a></li>
+                        <li><a href="underconstruction.html">Gallery</a></li>
+                        <li><a href="underconstruction.html">Tailoring</a></li>
+                    </ul>
+                </div>
+                <!--logo-->
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo-01.svg" alt="Jack Custom Tailors"
+                            srcset="images/logo-01_3x-01.svg 3x, images/logo-01_2x-01.svg 2x">
+                    </a>
+                </div>
+                <!--right part of navigation bar-->
+                <ul class="navright">
+                    <li><a href="underconstruction.html"><img src="images/icons_search.svg" alt="search bar"></a></li>
+                    <li><a href="underconstruction.html"><img src="images/icons_profile.svg" alt="profile"></a></li>
+                    <li><a href="underconstruction.html"><img src="images/icons_bookmark_topnav.svg" alt="bookmark"></a>
+                    </li>
+                    <li><a href="underconstruction.html"><img src="images/icons_bag.svg" alt="bag"></a></li>
+                </ul>
+            </nav>
+
+        </section>
+        <section class="pagetitle">
+            <h1>Promotions and Deals</h1>
+        </section>
+    </header>
+
+    <!--the body content-->
+    <main>
+        <section class="filter">
+            <div class="filterbtn" id="filterbtn">
+                <p class="filterbtntitle">Filter</p>
+                <img src="images/openmenu-01.svg" alt="open filter menu">
+            </div>
+            <div class="filtercontainer" id="filtersidebar">
+                <!--close filter side bar icon-->
+                <div class="closeicon">
+                    <img class="closemenu" id="menuclose" src="images/icons_close-01.svg" alt="close menu">
+                </div>
+                <!--filter bar: gender-->
+                <div class="filterwrap">
+                    <div class="filtertitle">
+                        <h3>GENDER</h3>
+                    </div>
+                    <div class="filterlistradio">
+                        <div class="radioinput radioinputall" >
+                            <input type="radio" id="allgender" name="genderSelect" value="all" data-filter="allgender"
+                                onclick="selection(this)" checked>
+                            <label for="allgender" data-filter="allgender">All</label>
+                        </div>
+                        <div class="radioinput">
+                            <input type="radio" id="femalegender" name="genderSelect" value="ladies"
+                                data-filter="ladies" onclick="selection(this)">
+                            <label for="femalegender" data-filter="ladies">Ladies</label>
+                        </div>
+                        <div class="radioinput">
+                            <input type="radio" id="malegender" name="genderSelect" value="gentlemen"
+                                data-filter="gentlemen" onclick="selection(this)">
+                            <label for="malegender" data-filter="gentlemen">Gentlemen</label>
+                        </div>
+                    </div>
+                </div>
+                <!--filter bar: style-->
+                <div class="filterwrap">
+                    <div class="filtertitle">
+                        <h3>STYLE</h3>
+                    </div>
+                    <div class="filterlistradio">
+                        <div class="radioinput radioinputall">
+                            <input type="radio" id="allstyle" name="styleSelect" value="all" data-filter="allstyle"
+                                onclick="selection(this)" checked>
+                            <label for="all" data-filter="allstyle">All</label>
+                        </div>
+                        <div class="radioinput">
+                            <input type="radio" id="formalstyle" name="styleSelect" value="formal" data-filter="formal"
+                                onclick="selection(this)">
+                            <label for="formalstyle" data-filter="formal">Formal</label>
+                        </div>
+                        <div class="radioinput">
+                            <input type="radio" id="casualstyle" name="styleSelect" value="casual" data-filter="casual"
+                                onclick="selection(this)">
+                            <label for="casualstyle" data-filter="casual">Casual</label>
+                        </div>
+                        <div class="radioinput">
+                            <input type="radio" id="creativestyle" name="styleSelect" value="creative"
+                                data-filter="creative" onclick="selection(this)">
+                            <label for="creativestyle" data-filter="creative">Creative</label>
+                        </div>
+                    </div>
+                </div>
+                <!--filter bar: size-->
+                <div class="filterwrap">
+                    <div class="filtertitle">
+                        <h3>SIZE</h3>
+                    </div>
+                    <div class="filterwrap">
+                        <ul class="filterlistsize">
+                            <li class="sizelistitem" data-filter="xs" onclick="selection(this)">XS</li>
+                            <li class="sizelistitem" data-filter="s" onclick="selection(this)">S</li>
+                            <li class="sizelistitem" data-filter="m" onclick="selection(this)">M</li>
+                            <li class="sizelistitem" data-filter="l" onclick="selection(this)">L</li>
+                            <li class="sizelistitem" data-filter="xl" onclick="selection(this)">XL</li>
+                            <li class="sizelistitem" data-filter="xxl" onclick="selection(this)">XXL</li>
+                        </ul>
+                    </div>
+                </div>
+                <!--filter bar: colour-->
+                <div class="filterwrap">
+                    <div class="filtertitle">
+                        <h3>COLOUR</h3>
+                    </div>
+                    <div class="filterwrap">
+                        <ul class="filterlistcolour">
+                            <li class="sizelistitem" data-filter="black" onclick="selection(this)"><img
+                                    src="images/colorfilter_black-01.svg" alt="black"></li>
+                            <li class="sizelistitem" data-filter="blue" onclick="selection(this)"><img
+                                    src="images/colorfilter_blue-01.svg" alt="blue"></li>
+                            <li class="sizelistitem" data-filter="darkbrown" onclick="selection(this)"><img
+                                    src="images/colorfilter_darkbrown-01.svg" alt="darkbrown"></li>
+                            <li class="sizelistitem" data-filter="gray" onclick="selection(this)"><img
+                                    src="images/colorfilter_gray-01.svg" alt="gray"></li>
+                            <li class="sizelistitem" data-filter="green" onclick="selection(this)"><img
+                                    src="images/colorfilter_green-01.svg" alt="green"></li>
+                            <li class="sizelistitem" data-filter="lightbrown" onclick="selection(this)"><img
+                                    src="images/colorfilter_lightbrown-01.svg" alt="lightbrown"></li>
+                            <li class="sizelistitem" data-filter="purple" onclick="selection(this)"><img
+                                    src="images/colorfilter_purple-01.svg" alt="purple"></li>
+                            <li class="sizelistitem" data-filter="red" onclick="selection(this)"><img
+                                    src="images/colorfilter_red-01.svg" alt="red"></li>
+                        </ul>
+                    </div>
+                </div>
+                <!--filter bar: fabrics-->
+                <div class="filterwrap">
+                    <div class="fabriccontainer">
+                        <div class="filtertitle">
+                            <h3>FABRICS</h3>
+                        </div>
+                        <div class="filterwrap">
+                            <div class="filterlistradio">
+                                <div class="radioinput radiofabric">
+                                    <input type="radio" id="hollandFabric" name="fabricSelect" value="holland"
+                                        data-filter="holland" onclick="selection(this)">
+                                    <label for="hollandFabric" data-filter="holland">Holland & Sherry</label>
+                                </div>
+                                <div class="radioinput radiofabric">
+                                    <input type="radio" id="marzoniFabric" name="fabricSelect" value="marzoni"
+                                        data-filter="marzoni" onclick="selection(this)">
+                                    <label for="marzoniFabric" data-filter="marzoni">Marzoni</label>
+                                </div>
+                                <div class="radioinput radiofabric">
+                                    <input type="radio" id="ermenegildoFabric" name="fabricSelect" value="ermenegildo"
+                                        data-filter="ermenegildo" onclick="selection(this)">
+                                    <label for="ermenegildoFabric" data-filter="ermenegildo">Ermenegildo Zegna</label>
+                                </div>
+                                <div class="radioinput radiofabric">
+                                    <input type="radio" id="piacenzaFabric" name="fabricSelect" value="piacenza"
+                                        data-filter="piacenza" onclick="selection(this)">
+                                    <label for="piacenzaFabric" data-filter="piacenza">Piacenza</label>
+                                </div>
+                                <div class="radioinput radiofabric">
+                                    <input type="radio" id="dormeiulFabric" name="fabricSelect" value="dormeuil"
+                                        data-filter="dormeuil" onclick="selection(this)">
+                                    <label for="dormeiulFabric" data-filter="dormeuil">Dormeuil</label>
+                                </div>
+                                <div class="radioinput radiofabric">
+                                    <input type="radio" id="lanificioFabric" name="fabricSelect" value="lanificio"
+                                        data-filter="lanificio" onclick="selection(this)">
+                                    <label for="lanificioFabric" data-filter="lanificio">Lanificio F.lli Cerruti</label>
+                                </div>
+                                <div class="radioinput radiofabric">
+                                    <input type="radio" id="scabalFabric" name="fabricSelect" value="scabal"
+                                        data-filter="scabal" onclick="selection(this)"><label for="scabalFabric"
+                                        data-filter="scabal">Scabal</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </section>
+        <section class="productdisplay">
+            <div class="productgroup">
+                <!--first image-->
+                <div class="singleproduct" id="firstproduct">
+                    <div class="productimage">
+                        <span class="discount">20% OFF</span>
+                        <div class="imagecontainer">
+                            <a href="productpage.html">
+                                <img src="images/product/product01-02.jpg" alt="Classic Mandarin Suit" class="thumb2">
+                                <img src="images/product/product01-01.jpg" alt="Classic Mandarin Suit" class="thumb1">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="productdetails">
+                        <div class="producttext">
+                            <h4 class="productname">Classic Mandarin Suit</h4>
+                            <div class="price">
+                                <p class="actualprice">$465</p>
+                                <p class="discountprice">NOW $372</p>
+                            </div>
+                        </div>
+                        <div class="bookmarkbutton">
+                            <img src="images/icons_bookmark.svg" onclick="bookmarkclicked(this)" ;>
+                        </div>
+                    </div>
+                </div>
+                <!--second image-->
+                <div class="singleproduct" id="secondproduct">
+                    <div class="productimage">
+                        <span class="discount">5% OFF</span>
+                        <div class="imagecontainer">
+                            <a href="productpage.html">
+                                <img src="images/product/product02-02.jpg" alt="Standard Mandarin Suit" class="thumb2">
+                                <img src="images/product/product02-01.jpg" alt="Standard Mandarin Suit" class="thumb1">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="productdetails">
+                        <div class="producttext">
+                            <h4 class="productname">Standard Mandarin Suit</h4>
+                            <div class="price">
+                                <p class="actualprice">$540</p>
+                                <p class="discountprice">NOW $513</p>
+                            </div>
+                        </div>
+                        <div class="bookmarkbutton">
+                            <img src="images/icons_bookmark.svg" class="before" onclick="bookmarkclicked(this)" ;>
+                        </div>
+                    </div>
+                </div>
+                <!--third image-->
+                <div class="singleproduct" id="thirdproduct">
+                    <div class="productimage">
+                        <span class="discount">10% OFF</span>
+                        <div class="imagecontainer">
+                            <a href="productpage.html">
+                                <img src="images/product/product03-02.jpg" alt="Short Diamond Suit" class="thumb2">
+                                <img src="images/product/product03-01.jpg" alt="Short Diamond Suit" class="thumb1">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="productdetails">
+                        <div class="producttext">
+                            <h4 class="productname">Short Diamond Suit</h4>
+                            <div class="price">
+                                <p class="actualprice">$1149</p>
+                                <p class="discountprice">NOW $1034.10</p>
+                            </div>
+                        </div>
+                        <div class="bookmarkbutton">
+                            <img src="images/icons_bookmark.svg" class="before" onclick="bookmarkclicked(this)" ;>
+                        </div>
+                    </div>
+                </div>
+                <!--fourth image-->
+                <div class="singleproduct" id="fourthproduct">
+                    <div class="productimage">
+                        <span class="discount">20% OFF</span>
+                        <div class="imagecontainer">
+                            <a href="productpage.html">
+                                <img src="images/product/product04-02.jpg" alt="Mandarin Diamond Suit" class="thumb2">
+                                <img src="images/product/product04-01.jpg" alt="Mandarin Diamond Suit" class="thumb1">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="productdetails">
+                        <div class="producttext">
+                            <h4 class="productname">Mandarin Diamond Suit</h4>
+                            <div class="price">
+                                <p class="actualprice">$1309</p>
+                                <p class="discountprice">NOW $1047.20</p>
+                            </div>
+                        </div>
+                        <div class="bookmarkbutton">
+                            <img src="images/icons_bookmark.svg" class="before" onclick="bookmarkclicked(this)" ;>
+                        </div>
+                    </div>
+                </div>
+                <!--fifth image-->
+                <div class="singleproduct" id="fifthproduct">
+                    <div class="productimage">
+                        <span class="discount">10% OFF</span>
+                        <div class="imagecontainer">
+                            <a href="productpage.html">
+                                <img src="images/product/product05-02.jpg" alt="Oriental Spread Suit" class="thumb2">
+                                <img src="images/product/product05-01.jpg" alt="Oriental Spread Suit" class="thumb1">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="productdetails">
+                        <div class="producttext">
+                            <h4 class="productname">Oriental Spread Suit</h4>
+                            <div class="price">
+                                <p class="actualprice">$1389</p>
+                                <p class="discountprice">NOW $1250.10</p>
+                            </div>
+                        </div>
+                        <div class="bookmarkbutton">
+                            <img src="images/icons_bookmark.svg" class="before" onclick="bookmarkclicked(this)" ;>
+                        </div>
+                    </div>
+                </div>
+                <!--sixth image-->
+                <div class="singleproduct" id="sixthproduct">
+                    <div class="productimage">
+                        <span class="discount">20% OFF</span>
+                        <div class="imagecontainer">
+                            <a href="productpage.html">
+                                <img src="images/product/product06-02.jpg" alt="Polynesian Spread Suit" class="thumb2">
+                                <img src="images/product/product06-01.jpg" alt="Polynesian Spread Suit" class="thumb1">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="productdetails">
+                        <div class="producttext">
+                            <h4 class="productname">Polynesian Spread Suit</h4>
+                            <div class="price">
+                                <p class="actualprice">$1589</p>
+                                <p class="discountprice">NOW $1271.20</p>
+                            </div>
+                        </div>
+                        <div class="bookmarkbutton">
+                            <img src="images/icons_bookmark.svg" class="before" onclick="bookmarkclicked(this)" ;>
+                        </div>
+                    </div>
+                </div>
+                <!--seventh image-->
+                <div class="singleproduct" id="seventhproduct">
+                    <div class="productimage">
+                        <span class="discount">20% OFF</span>
+                        <div class="imagecontainer">
+                            <a href="productpage.html">
+                                <img src="images/product/product07-02.jpg" alt="High Mandarin Suit" class="thumb2">
+                                <img src="images/product/product07-01.jpg" alt="High Mandarin Suit" class="thumb1">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="productdetails">
+                        <div class="producttext">
+                            <h4 class="productname">High Mandarin Suit</h4>
+                            <div class="price">
+                                <p class="actualprice">$465</p>
+                                <p class="discountprice">NOW $372</p>
+                            </div>
+                        </div>
+                        <div class="bookmarkbutton">
+                            <img src="images/icons_bookmark.svg" onclick="bookmarkclicked(this)" ;>
+                        </div>
+                    </div>
+                </div>
+                <!--eighth image-->
+                <div class="singleproduct" id="eighthproduct">
+                    <div class="productimage">
+                        <span class="discount">5% OFF</span>
+                        <div class="imagecontainer">
+                            <a href="productpage.html">
+                                <img src="images/product/product08-02.jpg" alt="Square Mandarin Suit" class="thumb2">
+                                <img src="images/product/product08-01.jpg" alt="Square Mandarin Suit" class="thumb1">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="productdetails">
+                        <div class="producttext">
+                            <h4 class="productname">Square Mandarin Suit</h4>
+                            <div class="price">
+                                <p class="actualprice">$779</p>
+                                <p class="discountprice">NOW $740.05</p>
+                            </div>
+                        </div>
+                        <div class="bookmarkbutton">
+                            <img src="images/icons_bookmark.svg" class="before" onclick="bookmarkclicked(this)" ;>
+                        </div>
+                    </div>
+                </div>
+                <!--nineth image-->
+                <div class="singleproduct" id="ninethproduct">
+                    <div class="productimage">
+                        <span class="discount">20% OFF</span>
+                        <div class="imagecontainer">
+                            <a href="productpage.html">
+                                <img src="images/product/product09-02.jpg" alt="Straight Round Suit" class="thumb2">
+                                <img src="images/product/product09-01.jpg" alt="Straight Round Suit" class="thumb1">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="productdetails">
+                        <div class="producttext">
+                            <h4 class="productname">Straight Round Suit</h4>
+                            <div class="price">
+                                <p class="actualprice">$540</p>
+                                <p class="discountprice">NOW $432</p>
+                            </div>
+                        </div>
+                        <div class="bookmarkbutton">
+                            <img src="images/icons_bookmark.svg" class="before" onclick="bookmarkclicked(this)" ;>
+                        </div>
+                    </div>
+                </div>
+                <!--tenth image-->
+                <div class="singleproduct" id="tenthproduct">
+                    <div class="productimage">
+                        <span class="discount">5% OFF</span>
+                        <div class="imagecontainer">
+                            <a href="productpage.html">
+                                <img src="images/product/product10-02.jpg" alt="French Spread Suit" class="thumb2">
+                                <img src="images/product/product10-01.jpg" alt="French Spread Suit" class="thumb1">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="productdetails">
+                        <div class="producttext">
+                            <h4 class="productname">French Spread Suit</h4>
+                            <div class="price">
+                                <p class="actualprice">$1549</p>
+                                <p class="discountprice">NOW $1471.55</p>
+                            </div>
+                        </div>
+                        <div class="bookmarkbutton">
+                            <img src="images/icons_bookmark.svg" class="before" onclick="bookmarkclicked(this)" ;>
+                        </div>
+                    </div>
+                </div>
+                <!--eleventh image-->
+                <div class="singleproduct" id="eleventhproduct">
+                    <div class="productimage">
+                        <span class="discount">10% OFF</span>
+                        <div class="imagecontainer">
+                            <a href="productpage.html">
+                                <img src="images/product/product11-02.jpg" alt="Northern Spread Suit" class="thumb2">
+                                <img src="images/product/product11-01.jpg" alt="Northern Spread Suit" class="thumb1">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="productdetails">
+                        <div class="producttext">
+                            <h4 class="productname">Northern Spread Suit</h4>
+                            <div class="price">
+                                <p class="actualprice">$1389</p>
+                                <p class="discountprice">NOW $1250.10</p>
+                            </div>
+                        </div>
+                        <div class="bookmarkbutton">
+                            <img src="images/icons_bookmark.svg" class="before" onclick="bookmarkclicked(this)" ;>
+                        </div>
+                    </div>
+                </div>
+                <!--twelveth image-->
+                <div class="singleproduct" id="twelvethproduct">
+                    <div class="productimage">
+                        <span class="discount">20% OFF</span>
+                        <div class="imagecontainer">
+                            <a href="productpage.html">
+                                <img src="images/product/product12-02.jpg" alt="Roman Spread Suit" class="thumb2">
+                                <img src="images/product/product12-01.jpg" alt="Roman Spread Suit" class="thumb1">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="productdetails">
+                        <div class="producttext">
+                            <h4 class="productname">Roman Spread Suit</h4>
+                            <div class="price">
+                                <p class="actualprice">$1489</p>
+                                <p class="discountprice">NOW $1191.20</p>
+                            </div>
+                        </div>
+                        <div class="bookmarkbutton">
+                            <img src="images/icons_bookmark.svg" class="before" onclick="bookmarkclicked(this)" ;>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+
+
+
+    <!--the footer-->
+    <footer>
+        <div class="footercontainer">
+            <!--the footer: company column-->
+            <div class="companyfooter">
+                <h3 class="footertitle">Jack Custom Tailors</h3>
+                <ul>
+                    <li><a href="underconstruction.html">About</a></li>
+                    <li><a href="underconstruction.html">Shipping</a></li>
+                    <li><a href="underconstruction.html">Refund Policy</a></li>
+                    <li><a href="underconstruction.html">Terms of Service</a></li>
+                    <li><a href="underconstruction.html">Size Guide</a></li>
+                    <li><a href="underconstruction.html">FAQs</a></li>
+                    <li><a href="underconstruction.html">Careers</a></li>
+                </ul>
+            </div>
+            <!--the footer: subscription column-->
+            <div class="subscribefooter">
+                <!-- email subscription -->
+                <form action="form.php" method="post" id="subscriptionform">
+                    <h3 class="footertitle">Subscribe to Us</h3>
+                    <p>Subscribe to our newsletter and get 10% off your first online order.</p>
+                    <input required type="email" name="emailaddress" placeholder="Email Address" class="emailinput">
+                    <button type="submit" class="subscribe" id="subscribebtn">Subscribe</button>
+                </form>
+            </div>
+            <!--the footer: socials column-->
+            <div class="socials">
+                <h3 class="footertitle">Find Us On</h3>
+                <div class="socialcontainer">
+                    <a href="https://www.linkedin.com/in/jack-custom-tailors-5308a428/" class="linkedin"><img
+                            src="images/icons_linkedin-01.svg" alt="Linkedin"></a>
+                    <a href="https://www.facebook.com/jack.tailors/" class="facebook"><img
+                            src="images/icons_facebook.svg" alt="Facebook"></a>
+                </div>
+            </div>
+            <!--the footer: copyright row-->
+            <div class="copyright">
+                <p>
+                    Copyright@ 2017 Jack Custom Tailors.<br>
+                    All rights reserved,<br>
+                    Powered by - Classysys Pte Ltd
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!--meta data: javascript of Website. placed at bottom to let variables load first-->
+    <script src="js/basescript.js"></script>
+    <script src="js/productlist.js"></script>
+</body>
+
+
+</html>

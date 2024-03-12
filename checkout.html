@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--meta data: Charset used-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--meta data: Responsive Website-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--meta data: Description of Website-->
+    <meta name="description"
+        content="This is the checkout page. Enter your delivery and contact information for smooth delivery. Jack Custom Tailors specialises in high quality, individually designed and beautifully hand-sewn suits and dresses. Jack who is the founder of the company. He was first trained at Savile Row, in London's elite Mayfair district. Since then, he has acquired many years of experience. His prestigious clientele includes politicians, industry leaders and international leading figures in media. There are many selection of fabrics, colourings, patterns, weights and designs to choose from. The suits are woven with genuine quality materials which include cashmere, mohair, silk, linen, lambswool and cotton. Book an appointment today for your custom suit tailoring session.">
+    <!--meta data: Keywords of Website-->
+    <meta name="keywords"
+        content="Checkout, delivery, contact, information, details, Jack, Custom, Tailors, bespoke, suits, tuxedo, hand-basted, tailoring, dresses, woven, high, quality, Singapore, under, construction">
+    <title>Jack Custom Tailors - Checkout</title>
+    <!--meta data: CSS of Website-->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/checkout.css">
+    <!--meta data: Favicon of Website-->
+    <link rel="icon" type="image/png" href="images/favicon3.png">
+</head>
+
+
+<body>
+    <!--the header-->
+    <header>
+        <!--top navigation bar-->
+        <section class="navbar">
+            <nav>
+                <!--left part of navigation bar-->
+                <div class="menuleft">
+                    <!--hamburger and close icon-->
+                    <div class="menu-hamburger" id="hamburger">
+                        <img class="openmenu" id="menuopen" src="images/icons_hamburger-01.svg" alt="open menu">
+                        <img class="closemenu" id="menuclose" src="images/icons_close-01.svg" alt="close menu">
+                    </div>
+                    <!--left menu-->
+                    <ul class="navleft" id="sideBar">
+                        <li class="top"><a href="underconstruction.html">About</a></li>
+                        <li><a href="productlist.html">Shop</a></li>
+                        <li><a href="underconstruction.html">Size Guide</a></li>
+                        <li><a href="underconstruction.html">Gallery</a></li>
+                        <li><a href="underconstruction.html">Tailoring</a></li>
+                    </ul>
+                </div>
+                <!--logo-->
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo-01.svg" alt="Jack Custom Tailors"
+                            srcset="images/logo-01_3x-01.svg 3x, images/logo-01_2x-01.svg 2x">
+                    </a>
+                </div>
+                <!--right part of navigation bar-->
+                <ul class="navright">
+                    <li><a href="underconstruction.html"><img src="images/icons_search.svg" alt="search bar"></a></li>
+                    <li><a href="underconstruction.html"><img src="images/icons_profile.svg" alt="profile"></a></li>
+                    <li><a href="underconstruction.html"><img src="images/icons_bookmark_topnav.svg" alt="bookmark"></a>
+                    </li>
+                    <li><a href="underconstruction.html"><img src="images/icons_bag.svg" alt="bag"></a></li>
+                </ul>
+            </nav>
+
+        </section>
+    </header>
+
+    <!--the body content-->
+    <main>
+        <!-- delivery and contact form -->
+        <form action="form.php" method="post" id="deliveryform">
+            <section class="checkoutinfo">
+                <!--go back to cart page-->
+                <section class="message">
+                    <div class="backtoprevious">
+                        <!--javascript code to go to previous page and show previous page link upon hover-->
+                        <script>
+                            document.write('<a href="cartpage.html">' + '<img src="images/backarrow_btn-01.svg" alt="go back to previous page">' + 'Checkout</a>');
+                        </script>
+                    </div>
+                </section>
+                <!-- contact column -->
+                <section class="contactinfo">
+                    <fieldset>
+                        <!-- contact details -->
+                        <legend class="legendtitle">Contact Information</legend>
+                        <!-- email -->
+                        <div class="infowrapper">
+                            <label for="emailinfo">Email Address*</label><br>
+                            <input required type="email" name="contactInfo" placeholder="Required Field"
+                                class="infoinput" id="emailinfo">
+                            <!-- subscribe checkbox -->
+                            <div class="subscribecheckbox">
+                                <input type="checkbox" name="subscription" value="subscribeMe" id="subscribe">
+                                <label for="subscribe">Subscribe me to latest offers and news</label>
+                            </div>
+                        </div>
+                        <!-- phone -->
+                        <div class="infowrapper">
+                            <label for="phoneinfo">Phone Number*</label><br>
+                            <input required type="tel" name="contactInfo" placeholder="Required Field" class="infoinput"
+                                id="phoneinfo" pattern="[0-9]{8}">
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <!-- delivery details -->
+                        <legend class="legendtitle">Delivery Address</legend>
+                        <!-- country/region -->
+                        <div class="infowrapper">
+                            <label for="countryinfor">Country/Region*</label><br>
+                            <select name="country" id="countryinfo" required>
+                                <option value="" disabled selected>Select your option</option>
+                                <option value="singapore">Singapore</option>
+                                <option value="malaysia">Malaysia</option>
+                                <option value="australia">Australia</option>
+                            </select>
+                        </div>
+                        <!-- name details -->
+                        <div class="infowrapper half">
+                            <div class="names">
+                                <label for="firstname">First Name*</label><br>
+                                <input required type="text" name="firstname" placeholder="Required Field"
+                                    class="infoinput" id="firstname" pattern="^[a-zA-Z]+$">
+                            </div>
+                            <div class="names">
+                                <label for="lastname">Last Name*</label><br>
+                                <input required type="text" name="lastname" placeholder="Required Field"
+                                    class="infoinput" id="lastname" pattern="^[a-zA-Z]+$">
+                            </div>
+                        </div>
+                        <!-- state province details -->
+                        <div class="infowrapper">
+                            <label for="stateprovince">State/Province</label><br>
+                            <input type="text" name="stateprovince" class="infoinput" id="stateprovince"
+                                pattern="^[a-zA-Z]+$">
+                        </div>
+                        <!-- address details -->
+                        <div class="infowrapper">
+                            <label for="addressinfo">Street Address*</label><br>
+                            <input required type="text" name="address" placeholder="Required Field" class="infoinput"
+                                id="addressinfo">
+                        </div>
+                        <!-- unit and postal details -->
+                        <div class="infowrapper half">
+                            <div class="unitinfo">
+                                <label for="unitno">Unit Number*</label><br>
+                                <input required type="text" name="unitnumber" placeholder="Required Field"
+                                    class="infoinput" id="unitno">
+                            </div>
+                            <div class="unitinfo">
+                                <label for="postal">Postal Code*</label><br>
+                                <input required type="text" name="postalcode" placeholder="Required Field"
+                                    class="infoinput" id="postal">
+                            </div>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        <!-- add a note details -->
+                        <div class="infowrapper">
+                            <label for="noteinfo" class="noteinfo">Add a note to your order</label>
+                            <textarea name="customernote" placeholder="Type something here..." class="notebody"
+                                id="noteinfo"></textarea>
+                        </div>
+                    </fieldset>
+
+                </section>
+            </section>
+            <!-- purchase info column -->
+            <section class="purchaseinfo">
+                <!-- product details -->
+                <div class="product">
+                    <h4>Order Summary</h4>
+                    <div class="productwrapper">
+                        <div class="productimage">
+                            <img src="images/product/product01-01.jpg" alt="Classic Mandarin Suit thumbnail"
+                                class="productthumbnail">
+                        </div>
+                        <div class="item">
+                            <h3 class="productname">Classic Mandarin Suit</h3>
+                            <p>Size: 38</p>
+                            <p>Color: Black</p>
+                        </div>
+                        <div class="pricecontainer">
+                            <p class="price">$372</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- payment details -->
+                <div class="paymentcontainer">
+                    <!-- payment method details -->
+                    <fieldset class="payments">
+                        <legend class="legendtitle">Payment Method</legend>
+                        <input required type="radio" name="paymentmethod" class="infoinput" id="visa" value="visa">
+                        <label for="visa">VISA</label><br>
+                        <input required type="radio" name="paymentmethod" class="infoinput" id="mastercard"
+                            value="mastercard">
+                        <label for="mastercard">Mastercard</label><br>
+                        <input required type="radio" name="paymentmethod" class="infoinput" id="americanexpress"
+                            value="americanexpress">
+                        <label for="americanexpress">American Express</label><br>
+                        <input required type="radio" name="paymentmethod" class="infoinput" id="paypal" value="paypal">
+                        <label for="paypal">Paypal</label><br>
+                    </fieldset>
+                    <!-- voucher details -->
+                    <fieldset class="voucher">
+                        <h3 class="vouchertitle">Voucher Code</h3>
+                        <div class="voucherinput">
+                            <input type="text" name="voucher" placeholder="Enter Voucher Code" class="vouchercode">
+                            <button type="submit" class="apply" id="applybtn">Apply</button>
+                        </div>
+                    </fieldset>
+                    <!-- price details -->
+                    <div class="subtotal">
+                        <div class="pricewrapper">
+                            <p class="title">Subtotal</p>
+                            <p class="price">$372</p>
+                        </div>
+                        <div class="pricewrapper">
+                            <p class="title">Delivery Fee</p>
+                            <p class="price">$5</p>
+                        </div>
+                        <div class="pricewrapper">
+                            <p class="title">TOTAL</p>
+                            <p class="price">$377</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="buttonwrap">
+                    <button type="submit" class="placeorder" id="placeorderbtn"
+                        onclick="location.href = 'orderconfirmation.html';">Place Your Order</button>
+                </div>
+            </section>
+
+        </form>
+
+
+
+    </main>
+
+    <!--the footer-->
+    <footer>
+        <div class="footercontainer">
+            <!--the footer: company column-->
+            <div class="companyfooter">
+                <h3 class="footertitle">Jack Custom Tailors</h3>
+                <ul>
+                    <li><a href="underconstruction.html">About</a></li>
+                    <li><a href="underconstruction.html">Shipping</a></li>
+                    <li><a href="underconstruction.html">Refund Policy</a></li>
+                    <li><a href="underconstruction.html">Terms of Service</a></li>
+                    <li><a href="underconstruction.html">Size Guide</a></li>
+                    <li><a href="underconstruction.html">FAQs</a></li>
+                    <li><a href="underconstruction.html">Careers</a></li>
+                </ul>
+            </div>
+            <!--the footer: subscription column-->
+            <div class="subscribefooter">
+                <!-- email subscription -->
+                <form action="form.php" method="post" id="subscriptionform">
+                    <h3 class="footertitle">Subscribe to Us</h3>
+                    <p>Subscribe to our newsletter and get 10% off your first online order.</p>
+                    <input required type="email" name="emailaddress" placeholder="Email Address" class="emailinput">
+                    <button type="submit" class="subscribe" id="subscribebtn">Subscribe</button>
+                </form>
+            </div>
+            <!--the footer: socials column-->
+            <div class="socials">
+                <h3 class="footertitle">Find Us On</h3>
+                <div class="socialcontainer">
+                    <a href="https://www.linkedin.com/in/jack-custom-tailors-5308a428/" class="linkedin"><img
+                            src="images/icons_linkedin-01.svg" alt="Linkedin"></a>
+                    <a href="https://www.facebook.com/jack.tailors/" class="facebook"><img
+                            src="images/icons_facebook.svg" alt="Facebook"></a>
+                </div>
+            </div>
+            <!--the footer: copyright row-->
+            <div class="copyright">
+                <p>
+                    Copyright@ 2017 Jack Custom Tailors.<br>
+                    All rights reserved,<br>
+                    Powered by - Classysys Pte Ltd
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!--meta data: javascript of Website. placed at bottom to let variables load first-->
+    <script src="js/basescript.js"></script>
+    <script src="js/checkout.js"></script>
+</body>
+
+
+</html>

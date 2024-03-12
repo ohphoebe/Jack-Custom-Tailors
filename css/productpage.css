@@ -1,0 +1,4249 @@
+/*background color of webpage*/
+html {
+    scroll-behavior: smooth;
+    background-color: var(--color);
+}
+
+/* width of body to be full screen to device width and centralised */
+body {
+    max-width: 100vw;
+}
+
+/* header full width of body */
+header {
+    width: 100%;
+    display: block;
+    background-color: var(--bgcolor);
+}
+
+/* navbar to be at the front of image header and at top of header. */
+header section.navbar nav {
+    padding: 0.5em 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 3;
+    width: 100%;
+    border-bottom: 0.4px solid rgba(221, 193, 147, 0.3);
+}
+
+/*LEFT NAV MENU*/
+/*align left nav menu with hamburger and close icon*/
+header section.navbar>nav>div.menuleft {
+    display: flex;
+    /* justify-content: flex-start; */
+    justify-content: start;
+    align-items: center;
+    width: 35%;
+    margin-left: 0.5em;
+}
+
+/*resize hamburger icon*/
+header section.navbar>nav>div.menuleft>div.menu-hamburger {
+    width: 6%;
+    display: none;
+}
+
+/*align left nav menu items excluding icons*/
+header section.navbar>nav>div.menuleft>ul.navleft {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    margin-left: 0.5em;
+    background: transparent;
+    transition: all 0.3 ease;
+    text-align: center;
+}
+
+/*font properties for left nav menu*/
+header section.navbar>nav>div.menuleft>ul.navleft>li a {
+    font-family: var(--sansserif);
+    font-size: 0.8em;
+    margin: 0.6em;
+    letter-spacing: 0.1em;
+    transition: opacity 0.2s ease;
+}
+
+/*properties for a href: link, visited*/
+header section.navbar>nav>div.menuleft>ul.navleft>li a:link,
+header section.navbar>nav>div.menuleft>ul.navleft>li a:visited {
+    color: var(--color);
+}
+
+/*properties for a href: hover*/
+header section.navbar>nav>div.menuleft>ul.navleft>li a:hover {
+    opacity: 0.6;
+}
+
+/*navleft bar to appear at max-width 720px and lower*/
+@media screen and (max-width: 720px) {
+    header section.navbar>nav>div.menuleft>div.menu-hamburger {
+        display: block;
+        width: 15%;
+        position: relative;
+        top: 0;
+        left: 0;
+        z-index: 9;
+    }
+
+    header section.navbar>nav>div.menuleft>div.menu-hamburger>img.openmenu {
+        display: block;
+    }
+
+    header section.navbar>nav>div.menuleft>div.menu-hamburger>#menuopen.hide {
+        display: none;
+    }
+
+    header section.navbar>nav>div.menuleft>div.menu-hamburger>img.openmenu:hover {
+        cursor: pointer;
+    }
+
+    header section.navbar>nav>div.menuleft>div.menu-hamburger>#menuclose {
+        display: none;
+        width: 100%;
+    }
+
+    header section.navbar>nav>div.menuleft>div.menu-hamburger>#menuclose.show {
+        display: block;
+    }
+
+    header section.navbar>nav>div.menuleft>div.menu-hamburger>img.closemenu:hover {
+        cursor: pointer;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar {
+        background: var(--color);
+        position: fixed;
+        z-index: 8;
+        top: 0%;
+        height: 100vh;
+        left: -100%;
+        width: 25%;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        padding-top: 3em;
+        margin: 0;
+        transition: 0.2s;
+    }
+
+    header section.navbar>nav>div.menuleft>ul.navleft>li.top {
+        padding-top: 2em;
+    }
+
+    header section.navbar>nav>div.menuleft>ul.navleft>li {
+        margin: 0.7em;
+    }
+
+    header section.navbar>nav>div.menuleft>ul.navleft>li a {
+        transition: opacity 0.2s ease;
+    }
+
+    header section.navbar>nav>div.menuleft>ul.navleft>li a:link,
+    header section.navbar>nav>div.menuleft>ul.navleft>li a:visited {
+        color: #0c2c24;
+    }
+
+    header section.navbar>nav>div.menuleft>ul.navleft>li a:hover {
+        opacity: 0.3;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar.open {
+        background: var(--color);
+        position: fixed;
+        top: 0%;
+        height: 100vh;
+        left: 0%;
+        width: 25%;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        padding-top: 3em;
+        margin: 0;
+        transition: 0.2s;
+    }
+}
+
+/*RIGHT NAV BAR MENU*/
+/*align right nav menu*/
+header section.navbar>nav>ul.navright {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 33.3%;
+    margin-right: 0.5em;
+}
+
+/*resize right nav menu icons*/
+header section.navbar>nav>ul.navright li {
+    padding: 0.5em;
+    width: 5%;
+    transition: opacity 0.2s ease;
+}
+
+/*properties for right nav menu icons: hover*/
+header section.navbar>nav>ul.navright li:hover {
+    opacity: 0.6;
+}
+
+/*header h1 title*/
+header>section.pagetitle>h1 {
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    padding: 3em;
+    color: var(--color);
+    font-family: var(--serif);
+    letter-spacing: 0.1em;
+    font-weight: 150;
+    font-size: 1.3em;
+}
+
+
+/* nav bar to be responsive*/
+/*min-width: 2048px*/
+@media screen and (min-width: 2048px) {
+    header section.navbar>nav>div.logo>a>img {
+        display: inline;
+        max-width: 3%;
+    }
+
+}
+
+/*max-width: 1080px*/
+@media screen and (max-width: 1080px) {
+    header section.navbar>nav>div.logo {
+        display: inline;
+        max-width: 3%;
+    }
+
+    header section.navbar>nav>div.menuleft>div.menu-hamburger {
+        width: 10%;
+        position: relative;
+        z-index: 9;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar.open {
+        z-index: 8;
+        width: 45%;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar li {
+        display: block;
+        width: 100%;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar li a {
+        margin: 0;
+    }
+
+    header section.navbar>nav>ul.navright li {
+        width: 6%;
+        margin: 0.2em;
+        padding: 0.1em;
+    }
+}
+
+/*max-width: 992px*/
+@media screen and (max-width: 992px) {
+    header section.navbar>nav>div.logo>a>img {
+        display: block;
+        max-width: 100%;
+    }
+
+    header section.navbar>nav>div.menuleft>div.menu-hamburger {
+        width: 10%;
+        position: relative;
+        z-index: 9;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar.open {
+        z-index: 8;
+        width: 45%;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar li {
+        display: block;
+        width: 100%;
+    }
+
+    header section.navbar>nav>ul.navright li {
+        width: 6%;
+        margin: 0.2em;
+        padding: 0.1em;
+    }
+}
+
+/*max-width: 720px*/
+@media screen and (max-width: 720px) {
+    header section.navbar>nav>div.logo>a>img {
+        display: block;
+        max-width: 100%;
+    }
+
+    header section.navbar>nav>div.menuleft>div.menu-hamburger {
+        width: 15%;
+        position: relative;
+        z-index: 9;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar.open {
+        z-index: 8;
+        width: 45%;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar li {
+        display: block;
+        width: 100%;
+    }
+
+    header section.navbar>nav>ul.navright li {
+        width: 9%;
+        margin: 0.2em;
+        padding: 0.1em;
+    }
+}
+
+/*max-width: 540px*/
+@media screen and (max-width: 540px) {
+    header section.navbar>nav>div.logo>a>img {
+        display: block;
+        max-width: 80%;
+    }
+
+    header section.navbar>nav>div.menuleft>div.menu-hamburger {
+        width: 20%;
+        position: relative;
+        z-index: 9;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar.open {
+        z-index: 8;
+        width: 45%;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar li {
+        display: block;
+        width: 100%;
+    }
+
+    header section.navbar>nav>ul.navright li {
+        width: 10%;
+        margin: 0.2em;
+    }
+}
+
+/*max-width: 300px*/
+@media screen and (max-width: 300px) {
+    header section.navbar>nav>div.logo>a>img {
+        display: block;
+        max-width: 80%;
+    }
+
+
+    header section.navbar>nav>div.menuleft>div.menu-hamburger {
+        width: 25%;
+        position: relative;
+        z-index: 9;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar.open {
+        z-index: 8;
+        width: 45%;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar li {
+        display: block;
+        width: 100%;
+    }
+
+    header section.navbar>nav>ul.navright li {
+        width: 35%;
+        margin: 0.2em;
+    }
+}
+
+
+
+/*background color of main section*/
+main {
+    background-color: white;
+    padding: 6em;
+}
+
+/*product content width*/
+main>section.product {
+    display: flex;
+    justify-content: space-between;
+}
+
+/*thumbnails container width*/
+main>section.product>div.productthumbnailscontainer {
+    width: 60vw;
+    display: grid;
+    grid-template-columns: 0.15fr 0.8fr;
+    grid-template-rows: auto;
+    column-gap: 1em;
+    /* margin-right: 1em; */
+}
+
+/*thumbnails sidebar*/
+main>section.product>div.productthumbnailscontainer>div.thumbnailsidewrap {
+    width: 100%;
+    border-right: rgba(0, 42, 42, 0.4);
+    padding-right: 0.3em;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+/*thumbnails sidebar no bullet*/
+main>section.product>div.productthumbnailscontainer>div.thumbnailsidewrap>ul {
+    list-style-type: none;
+}
+
+/*thumbnails spacing*/
+main>section.product>div.productthumbnailscontainer>div.thumbnailsidewrap>ul>li img.thumbs {
+    width: 100%;
+    margin-bottom: 0.3em;
+    border: 1px solid white;
+}
+
+main>section.product>div.productthumbnailscontainer>div.thumbnailsidewrap>ul>li img.thumbs:hover {
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+.active {
+    opacity: 1;
+}
+
+
+/*thumbnails container highlight image*/
+main>section.product>div.productthumbnailscontainer>div.productimg {
+    max-width: 30em;
+    grid-column: 2;
+    grid-row: 1;
+}
+
+/*thumbnails container highlight image*/
+main>section.product>div.productthumbnailscontainer>div.productimg>img.producthighlight {
+    display: block;
+    max-width: 30em;
+    object-fit: cover;
+}
+
+/*thumbnails container highlight image container for zoom*/
+main>section.product>div.productthumbnailscontainer>div.productimg>img#productzoomcontainer {
+    max-width: 100%;
+    max-height: auto;
+    display: block;
+    position: relative;
+}
+
+/*thumbnails container highlight image zoom lens*/
+main>section.product>div.productthumbnailscontainer>div.productimg>div#magnify {
+    height: 11em;
+    width: 11em;
+    border: 2px solid gray;
+    border-radius: 50%;
+    z-index: 2;
+    position: absolute;
+    background-repeat: no-repeat;
+    cursor: none;
+}
+
+/*thumbnails container highlight image*/
+main>section.product>div.productthumbnailscontainer>div.productimg>div#imghighlight {
+    z-index: 1;
+    max-width: 100%;
+}
+
+
+
+
+
+
+/*product details product text body arrangement*/
+main>section.product>div.productdetailsorder>div.productdetails {
+    display: flex;
+    justify-content: space-between;
+    margin: 1em 0;
+    width: 100%;
+    height: 5em;
+}
+
+/*product details product text body spacing*/
+main>section.product>div.productdetailsorder>div.productdetails div.producttext {
+    margin-bottom: 2em;
+}
+
+/*product details product name*/
+main>section.product>div.productdetailsorder>div.productdetails div.producttext h4.productname {
+    font-family: var(--serif);
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+}
+
+/*product details product price*/
+body>main>section.product>div.productdetailsorder>div.productdetails div.producttext div.price {
+    font-family: var(--sansserif);
+    font-size: 0.9em;
+    line-height: 1.2em;
+}
+
+/*product details product actual price*/
+main>section.product>div.productdetailsorder>div.productdetails>div.producttext>div>p.actualprice {
+    text-decoration: line-through;
+}
+
+/*product details product bookmark container*/
+main>section.product>div.productdetailsorder>div.productdetails>div.bookmarkbutton {
+    width: 9%;
+    position: relative;
+    transform: translate(0.5em, 0);
+}
+
+/*product details product bookmark*/
+main>section.product>div.productdetailsorder>div.productdetails>div.bookmarkbutton img {
+    position: absolute;
+    width: 100%;
+    object-fit: contain;
+}
+
+/*product details product bookmark cursor*/
+main>section.product>div.productdetailsorder>div.productdetails>div.bookmarkbutton img:hover {
+    cursor: pointer;
+}
+
+/*product details product bookmark animation toggle classes: before, hover, clicked*/
+main section div.slider div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.before {
+    display: block;
+    transition: 0.2s ease;
+}
+
+main section div.slider div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.before.gone {
+    display: none;
+}
+
+main section div.slider div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.clicked {
+    display: none;
+    transition: 0.2s ease;
+}
+
+main section div.slider div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.clicked.appear {
+    display: block;
+}
+
+
+
+
+/*product details product detail header*/
+main>section.product>div.productdetailsorder>div h4.detailheader {
+    font-family: var(--sansserif);
+    font-size: 1em;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+/*product details product detail small text*/
+main>section.product>div.productdetailsorder>div.productdetailscontent>div p.detailtitle {
+    font-family: var(--sansserif);
+    font-size: 0.85em;
+    line-height: 1.3em;
+    margin-top: 0.3em;
+}
+
+/*product details product detail bullet list*/
+main>section.product>div.productdetailsorder>div.productdetailscontent>div ul {
+    font-family: var(--sansserif);
+    font-size: 0.85em;
+    padding-left: 1.1em;
+    line-height: 1.3em;
+}
+
+/*product details width*/
+main>section.product>div.productdetailsorder {
+    width: 50vw;
+}
+
+main>section.product>div.productdetailsorder>div.productdetailscontent,
+main>section.product>div.productdetailsorder>div.productsize,
+main>section.product>div.productdetailsorder>div.productcolour,
+main>section.product>div.productdetailsorder>div.productquantity {
+    margin-bottom: 1em;
+}
+
+/*product details: colour width*/
+main>section.product>div.productdetailsorder>div.productcolour {
+    display: block;
+    width: 100%;
+}
+
+/*product details: colour label arrangement*/
+main>section.product>div.productdetailsorder>div.productcolour label.colourradio {
+    display: inline;
+    cursor: pointer;
+}
+
+/*product details: size width*/
+main>section.product>div.productdetailsorder>div.productsize {
+    width: 80%;
+}
+
+/*product details: size label arrangement*/
+body>main>section.product>div.productdetailsorder>div.productsize>div.sizebtns {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+
+/*product details: size label height*/
+body>main>section.product>div.productdetailsorder>div.productsize>div.sizebtns label {
+    height: 2.5em;
+    cursor: pointer;
+}
+
+
+/*product details: setting radio default*/
+input[type="radio"] {
+    appearance: none;
+    background-color: #fff;
+    margin: 0.2em;
+    cursor: pointer;
+}
+
+/*product details: colour label for black*/
+input[type="radio"]#black {
+    background-color: black;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    outline: 1px solid white;
+    outline-offset: 3px;
+}
+
+/*product details: colour label for blue*/
+input[type="radio"]#blue {
+    background-color: #335abf;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    outline: 1px solid white;
+    outline-offset: 3px;
+}
+
+/*product details: colour label for dark brown*/
+input[type="radio"]#darkbrown {
+    background-color: #5c4747;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    outline: 1px solid white;
+    outline-offset: 3px;
+}
+
+/*product details: colour label for gray*/
+input[type="radio"]#gray {
+    background-color: #6f6c79;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    outline: 1px solid white;
+    outline-offset: 3px;
+}
+
+/*product details: colour label for lightbrown*/
+input[type="radio"]#lightbrown {
+    background-color: #a37961;
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    outline: 1px solid white;
+    outline-offset: 3px;
+}
+
+/*product details: colour label checked looks*/
+input[type="radio"]#black:checked,
+input[type="radio"]#blue:checked,
+input[type="radio"]#gray:checked,
+input[type="radio"]#darkbrown:checked,
+input[type="radio"]#lightbrown:checked {
+    width: 2em;
+    height: 2em;
+    border-radius: 50%;
+    outline: 1px solid black;
+    outline-offset: 3px;
+}
+
+/*product details: size label text*/
+main>section.product>div.productdetailsorder>div.productsize>div.sizebtns label span {
+    position: relative;
+    top: -26px;
+    left: 0;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    font-family: var(--sansserif);
+    font-size: 0.9em;
+}
+
+/*product details: size label look*/
+input[type="radio"]#xs,
+input[type="radio"]#s,
+input[type="radio"]#m,
+input[type="radio"]#l,
+input[type="radio"]#xl,
+input[type="radio"]#xxl {
+    color: white;
+    border: 1px solid black;
+    width: 3em;
+    height: 2.2em;
+}
+
+/*product details: size label checked look*/
+input[type="radio"]#xs:checked,
+input[type="radio"]#s:checked,
+input[type="radio"]#m:checked,
+input[type="radio"]#l:checked,
+input[type="radio"]#xl:checked,
+input[type="radio"]#xxl:checked {
+    width: 3em;
+    height: 2.2em;
+    background-color: black;
+}
+
+/*product details: size label text look*/
+input[type="radio"]#xs:checked+span,
+input[type="radio"]#s:checked+span,
+input[type="radio"]#m:checked+span,
+input[type="radio"]#l:checked+span,
+input[type="radio"]#xl:checked+span,
+input[type="radio"]#xxl:checked+span {
+    color: white;
+}
+
+main>section.product>div.productdetailsorder>div.productsize>div.sizeguide>a:link,
+main>section.product>div.productdetailsorder>div.productsize>div.sizeguide>a:hover,
+main>section.product>div.productdetailsorder>div.productsize>div.sizeguide>a:active,
+main>section.product>div.productdetailsorder>div.productsize>div.sizeguide>a:visited {
+    color: black;
+    font-size: 0.8em;
+    font-family: var(--sansserif);
+}
+
+
+/*product quantity input stepper container*/
+main>section.product>div.productdetailsorder>div.productquantity>div.inputstepper {
+    text-align: center;
+    grid-column: 4;
+    height: 13%;
+    margin: 0.3em 0;
+    width: 18%;
+}
+
+/*product quantity input stepper*/
+main>section.product>div.productdetailsorder>div.productquantity>div.inputstepper>div.inputwrap {
+    width: 100%;
+    background-color: transparent;
+    border: 2px solid var(--bgcolor);
+    padding: 0.3em 0;
+}
+
+/*product quantity input stepper number*/
+main>section.product>div.productdetailsorder>div.productquantity>div.inputstepper>div.inputwrap>input[type="number"] {
+    text-align: center;
+    background-color: transparent;
+    color: var(--bgcolor);
+    border: none;
+    font-size: 0.9em;
+    margin: 0 auto;
+    font-family: var(--serif);
+}
+
+/*product quantity input stepper - hide default buttons*/
+main>section.product>div.productdetailsorder>div.productquantity>div.inputstepper>div.inputwrap>input[type="number"]::-webkit-outer-spin-button,
+main>section.product>div.productdetailsorder>div.productquantity>div.inputstepper>div.inputwrap>input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/*product quantity input stepper buttons*/
+main>section.product>div.productdetailsorder>div.productquantity>div.inputstepper button {
+    background-color: transparent;
+    color: var(--bgcolor);
+    border: none;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+/*stock left number*/
+main>section.product>div.productdetailsorder>div.productquantity p {
+    color: black;
+    font-size: 0.8em;
+    font-family: var(--sansserif);
+}
+
+
+/*add to bag button container*/
+main>section.product>div.productdetailsorder>div.orderbtn {
+    grid-column: 2;
+    grid-row: 2;
+    text-align: left;
+    width: 50%;
+}
+
+/*add to bag button*/
+main>section.product>div.productdetailsorder>div.orderbtn>div.buttonwrap>button {
+    border: 2px solid var(--bgcolor);
+    border-radius: 0.2em;
+    color: var(--color);
+    background: var(--bgcolor);
+    padding: 0.4em;
+    width: 70%;
+    font-size: 1.1em;
+    letter-spacing: 0.1em;
+    font-family: var(--sansserif);
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/*add to bag button (first layer of shine)*/
+main>section.product>div.productdetailsorder>div.orderbtn>div.buttonwrap>button::before {
+    content: '';
+    display: block;
+    position: absolute;
+    background: rgba(255, 255, 255, 1);
+    width: 9px;
+    height: 100%;
+    top: 0;
+    filter: blur(12px);
+    transform: translateX(-100px) skewX(-20deg);
+}
+
+/*add to bag button (second layer of shine)*/
+main>section.product>div.productdetailsorder>div.orderbtn>div.buttonwrap>button::after {
+    content: '';
+    display: block;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.5);
+    width: 12px;
+    height: 100%;
+    top: 0;
+    filter: blur(6px);
+    transform: translateX(-100px) skewX(-20deg);
+}
+
+/*add to bag button hover effect*/
+main>section.product>div.productdetailsorder>div.orderbtn>div.buttonwrap>button:hover {
+    background-color: var(--bgcolor);
+    border: 2px solid var(--bgcolor);
+    color: var(--color);
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    box-shadow: 3px 3px 5px rgba(0, 42, 42, 0.4);
+    -webkit-box-shadow: 3px 3px 5px rgba(0, 42, 42, 0.4);
+    -moz-box-shadow: 3px 3px 5px rgba(0, 42, 42, 0.4);
+}
+
+/*add to bag button (shine translate effect)*/
+main>section.product>div.productdetailsorder>div.orderbtn>div.buttonwrap>button:hover::before,
+main>section.product>div.productdetailsorder>div.orderbtn>div.buttonwrap>button:hover::after {
+    transform: translateX(250px) skewX(-20deg);
+    transition: 0.6s ease;
+}
+
+
+
+/*product images and product details section to be responsive*/
+
+/*min-width: 2048px*/
+@media screen and (max-width: 2048px) {
+
+
+    /*background color of main section*/
+    main {
+        padding: 4em;
+    }
+
+    /*product content width*/
+    main>section.product {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    /*thumbnails container width*/
+    main>section.product>div.productthumbnailscontainer {
+        width: 30vw;
+        display: grid;
+        grid-template-columns: 20% 60%;
+        grid-template-rows: auto;
+        column-gap: 1em;
+        /* margin-right: 1em; */
+    }
+
+    /*thumbnails sidebar*/
+    main>section.product>div.productthumbnailscontainer>div.thumbnailsidewrap {
+        width: 100%;
+        border-right: rgba(0, 42, 42, 0.4);
+        padding-right: 0.3em;
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    /*thumbnails sidebar no bullet*/
+    main>section.product>div.productthumbnailscontainer>div.thumbnailsidewrap>ul {
+        list-style-type: none;
+    }
+
+    /*thumbnails spacing*/
+    main>section.product>div.productthumbnailscontainer>div.thumbnailsidewrap>ul>li img.thumbs {
+        width: 100%;
+        margin-bottom: 0.3em;
+        border: 1px solid white;
+    }
+
+    main>section.product>div.productthumbnailscontainer>div.thumbnailsidewrap>ul>li img.thumbs:hover {
+        cursor: pointer;
+        border: 1px solid black;
+    }
+
+    .active {
+        opacity: 1;
+    }
+
+
+    /*thumbnails container highlight image*/
+    main>section.product>div.productthumbnailscontainer>div.productimg {
+        max-width: 30em;
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    /*thumbnails container highlight image*/
+    main>section.product>div.productthumbnailscontainer>div.productimg>img.producthighlight {
+        display: block;
+        max-width: 30em;
+        object-fit: cover;
+    }
+
+    /*thumbnails container highlight image container for zoom*/
+    main>section.product>div.productthumbnailscontainer>div.productimg>img#productzoomcontainer {
+        max-width: 100%;
+        max-height: auto;
+        display: block;
+        position: relative;
+    }
+
+    /*thumbnails container highlight image zoom lens*/
+    main>section.product>div.productthumbnailscontainer>div.productimg>div#magnify {
+        height: 7em;
+        width: 7em;
+        border: 2px solid gray;
+        border-radius: 50%;
+        z-index: 2;
+        position: absolute;
+        background-repeat: no-repeat;
+        cursor: none;
+    }
+
+    /*thumbnails container highlight image*/
+    main>section.product>div.productthumbnailscontainer>div.productimg>div#imghighlight {
+        z-index: 1;
+        max-width: 100%;
+    }
+
+
+
+
+
+
+    /*product details product text body arrangement*/
+    main>section.product>div.productdetailsorder>div.productdetails {
+        display: flex;
+        justify-content: space-between;
+        margin: 1em 0;
+        width: 100%;
+        height: 5em;
+    }
+
+    /*product details product text body spacing*/
+    main>section.product>div.productdetailsorder>div.productdetails div.producttext {
+        margin-bottom: 2em;
+    }
+
+    /*product details product name*/
+    main>section.product>div.productdetailsorder>div.productdetails div.producttext h4.productname {
+        font-family: var(--serif);
+        font-size: 1.2em;
+        margin-bottom: 0.5em;
+    }
+
+    /*product details product price*/
+    body>main>section.product>div.productdetailsorder>div.productdetails div.producttext div.price {
+        font-family: var(--sansserif);
+        font-size: 0.9em;
+        line-height: 1.2em;
+    }
+
+    /*product details product actual price*/
+    main>section.product>div.productdetailsorder>div.productdetails>div.producttext>div>p.actualprice {
+        text-decoration: line-through;
+    }
+
+    /*product details product bookmark container*/
+    main>section.product>div.productdetailsorder>div.productdetails>div.bookmarkbutton {
+        width: 6%;
+        position: relative;
+        transform: translate(0.5em, 0);
+    }
+
+    /*product details product bookmark*/
+    main>section.product>div.productdetailsorder>div.productdetails>div.bookmarkbutton img {
+        position: absolute;
+        width: 100%;
+        object-fit: contain;
+    }
+
+    /*product details product bookmark cursor*/
+    main>section.product>div.productdetailsorder>div.productdetails>div.bookmarkbutton img:hover {
+        cursor: pointer;
+    }
+
+    /*product details product bookmark animation toggle classes: before, hover, clicked*/
+    main section div.slider div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.before {
+        display: block;
+        transition: 0.2s ease;
+    }
+
+    main section div.slider div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.before.gone {
+        display: none;
+    }
+
+    main section div.slider div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.clicked {
+        display: none;
+        transition: 0.2s ease;
+    }
+
+    main section div.slider div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.clicked.appear {
+        display: block;
+    }
+
+
+
+
+    /*product details product detail header*/
+    main>section.product>div.productdetailsorder>div h4.detailheader {
+        font-family: var(--sansserif);
+        font-size: 1em;
+        font-weight: bold;
+        margin-bottom: 0.5em;
+    }
+
+    /*product details product detail small text*/
+    main>section.product>div.productdetailsorder>div.productdetailscontent>div p.detailtitle {
+        font-family: var(--sansserif);
+        font-size: 0.85em;
+        line-height: 1.3em;
+        margin-top: 0.3em;
+    }
+
+    /*product details product detail bullet list*/
+    main>section.product>div.productdetailsorder>div.productdetailscontent>div ul {
+        font-family: var(--sansserif);
+        font-size: 0.85em;
+        padding-left: 1.1em;
+        line-height: 1.3em;
+    }
+
+    /*product details width*/
+    main>section.product>div.productdetailsorder {
+        width: 35vw;
+    }
+
+    main>section.product>div.productdetailsorder>div.productdetailscontent,
+    main>section.product>div.productdetailsorder>div.productsize,
+    main>section.product>div.productdetailsorder>div.productcolour,
+    main>section.product>div.productdetailsorder>div.productquantity {
+        margin-bottom: 1em;
+    }
+
+    /*product details: colour width*/
+    main>section.product>div.productdetailsorder>div.productcolour {
+        display: block;
+        width: 100%;
+    }
+
+    /*product details: colour label arrangement*/
+    main>section.product>div.productdetailsorder>div.productcolour label.colourradio {
+        display: inline;
+        cursor: pointer;
+    }
+
+    /*product details: size width*/
+    main>section.product>div.productdetailsorder>div.productsize {
+        width: 80%;
+    }
+
+    /*product details: size label arrangement*/
+    body>main>section.product>div.productdetailsorder>div.productsize>div.sizebtns {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    /*product details: size label height*/
+    body>main>section.product>div.productdetailsorder>div.productsize>div.sizebtns label {
+        height: 2.5em;
+        cursor: pointer;
+    }
+
+
+    /*product details: setting radio default*/
+    input[type="radio"] {
+        appearance: none;
+        background-color: #fff;
+        margin: 0.2em;
+        cursor: pointer;
+    }
+
+    /*product details: colour label for black*/
+    input[type="radio"]#black {
+        background-color: black;
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        outline: 1px solid white;
+        outline-offset: 3px;
+    }
+
+    /*product details: colour label for blue*/
+    input[type="radio"]#blue {
+        background-color: #335abf;
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        outline: 1px solid white;
+        outline-offset: 3px;
+    }
+
+    /*product details: colour label for dark brown*/
+    input[type="radio"]#darkbrown {
+        background-color: #5c4747;
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        outline: 1px solid white;
+        outline-offset: 3px;
+    }
+
+    /*product details: colour label for gray*/
+    input[type="radio"]#gray {
+        background-color: #6f6c79;
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        outline: 1px solid white;
+        outline-offset: 3px;
+    }
+
+    /*product details: colour label for lightbrown*/
+    input[type="radio"]#lightbrown {
+        background-color: #a37961;
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        outline: 1px solid white;
+        outline-offset: 3px;
+    }
+
+    /*product details: colour label checked looks*/
+    input[type="radio"]#black:checked,
+    input[type="radio"]#blue:checked,
+    input[type="radio"]#gray:checked,
+    input[type="radio"]#darkbrown:checked,
+    input[type="radio"]#lightbrown:checked {
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        outline: 1px solid black;
+        outline-offset: 3px;
+    }
+
+    /*product details: size label text*/
+    main>section.product>div.productdetailsorder>div.productsize>div.sizebtns label span {
+        position: relative;
+        top: -26px;
+        left: 0;
+        width: 100%;
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        font-family: var(--sansserif);
+        font-size: 0.9em;
+    }
+
+    /*product details: size label look*/
+    input[type="radio"]#xs,
+    input[type="radio"]#s,
+    input[type="radio"]#m,
+    input[type="radio"]#l,
+    input[type="radio"]#xl,
+    input[type="radio"]#xxl {
+        color: white;
+        border: 1px solid black;
+        width: 3em;
+        height: 2.2em;
+    }
+
+    /*product details: size label checked look*/
+    input[type="radio"]#xs:checked,
+    input[type="radio"]#s:checked,
+    input[type="radio"]#m:checked,
+    input[type="radio"]#l:checked,
+    input[type="radio"]#xl:checked,
+    input[type="radio"]#xxl:checked {
+        width: 3em;
+        height: 2.2em;
+        background-color: black;
+    }
+
+    /*product details: size label text look*/
+    input[type="radio"]#xs:checked+span,
+    input[type="radio"]#s:checked+span,
+    input[type="radio"]#m:checked+span,
+    input[type="radio"]#l:checked+span,
+    input[type="radio"]#xl:checked+span,
+    input[type="radio"]#xxl:checked+span {
+        color: white;
+    }
+
+    main>section.product>div.productdetailsorder>div.productsize>div.sizeguide>a:link,
+    main>section.product>div.productdetailsorder>div.productsize>div.sizeguide>a:hover,
+    main>section.product>div.productdetailsorder>div.productsize>div.sizeguide>a:active,
+    main>section.product>div.productdetailsorder>div.productsize>div.sizeguide>a:visited {
+        color: black;
+        font-size: 0.8em;
+        font-family: var(--sansserif);
+    }
+
+
+    /*product quantity input stepper container*/
+    main>section.product>div.productdetailsorder>div.productquantity>div.inputstepper {
+        text-align: center;
+        grid-column: 4;
+        height: 13%;
+        margin: 0.3em 0;
+        width: 25%;
+    }
+
+    /*product quantity input stepper*/
+    main>section.product>div.productdetailsorder>div.productquantity>div.inputstepper>div.inputwrap {
+        width: 100%;
+        background-color: transparent;
+        border: 2px solid var(--bgcolor);
+        padding: 0.3em 0;
+    }
+
+    /*product quantity input stepper number*/
+    main>section.product>div.productdetailsorder>div.productquantity>div.inputstepper>div.inputwrap>input[type="number"] {
+        text-align: center;
+        background-color: transparent;
+        color: var(--bgcolor);
+        border: none;
+        font-size: 0.9em;
+        margin: 0 auto;
+        font-family: var(--serif);
+    }
+
+    /*product quantity input stepper - hide default buttons*/
+    main>section.product>div.productdetailsorder>div.productquantity>div.inputstepper>div.inputwrap>input[type="number"]::-webkit-outer-spin-button,
+    main>section.product>div.productdetailsorder>div.productquantity>div.inputstepper>div.inputwrap>input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /*product quantity input stepper buttons*/
+    main>section.product>div.productdetailsorder>div.productquantity>div.inputstepper button {
+        background-color: transparent;
+        color: var(--bgcolor);
+        border: none;
+        font-size: 1.1em;
+        cursor: pointer;
+    }
+
+    /*stock left number*/
+    main>section.product>div.productdetailsorder>div.productquantity p {
+        color: black;
+        font-size: 0.8em;
+        font-family: var(--sansserif);
+    }
+
+
+    /*add to bag button container*/
+    main>section.product>div.productdetailsorder>div.orderbtn {
+        grid-column: 2;
+        grid-row: 2;
+        text-align: left;
+        width: 100%;
+    }
+
+    /*add to bag button*/
+    main>section.product>div.productdetailsorder>div.orderbtn>div.buttonwrap>button {
+        border: 2px solid var(--bgcolor);
+        border-radius: 0.2em;
+        color: var(--color);
+        background: var(--bgcolor);
+        padding: 0.4em;
+        width: 70%;
+        font-size: 1.1em;
+        letter-spacing: 0.1em;
+        font-family: var(--sansserif);
+        transition: all 0.2s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /*add to bag button (first layer of shine)*/
+    main>section.product>div.productdetailsorder>div.orderbtn>div.buttonwrap>button::before {
+        content: '';
+        display: block;
+        position: absolute;
+        background: rgba(255, 255, 255, 1);
+        width: 9px;
+        height: 100%;
+        top: 0;
+        filter: blur(12px);
+        transform: translateX(-100px) skewX(-20deg);
+    }
+
+    /*add to bag button (second layer of shine)*/
+    main>section.product>div.productdetailsorder>div.orderbtn>div.buttonwrap>button::after {
+        content: '';
+        display: block;
+        position: absolute;
+        background: rgba(255, 255, 255, 0.5);
+        width: 12px;
+        height: 100%;
+        top: 0;
+        filter: blur(6px);
+        transform: translateX(-100px) skewX(-20deg);
+    }
+
+    /*add to bag button hover effect*/
+    main>section.product>div.productdetailsorder>div.orderbtn>div.buttonwrap>button:hover {
+        background-color: var(--bgcolor);
+        border: 2px solid var(--bgcolor);
+        color: var(--color);
+        font-weight: bold;
+        letter-spacing: 0.1em;
+        cursor: pointer;
+        box-shadow: 3px 3px 5px rgba(0, 42, 42, 0.4);
+        -webkit-box-shadow: 3px 3px 5px rgba(0, 42, 42, 0.4);
+        -moz-box-shadow: 3px 3px 5px rgba(0, 42, 42, 0.4);
+    }
+
+    /*add to bag button (shine translate effect)*/
+    main>section.product>div.productdetailsorder>div.orderbtn>div.buttonwrap>button:hover::before,
+    main>section.product>div.productdetailsorder>div.orderbtn>div.buttonwrap>button:hover::after {
+        transform: translateX(500px) skewX(-20deg);
+        transition: 0.6s ease;
+    }
+}
+
+
+
+/*max-width: 1080px*/
+@media screen and (max-width: 1080px) {
+
+
+    /*background color of main section*/
+    main {
+        padding: 4em;
+    }
+
+    /*product content width*/
+    main>section.product {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    /*thumbnails container width*/
+    main>section.product>div.productthumbnailscontainer {
+        width: 60vw;
+        display: grid;
+        grid-template-columns: 15% 80%;
+        grid-template-rows: auto;
+        column-gap: 1em;
+        /* margin-right: 1em; */
+    }
+
+    /*thumbnails sidebar*/
+    main>section.product>div.productthumbnailscontainer>div.thumbnailsidewrap {
+        width: 100%;
+        border-right: rgba(0, 42, 42, 0.4);
+        padding-right: 0.3em;
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    /*thumbnails sidebar no bullet*/
+    main>section.product>div.productthumbnailscontainer>div.thumbnailsidewrap>ul {
+        list-style-type: none;
+    }
+
+    /*thumbnails spacing*/
+    main>section.product>div.productthumbnailscontainer>div.thumbnailsidewrap>ul>li img.thumbs {
+        width: 100%;
+        margin-bottom: 0.3em;
+        border: 1px solid white;
+    }
+
+    main>section.product>div.productthumbnailscontainer>div.thumbnailsidewrap>ul>li img.thumbs:hover {
+        cursor: pointer;
+        border: 1px solid black;
+    }
+
+    .active {
+        opacity: 1;
+    }
+
+
+    /*thumbnails container highlight image*/
+    main>section.product>div.productthumbnailscontainer>div.productimg {
+        max-width: 23em;
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    /*thumbnails container highlight image*/
+    main>section.product>div.productthumbnailscontainer>div.productimg>img.producthighlight {
+        display: block;
+        max-width: 23em;
+        object-fit: cover;
+    }
+
+    /*thumbnails container highlight image container for zoom*/
+    main>section.product>div.productthumbnailscontainer>div.productimg>img#productzoomcontainer {
+        max-width: 100%;
+        max-height: auto;
+        display: block;
+        position: relative;
+    }
+
+    /*thumbnails container highlight image zoom lens*/
+    main>section.product>div.productthumbnailscontainer>div.productimg>div#magnify {
+        height: 8em;
+        width: 8em;
+        border: 2px solid gray;
+        border-radius: 50%;
+        z-index: 2;
+        position: absolute;
+        background-repeat: no-repeat;
+        cursor: none;
+    }
+
+    /*thumbnails container highlight image*/
+    main>section.product>div.productthumbnailscontainer>div.productimg>div#imghighlight {
+        z-index: 1;
+        max-width: 100%;
+    }
+
+
+
+
+
+
+    /*product details product text body arrangement*/
+    main>section.product>div.productdetailsorder>div.productdetails {
+        display: flex;
+        justify-content: space-between;
+        margin: 1em 0;
+        width: 100%;
+        height: 5em;
+    }
+
+    /*product details product text body spacing*/
+    main>section.product>div.productdetailsorder>div.productdetails div.producttext {
+        margin-bottom: 2em;
+    }
+
+    /*product details product name*/
+    main>section.product>div.productdetailsorder>div.productdetails div.producttext h4.productname {
+        font-family: var(--serif);
+        font-size: 1.2em;
+        margin-bottom: 0.5em;
+    }
+
+    /*product details product price*/
+    body>main>section.product>div.productdetailsorder>div.productdetails div.producttext div.price {
+        font-family: var(--sansserif);
+        font-size: 0.9em;
+        line-height: 1.2em;
+    }
+
+    /*product details product actual price*/
+    main>section.product>div.productdetailsorder>div.productdetails>div.producttext>div>p.actualprice {
+        text-decoration: line-through;
+    }
+
+    /*product details product bookmark container*/
+    main>section.product>div.productdetailsorder>div.productdetails>div.bookmarkbutton {
+        width: 9%;
+        position: relative;
+        transform: translate(0.5em, 0);
+    }
+
+    /*product details product bookmark*/
+    main>section.product>div.productdetailsorder>div.productdetails>div.bookmarkbutton img {
+        position: absolute;
+        width: 100%;
+        object-fit: contain;
+    }
+
+    /*product details product bookmark cursor*/
+    main>section.product>div.productdetailsorder>div.productdetails>div.bookmarkbutton img:hover {
+        cursor: pointer;
+    }
+
+    /*product details product bookmark animation toggle classes: before, hover, clicked*/
+    main section div.slider div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.before {
+        display: block;
+        transition: 0.2s ease;
+    }
+
+    main section div.slider div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.before.gone {
+        display: none;
+    }
+
+    main section div.slider div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.clicked {
+        display: none;
+        transition: 0.2s ease;
+    }
+
+    main section div.slider div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.clicked.appear {
+        display: block;
+    }
+
+
+
+
+    /*product details product detail header*/
+    main>section.product>div.productdetailsorder>div h4.detailheader {
+        font-family: var(--sansserif);
+        font-size: 1em;
+        font-weight: bold;
+        margin-bottom: 0.5em;
+    }
+
+    /*product details product detail small text*/
+    main>section.product>div.productdetailsorder>div.productdetailscontent>div p.detailtitle {
+        font-family: var(--sansserif);
+        font-size: 0.85em;
+        line-height: 1.3em;
+        margin-top: 0.3em;
+    }
+
+    /*product details product detail bullet list*/
+    main>section.product>div.productdetailsorder>div.productdetailscontent>div ul {
+        font-family: var(--sansserif);
+        font-size: 0.85em;
+        padding-left: 1.1em;
+        line-height: 1.3em;
+    }
+
+    /*product details width*/
+    main>section.product>div.productdetailsorder {
+        width: 40vw;
+    }
+
+    main>section.product>div.productdetailsorder>div.productdetailscontent,
+    main>section.product>div.productdetailsorder>div.productsize,
+    main>section.product>div.productdetailsorder>div.productcolour,
+    main>section.product>div.productdetailsorder>div.productquantity {
+        margin-bottom: 1em;
+    }
+
+    /*product details: colour width*/
+    main>section.product>div.productdetailsorder>div.productcolour {
+        display: block;
+        width: 100%;
+    }
+
+    /*product details: colour label arrangement*/
+    main>section.product>div.productdetailsorder>div.productcolour label.colourradio {
+        display: inline;
+        cursor: pointer;
+    }
+
+    /*product details: size width*/
+    main>section.product>div.productdetailsorder>div.productsize {
+        width: 80%;
+    }
+
+    /*product details: size label arrangement*/
+    body>main>section.product>div.productdetailsorder>div.productsize>div.sizebtns {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    /*product details: size label height*/
+    body>main>section.product>div.productdetailsorder>div.productsize>div.sizebtns label {
+        height: 2.5em;
+        cursor: pointer;
+    }
+
+
+    /*product details: setting radio default*/
+    input[type="radio"] {
+        appearance: none;
+        background-color: #fff;
+        margin: 0.2em;
+        cursor: pointer;
+    }
+
+    /*product details: colour label for black*/
+    input[type="radio"]#black {
+        background-color: black;
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        outline: 1px solid white;
+        outline-offset: 3px;
+    }
+
+    /*product details: colour label for blue*/
+    input[type="radio"]#blue {
+        background-color: #335abf;
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        outline: 1px solid white;
+        outline-offset: 3px;
+    }
+
+    /*product details: colour label for dark brown*/
+    input[type="radio"]#darkbrown {
+        background-color: #5c4747;
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        outline: 1px solid white;
+        outline-offset: 3px;
+    }
+
+    /*product details: colour label for gray*/
+    input[type="radio"]#gray {
+        background-color: #6f6c79;
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        outline: 1px solid white;
+        outline-offset: 3px;
+    }
+
+    /*product details: colour label for lightbrown*/
+    input[type="radio"]#lightbrown {
+        background-color: #a37961;
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        outline: 1px solid white;
+        outline-offset: 3px;
+    }
+
+    /*product details: colour label checked looks*/
+    input[type="radio"]#black:checked,
+    input[type="radio"]#blue:checked,
+    input[type="radio"]#gray:checked,
+    input[type="radio"]#darkbrown:checked,
+    input[type="radio"]#lightbrown:checked {
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        outline: 1px solid black;
+        outline-offset: 3px;
+    }
+
+    /*product details: size label text*/
+    main>section.product>div.productdetailsorder>div.productsize>div.sizebtns label span {
+        position: relative;
+        top: -26px;
+        left: 0;
+        width: 100%;
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        font-family: var(--sansserif);
+        font-size: 0.9em;
+    }
+
+    /*product details: size label look*/
+    input[type="radio"]#xs,
+    input[type="radio"]#s,
+    input[type="radio"]#m,
+    input[type="radio"]#l,
+    input[type="radio"]#xl,
+    input[type="radio"]#xxl {
+        color: white;
+        border: 1px solid black;
+        width: 3em;
+        height: 2.2em;
+    }
+
+    /*product details: size label checked look*/
+    input[type="radio"]#xs:checked,
+    input[type="radio"]#s:checked,
+    input[type="radio"]#m:checked,
+    input[type="radio"]#l:checked,
+    input[type="radio"]#xl:checked,
+    input[type="radio"]#xxl:checked {
+        width: 3em;
+        height: 2.2em;
+        background-color: black;
+    }
+
+    /*product details: size label text look*/
+    input[type="radio"]#xs:checked+span,
+    input[type="radio"]#s:checked+span,
+    input[type="radio"]#m:checked+span,
+    input[type="radio"]#l:checked+span,
+    input[type="radio"]#xl:checked+span,
+    input[type="radio"]#xxl:checked+span {
+        color: white;
+    }
+
+    main>section.product>div.productdetailsorder>div.productsize>div.sizeguide>a:link,
+    main>section.product>div.productdetailsorder>div.productsize>div.sizeguide>a:hover,
+    main>section.product>div.productdetailsorder>div.productsize>div.sizeguide>a:active,
+    main>section.product>div.productdetailsorder>div.productsize>div.sizeguide>a:visited {
+        color: black;
+        font-size: 0.8em;
+        font-family: var(--sansserif);
+    }
+
+
+    /*product quantity input stepper container*/
+    main>section.product>div.productdetailsorder>div.productquantity>div.inputstepper {
+        text-align: center;
+        grid-column: 4;
+        height: 13%;
+        margin: 0.3em 0;
+        width: 25%;
+    }
+
+    /*product quantity input stepper*/
+    main>section.product>div.productdetailsorder>div.productquantity>div.inputstepper>div.inputwrap {
+        width: 100%;
+        background-color: transparent;
+        border: 2px solid var(--bgcolor);
+        padding: 0.3em 0;
+    }
+
+    /*product quantity input stepper number*/
+    main>section.product>div.productdetailsorder>div.productquantity>div.inputstepper>div.inputwrap>input[type="number"] {
+        text-align: center;
+        background-color: transparent;
+        color: var(--bgcolor);
+        border: none;
+        font-size: 0.9em;
+        margin: 0 auto;
+        font-family: var(--serif);
+    }
+
+    /*product quantity input stepper - hide default buttons*/
+    main>section.product>div.productdetailsorder>div.productquantity>div.inputstepper>div.inputwrap>input[type="number"]::-webkit-outer-spin-button,
+    main>section.product>div.productdetailsorder>div.productquantity>div.inputstepper>div.inputwrap>input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /*product quantity input stepper buttons*/
+    main>section.product>div.productdetailsorder>div.productquantity>div.inputstepper button {
+        background-color: transparent;
+        color: var(--bgcolor);
+        border: none;
+        font-size: 1.1em;
+        cursor: pointer;
+    }
+
+    /*stock left number*/
+    main>section.product>div.productdetailsorder>div.productquantity p {
+        color: black;
+        font-size: 0.8em;
+        font-family: var(--sansserif);
+    }
+
+
+    /*add to bag button container*/
+    main>section.product>div.productdetailsorder>div.orderbtn {
+        grid-column: 2;
+        grid-row: 2;
+        text-align: left;
+        width: 100%;
+    }
+
+    /*add to bag button*/
+    main>section.product>div.productdetailsorder>div.orderbtn>div.buttonwrap>button {
+        border: 2px solid var(--bgcolor);
+        border-radius: 0.2em;
+        color: var(--color);
+        background: var(--bgcolor);
+        padding: 0.4em;
+        width: 70%;
+        font-size: 1.1em;
+        letter-spacing: 0.1em;
+        font-family: var(--sansserif);
+        transition: all 0.2s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /*add to bag button (first layer of shine)*/
+    main>section.product>div.productdetailsorder>div.orderbtn>div.buttonwrap>button::before {
+        content: '';
+        display: block;
+        position: absolute;
+        background: rgba(255, 255, 255, 1);
+        width: 9px;
+        height: 100%;
+        top: 0;
+        filter: blur(12px);
+        transform: translateX(-100px) skewX(-20deg);
+    }
+
+    /*add to bag button (second layer of shine)*/
+    main>section.product>div.productdetailsorder>div.orderbtn>div.buttonwrap>button::after {
+        content: '';
+        display: block;
+        position: absolute;
+        background: rgba(255, 255, 255, 0.5);
+        width: 12px;
+        height: 100%;
+        top: 0;
+        filter: blur(6px);
+        transform: translateX(-100px) skewX(-20deg);
+    }
+
+    /*add to bag button hover effect*/
+    main>section.product>div.productdetailsorder>div.orderbtn>div.buttonwrap>button:hover {
+        background-color: var(--bgcolor);
+        border: 2px solid var(--bgcolor);
+        color: var(--color);
+        font-weight: bold;
+        letter-spacing: 0.1em;
+        cursor: pointer;
+        box-shadow: 3px 3px 5px rgba(0, 42, 42, 0.4);
+        -webkit-box-shadow: 3px 3px 5px rgba(0, 42, 42, 0.4);
+        -moz-box-shadow: 3px 3px 5px rgba(0, 42, 42, 0.4);
+    }
+
+    /*add to bag button (shine translate effect)*/
+    main>section.product>div.productdetailsorder>div.orderbtn>div.buttonwrap>button:hover::before,
+    main>section.product>div.productdetailsorder>div.orderbtn>div.buttonwrap>button:hover::after {
+        transform: translateX(500px) skewX(-20deg);
+        transition: 0.6s ease;
+    }
+}
+
+/*max-width: 992px*/
+@media screen and (max-width: 992px) {
+
+
+    /*background color of main section*/
+    main {
+        padding: 4em;
+    }
+
+    /*product content width*/
+    main>section.product {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    /*thumbnails container width*/
+    main>section.product>div.productthumbnailscontainer {
+        width: 60vw;
+        display: grid;
+        grid-template-columns: 0.7fr 0.5fr;
+        grid-template-rows: auto;
+        column-gap: 1em;
+        /* margin-right: 1em; */
+    }
+
+    /*thumbnails sidebar*/
+    main>section.product>div.productthumbnailscontainer>div.thumbnailsidewrap {
+        width: 100%;
+        border-right: rgba(0, 42, 42, 0.4);
+        padding-right: 0.3em;
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    /*thumbnails sidebar no bullet*/
+    main>section.product>div.productthumbnailscontainer>div.thumbnailsidewrap>ul {
+        list-style-type: none;
+    }
+
+    /*thumbnails spacing*/
+    main>section.product>div.productthumbnailscontainer>div.thumbnailsidewrap>ul>li img.thumbs {
+        width: 100%;
+        margin-bottom: 0.3em;
+        border: 1px solid white;
+    }
+
+    main>section.product>div.productthumbnailscontainer>div.thumbnailsidewrap>ul>li img.thumbs:hover {
+        cursor: pointer;
+        border: 1px solid black;
+    }
+
+    .active {
+        opacity: 1;
+    }
+
+
+    /*thumbnails container highlight image*/
+    main>section.product>div.productthumbnailscontainer>div.productimg {
+        max-width: 23em;
+        grid-column: 2;
+        grid-row: 1;
+    }
+
+    /*thumbnails container highlight image*/
+    main>section.product>div.productthumbnailscontainer>div.productimg>img.producthighlight {
+        display: block;
+        max-width: 23em;
+        object-fit: cover;
+    }
+
+    /*thumbnails container highlight image container for zoom*/
+    main>section.product>div.productthumbnailscontainer>div.productimg>img#productzoomcontainer {
+        max-width: 100%;
+        max-height: auto;
+        display: block;
+        position: relative;
+    }
+
+    /*thumbnails container highlight image zoom lens*/
+    main>section.product>div.productthumbnailscontainer>div.productimg>div#magnify {
+        height: 11em;
+        width: 11em;
+        border: 2px solid gray;
+        border-radius: 50%;
+        z-index: 2;
+        position: absolute;
+        background-repeat: no-repeat;
+        cursor: none;
+    }
+
+    /*thumbnails container highlight image*/
+    main>section.product>div.productthumbnailscontainer>div.productimg>div#imghighlight {
+        z-index: 1;
+        max-width: 100%;
+    }
+
+
+
+
+
+
+    /*product details product text body arrangement*/
+    main>section.product>div.productdetailsorder>div.productdetails {
+        display: flex;
+        justify-content: space-between;
+        margin: 1em 0;
+        width: 100%;
+        height: 5em;
+    }
+
+    /*product details product text body spacing*/
+    main>section.product>div.productdetailsorder>div.productdetails div.producttext {
+        margin-bottom: 2em;
+    }
+
+    /*product details product name*/
+    main>section.product>div.productdetailsorder>div.productdetails div.producttext h4.productname {
+        font-family: var(--serif);
+        font-size: 1.2em;
+        margin-bottom: 0.5em;
+    }
+
+    /*product details product price*/
+    body>main>section.product>div.productdetailsorder>div.productdetails div.producttext div.price {
+        font-family: var(--sansserif);
+        font-size: 0.9em;
+        line-height: 1.2em;
+    }
+
+    /*product details product actual price*/
+    main>section.product>div.productdetailsorder>div.productdetails>div.producttext>div>p.actualprice {
+        text-decoration: line-through;
+    }
+
+    /*product details product bookmark container*/
+    main>section.product>div.productdetailsorder>div.productdetails>div.bookmarkbutton {
+        width: 9%;
+        position: relative;
+        transform: translate(0.5em, 0);
+    }
+
+    /*product details product bookmark*/
+    main>section.product>div.productdetailsorder>div.productdetails>div.bookmarkbutton img {
+        position: absolute;
+        width: 100%;
+        object-fit: contain;
+    }
+
+    /*product details product bookmark cursor*/
+    main>section.product>div.productdetailsorder>div.productdetails>div.bookmarkbutton img:hover {
+        cursor: pointer;
+    }
+
+    /*product details product bookmark animation toggle classes: before, hover, clicked*/
+    main section div.slider div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.before {
+        display: block;
+        transition: 0.2s ease;
+    }
+
+    main section div.slider div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.before.gone {
+        display: none;
+    }
+
+    main section div.slider div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.clicked {
+        display: none;
+        transition: 0.2s ease;
+    }
+
+    main section div.slider div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.clicked.appear {
+        display: block;
+    }
+
+
+
+
+    /*product details product detail header*/
+    main>section.product>div.productdetailsorder>div h4.detailheader {
+        font-family: var(--sansserif);
+        font-size: 1em;
+        font-weight: bold;
+        margin-bottom: 0.5em;
+    }
+
+    /*product details product detail small text*/
+    main>section.product>div.productdetailsorder>div.productdetailscontent>div p.detailtitle {
+        font-family: var(--sansserif);
+        font-size: 0.85em;
+        line-height: 1.3em;
+        margin-top: 0.3em;
+    }
+
+    /*product details product detail bullet list*/
+    main>section.product>div.productdetailsorder>div.productdetailscontent>div ul {
+        font-family: var(--sansserif);
+        font-size: 0.85em;
+        padding-left: 1.1em;
+        line-height: 1.3em;
+    }
+
+    /*product details width*/
+    main>section.product>div.productdetailsorder {
+        width: 50vw;
+    }
+
+    main>section.product>div.productdetailsorder>div.productdetailscontent,
+    main>section.product>div.productdetailsorder>div.productsize,
+    main>section.product>div.productdetailsorder>div.productcolour,
+    main>section.product>div.productdetailsorder>div.productquantity {
+        margin-bottom: 1em;
+    }
+
+    /*product details: colour width*/
+    main>section.product>div.productdetailsorder>div.productcolour {
+        display: block;
+        width: 100%;
+    }
+
+    /*product details: colour label arrangement*/
+    main>section.product>div.productdetailsorder>div.productcolour label.colourradio {
+        display: inline;
+        cursor: pointer;
+    }
+
+    /*product details: size width*/
+    main>section.product>div.productdetailsorder>div.productsize {
+        width: 80%;
+    }
+
+    /*product details: size label arrangement*/
+    body>main>section.product>div.productdetailsorder>div.productsize>div.sizebtns {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    /*product details: size label height*/
+    body>main>section.product>div.productdetailsorder>div.productsize>div.sizebtns label {
+        height: 2.5em;
+        cursor: pointer;
+    }
+
+
+    /*product details: setting radio default*/
+    input[type="radio"] {
+        appearance: none;
+        background-color: #fff;
+        margin: 0.2em;
+        cursor: pointer;
+    }
+
+    /*product details: colour label for black*/
+    input[type="radio"]#black {
+        background-color: black;
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        outline: 1px solid white;
+        outline-offset: 3px;
+    }
+
+    /*product details: colour label for blue*/
+    input[type="radio"]#blue {
+        background-color: #335abf;
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        outline: 1px solid white;
+        outline-offset: 3px;
+    }
+
+    /*product details: colour label for dark brown*/
+    input[type="radio"]#darkbrown {
+        background-color: #5c4747;
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        outline: 1px solid white;
+        outline-offset: 3px;
+    }
+
+    /*product details: colour label for gray*/
+    input[type="radio"]#gray {
+        background-color: #6f6c79;
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        outline: 1px solid white;
+        outline-offset: 3px;
+    }
+
+    /*product details: colour label for lightbrown*/
+    input[type="radio"]#lightbrown {
+        background-color: #a37961;
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        outline: 1px solid white;
+        outline-offset: 3px;
+    }
+
+    /*product details: colour label checked looks*/
+    input[type="radio"]#black:checked,
+    input[type="radio"]#blue:checked,
+    input[type="radio"]#gray:checked,
+    input[type="radio"]#darkbrown:checked,
+    input[type="radio"]#lightbrown:checked {
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        outline: 1px solid black;
+        outline-offset: 3px;
+    }
+
+    /*product details: size label text*/
+    main>section.product>div.productdetailsorder>div.productsize>div.sizebtns label span {
+        position: relative;
+        top: -26px;
+        left: 0;
+        width: 100%;
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        font-family: var(--sansserif);
+        font-size: 0.9em;
+    }
+
+    /*product details: size label look*/
+    input[type="radio"]#xs,
+    input[type="radio"]#s,
+    input[type="radio"]#m,
+    input[type="radio"]#l,
+    input[type="radio"]#xl,
+    input[type="radio"]#xxl {
+        color: white;
+        border: 1px solid black;
+        width: 3em;
+        height: 2.2em;
+    }
+
+    /*product details: size label checked look*/
+    input[type="radio"]#xs:checked,
+    input[type="radio"]#s:checked,
+    input[type="radio"]#m:checked,
+    input[type="radio"]#l:checked,
+    input[type="radio"]#xl:checked,
+    input[type="radio"]#xxl:checked {
+        width: 3em;
+        height: 2.2em;
+        background-color: black;
+    }
+
+    /*product details: size label text look*/
+    input[type="radio"]#xs:checked+span,
+    input[type="radio"]#s:checked+span,
+    input[type="radio"]#m:checked+span,
+    input[type="radio"]#l:checked+span,
+    input[type="radio"]#xl:checked+span,
+    input[type="radio"]#xxl:checked+span {
+        color: white;
+    }
+
+    main>section.product>div.productdetailsorder>div.productsize>div.sizeguide>a:link,
+    main>section.product>div.productdetailsorder>div.productsize>div.sizeguide>a:hover,
+    main>section.product>div.productdetailsorder>div.productsize>div.sizeguide>a:active,
+    main>section.product>div.productdetailsorder>div.productsize>div.sizeguide>a:visited {
+        color: black;
+        font-size: 0.8em;
+        font-family: var(--sansserif);
+    }
+
+
+    /*product quantity input stepper container*/
+    main>section.product>div.productdetailsorder>div.productquantity>div.inputstepper {
+        text-align: center;
+        grid-column: 4;
+        height: 13%;
+        margin: 0.3em 0;
+        width: 25%;
+    }
+
+    /*product quantity input stepper*/
+    main>section.product>div.productdetailsorder>div.productquantity>div.inputstepper>div.inputwrap {
+        width: 100%;
+        background-color: transparent;
+        border: 2px solid var(--bgcolor);
+        padding: 0.3em 0;
+    }
+
+    /*product quantity input stepper number*/
+    main>section.product>div.productdetailsorder>div.productquantity>div.inputstepper>div.inputwrap>input[type="number"] {
+        text-align: center;
+        background-color: transparent;
+        color: var(--bgcolor);
+        border: none;
+        font-size: 0.9em;
+        margin: 0 auto;
+        font-family: var(--serif);
+    }
+
+    /*product quantity input stepper - hide default buttons*/
+    main>section.product>div.productdetailsorder>div.productquantity>div.inputstepper>div.inputwrap>input[type="number"]::-webkit-outer-spin-button,
+    main>section.product>div.productdetailsorder>div.productquantity>div.inputstepper>div.inputwrap>input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /*product quantity input stepper buttons*/
+    main>section.product>div.productdetailsorder>div.productquantity>div.inputstepper button {
+        background-color: transparent;
+        color: var(--bgcolor);
+        border: none;
+        font-size: 1.1em;
+        cursor: pointer;
+    }
+
+    /*stock left number*/
+    main>section.product>div.productdetailsorder>div.productquantity p {
+        color: black;
+        font-size: 0.8em;
+        font-family: var(--sansserif);
+    }
+
+
+    /*add to bag button container*/
+    main>section.product>div.productdetailsorder>div.orderbtn {
+        grid-column: 2;
+        grid-row: 2;
+        text-align: left;
+        width: 100%;
+    }
+
+    /*add to bag button*/
+    main>section.product>div.productdetailsorder>div.orderbtn>div.buttonwrap>button {
+        border: 2px solid var(--bgcolor);
+        border-radius: 0.2em;
+        color: var(--color);
+        background: var(--bgcolor);
+        padding: 0.4em;
+        width: 70%;
+        font-size: 1.1em;
+        letter-spacing: 0.1em;
+        font-family: var(--sansserif);
+        transition: all 0.2s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    /*add to bag button (first layer of shine)*/
+    main>section.product>div.productdetailsorder>div.orderbtn>div.buttonwrap>button::before {
+        content: '';
+        display: block;
+        position: absolute;
+        background: rgba(255, 255, 255, 1);
+        width: 9px;
+        height: 100%;
+        top: 0;
+        filter: blur(12px);
+        transform: translateX(-100px) skewX(-20deg);
+    }
+
+    /*add to bag button (second layer of shine)*/
+    main>section.product>div.productdetailsorder>div.orderbtn>div.buttonwrap>button::after {
+        content: '';
+        display: block;
+        position: absolute;
+        background: rgba(255, 255, 255, 0.5);
+        width: 12px;
+        height: 100%;
+        top: 0;
+        filter: blur(6px);
+        transform: translateX(-100px) skewX(-20deg);
+    }
+
+    /*add to bag button hover effect*/
+    main>section.product>div.productdetailsorder>div.orderbtn>div.buttonwrap>button:hover {
+        background-color: var(--bgcolor);
+        border: 2px solid var(--bgcolor);
+        color: var(--color);
+        font-weight: bold;
+        letter-spacing: 0.1em;
+        cursor: pointer;
+        box-shadow: 3px 3px 5px rgba(0, 42, 42, 0.4);
+        -webkit-box-shadow: 3px 3px 5px rgba(0, 42, 42, 0.4);
+        -moz-box-shadow: 3px 3px 5px rgba(0, 42, 42, 0.4);
+    }
+
+    /*add to bag button (shine translate effect)*/
+    main>section.product>div.productdetailsorder>div.orderbtn>div.buttonwrap>button:hover::before,
+    main>section.product>div.productdetailsorder>div.orderbtn>div.buttonwrap>button:hover::after {
+        transform: translateX(250px) skewX(-20deg);
+        transition: 0.6s ease;
+    }
+}
+
+/*max-width: 720px*/
+@media screen and (max-width: 720px) {
+    body {
+        max-width: 100vw;
+    }
+
+    /*background color of main section*/
+    main {
+        padding: 2em;
+        margin: 0;
+    }
+
+    /*thumbnails container width*/
+    main>section.product>div.productthumbnailscontainer {
+        display: block;
+        margin: 0;
+        padding: 0;
+        width: 50vw;
+    }
+
+    /*thumbnails sidebar*/
+    main>section.product>div.productthumbnailscontainer>div.thumbnailsidewrap {
+        width: 93%;
+        border-bottom: rgba(0, 42, 42, 0.4);
+        border-right: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    /*thumbnails sidebar no bullet*/
+    main>section.product>div.productthumbnailscontainer>div.thumbnailsidewrap>ul.thumbnailsidethumbs {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    /*thumbnails spacing*/
+    main>section.product>div.productthumbnailscontainer>div.thumbnailsidewrap>ul.thumbnailsidethumbs>li img.thumbs {
+        width: 100%;
+        margin: 0 0 0.3em 0;
+        padding: 0;
+    }
+
+    main>section.product>div.productthumbnailscontainer>div.thumbnailsidewrap>ul>li {
+        width: 23%;
+    }
+
+    /*thumbnails container highlight image*/
+    main>section.product>div.productthumbnailscontainer>div.productimg {
+        display: block;
+        max-width: 20.2em;
+        object-fit: cover;
+    }
+
+    /*thumbnails container highlight image*/
+    main>section.product>div.productthumbnailscontainer>div.productimg>img.producthighlight {
+        display: block;
+        max-width: 20.2em;
+        object-fit: cover;
+    }
+
+    /*thumbnails container highlight image container for zoom*/
+    main>section.product>div.productthumbnailscontainer>div.productimg>img#productzoomcontainer {
+        max-width: 100%;
+        max-height: auto;
+        display: block;
+        position: relative;
+    }
+
+    /*thumbnails container highlight image zoom lens*/
+    main>section.product>div.productthumbnailscontainer>div.productimg>div#magnify {
+        /* height: 5em;
+        width: 5em; */
+        display: none;
+    }
+
+    /*product details product text body arrangement*/
+    main>section.product>div.productdetailsorder>div.productdetails {
+        margin: 0;
+        width: 100%;
+        height: 4em;
+    }
+
+    /*product details product text body spacing*/
+    main>section.product>div.productdetailsorder>div.productdetails div.producttext {
+        margin-bottom: 0;
+        /* width: 40%; */
+    }
+
+    /*product details product name*/
+    main>section.product>div.productdetailsorder>div.productdetails div.producttext h4.productname {
+        font-family: var(--serif);
+        font-size: 0.8em;
+        /* margin-bottom: 0.3em; */
+    }
+
+    /*product details product price*/
+    body>main>section.product>div.productdetailsorder>div.productdetails div.producttext div.price {
+        line-height: 0.9em;
+    }
+
+    /*product details product actual price*/
+    main>section.product>div.productdetailsorder>div.productdetails>div.producttext>div>p.actualprice {
+        text-decoration: line-through;
+        font-size: 0.7em;
+        margin: 0;
+        padding: 0;
+    }
+
+    /*product details product discount price*/
+    main>section.product>div.productdetailsorder>div.productdetails>div.producttext>div>p.discountprice {
+        font-size: 0.7em;
+        margin: 0;
+        padding: 0;
+    }
+
+    /*product details product bookmark container*/
+    main>section.product>div.productdetailsorder>div.productdetails>div.bookmarkbutton {
+        width: 12%;
+        position: relative;
+        transform: translate(0.3em, 0);
+    }
+
+    /*product details product bookmark*/
+    main>section.product>div.productdetailsorder>div.productdetails>div.bookmarkbutton img {
+        position: absolute;
+        width: 100%;
+        object-fit: contain;
+    }
+
+    /*product details product bookmark cursor*/
+    main>section.product>div.productdetailsorder>div.productdetails>div.bookmarkbutton img:hover {
+        cursor: pointer;
+    }
+
+    /*product details product bookmark animation toggle classes: before, hover, clicked*/
+    main section div.slider div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.before {
+        display: block;
+        transition: 0.2s ease;
+    }
+
+    main section div.slider div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.before.gone {
+        display: none;
+    }
+
+    main section div.slider div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.clicked {
+        display: none;
+        transition: 0.2s ease;
+    }
+
+    main section div.slider div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.clicked.appear {
+        display: block;
+    }
+
+
+
+
+    /*product details product detail header*/
+    main>section.product>div.productdetailsorder>div h4.detailheader {
+        font-family: var(--sansserif);
+        font-size: 0.7em;
+        font-weight: bold;
+        margin-bottom: 0.4em;
+    }
+
+    /*product details product detail small text*/
+    main>section.product>div.productdetailsorder>div.productdetailscontent>div p.detailtitle {
+        font-size: 0.65em;
+        line-height: 1.2em;
+        margin-top: 0.3em;
+    }
+
+    /*product details product detail bullet list*/
+    main>section.product>div.productdetailsorder>div.productdetailscontent>div ul {
+        font-size: 0.65em;
+        padding-left: 1.1em;
+        line-height: 1.3em;
+    }
+
+    /*product details width*/
+    main>section.product>div.productdetailsorder {
+        width: 45vw;
+    }
+
+    main>section.product>div.productdetailsorder>div.productdetailscontent,
+    main>section.product>div.productdetailsorder>div.productsize,
+    main>section.product>div.productdetailsorder>div.productcolour,
+    main>section.product>div.productdetailsorder>div.productquantity {
+        margin-bottom: 1em;
+    }
+
+    /*product details: colour width*/
+    main>section.product>div.productdetailsorder>div.productcolour {
+        display: block;
+        width: 100%;
+    }
+
+    /*product details: colour label arrangement*/
+    main>section.product>div.productdetailsorder>div.productcolour label.colourradio {
+        display: inline;
+        cursor: pointer;
+    }
+
+    /*product details: size width*/
+    main>section.product>div.productdetailsorder>div.productsize {
+        width: 100%;
+    }
+
+    /*product details: size label arrangement*/
+    body>main>section.product>div.productdetailsorder>div.productsize>div.sizebtns {
+        display: flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    /*product details: size label height*/
+    body>main>section.product>div.productdetailsorder>div.productsize>div.sizebtns label {
+        height: 2em;
+        cursor: pointer;
+    }
+
+
+    /*product details: setting radio default*/
+    input[type="radio"] {
+        appearance: none;
+        background-color: #fff;
+        margin: 0.2em;
+        cursor: pointer;
+    }
+
+    /*product details: colour label for black*/
+    input[type="radio"]#black {
+        background-color: black;
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        outline: 1px solid white;
+        outline-offset: 3px;
+    }
+
+    /*product details: colour label for blue*/
+    input[type="radio"]#blue {
+        background-color: #335abf;
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        outline: 1px solid white;
+        outline-offset: 3px;
+    }
+
+    /*product details: colour label for dark brown*/
+    input[type="radio"]#darkbrown {
+        background-color: #5c4747;
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        outline: 1px solid white;
+        outline-offset: 3px;
+    }
+
+    /*product details: colour label for gray*/
+    input[type="radio"]#gray {
+        background-color: #6f6c79;
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        outline: 1px solid white;
+        outline-offset: 3px;
+    }
+
+    /*product details: colour label for lightbrown*/
+    input[type="radio"]#lightbrown {
+        background-color: #a37961;
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        outline: 1px solid white;
+        outline-offset: 3px;
+    }
+
+    /*product details: colour label checked looks*/
+    input[type="radio"]#black:checked,
+    input[type="radio"]#blue:checked,
+    input[type="radio"]#gray:checked,
+    input[type="radio"]#darkbrown:checked,
+    input[type="radio"]#lightbrown:checked {
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        outline: 1px solid black;
+        outline-offset: 3px;
+    }
+
+    /*product details: size label text*/
+    main>section.product>div.productdetailsorder>div.productsize>div.sizebtns label span {
+        top: -26px;
+        left: 0px;
+        width: 100%;
+        font-size: 0.7em;
+    }
+
+    /*product details: size label look*/
+    input[type="radio"]#xs,
+    input[type="radio"]#s,
+    input[type="radio"]#m,
+    input[type="radio"]#l,
+    input[type="radio"]#xl,
+    input[type="radio"]#xxl {
+        color: white;
+        border: 1px solid black;
+        width: 2em;
+        height: 2.2em;
+    }
+
+    /*product details: size label checked look*/
+    input[type="radio"]#xs:checked,
+    input[type="radio"]#s:checked,
+    input[type="radio"]#m:checked,
+    input[type="radio"]#l:checked,
+    input[type="radio"]#xl:checked,
+    input[type="radio"]#xxl:checked {
+        width: 2em;
+        height: 2.2em;
+        background-color: black;
+    }
+
+    main>section.product>div.productdetailsorder>div.productsize>div.sizeguide>a:link,
+    main>section.product>div.productdetailsorder>div.productsize>div.sizeguide>a:hover,
+    main>section.product>div.productdetailsorder>div.productsize>div.sizeguide>a:active,
+    main>section.product>div.productdetailsorder>div.productsize>div.sizeguide>a:visited {
+        font-size: 0.7em;
+    }
+
+
+    /*product quantity input stepper container*/
+    main>section.product>div.productdetailsorder>div.productquantity>div.inputstepper {
+        text-align: center;
+        grid-column: 4;
+        height: 13%;
+        margin: 0.3em 0;
+        width: 30%;
+    }
+
+    main>section.product>div.productdetailsorder>div.productquantity>p {
+        font-size: 0.7em;
+    }
+
+    /*add to bag button container*/
+    main>section.product>div.productdetailsorder>div.orderbtn {
+        text-align: left;
+        width: 60%;
+    }
+
+    /*add to bag button*/
+    main>section.product>div.productdetailsorder>div.orderbtn>div.buttonwrap>button {
+        font-size: 0.9em;
+        letter-spacing: 0.1em;
+        width: 100%;
+    }
+
+    main>section.product>div.productdetailsorder>div.productquantity>div.inputstepper>div.inputwrap>input[type="number"] {
+        font-size: 0.8em;
+    }
+
+}
+
+/*max-width: 540px*/
+@media screen and (max-width: 540px) {
+    body {
+        max-width: 100vw;
+    }
+
+    /*background color of main section*/
+    main {
+        padding: 2em;
+        margin: 0;
+    }
+
+    /*thumbnails container width*/
+    main>section.product>div.productthumbnailscontainer {
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+
+    /*thumbnails sidebar*/
+    main>section.product>div.productthumbnailscontainer>div.thumbnailsidewrap {
+        width: 86%;
+        border-bottom: rgba(0, 42, 42, 0.4);
+        border-right: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    /*thumbnails sidebar no bullet*/
+    main>section.product>div.productthumbnailscontainer>div.thumbnailsidewrap>ul.thumbnailsidethumbs {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    /*thumbnails spacing*/
+    main>section.product>div.productthumbnailscontainer>div.thumbnailsidewrap>ul.thumbnailsidethumbs>li img.thumbs {
+        width: 100%;
+        margin: 0 0 0.3em 0;
+        padding: 0;
+    }
+
+    main>section.product>div.productthumbnailscontainer>div.thumbnailsidewrap>ul>li {
+        width: 23%;
+    }
+
+    /*thumbnails container highlight image*/
+    main>section.product>div.productthumbnailscontainer>div.productimg {
+        display: block;
+        max-width: 14.83em;
+        object-fit: cover;
+    }
+
+    /*thumbnails container highlight image*/
+    main>section.product>div.productthumbnailscontainer>div.productimg>img.producthighlight {
+        display: block;
+        max-width: 14.83em;
+        object-fit: cover;
+    }
+
+    /*thumbnails container highlight image container for zoom*/
+    main>section.product>div.productthumbnailscontainer>div.productimg>img#productzoomcontainer {
+        max-width: 100%;
+        max-height: auto;
+        display: block;
+        position: relative;
+    }
+
+    /*thumbnails container highlight image zoom lens*/
+    main>section.product>div.productthumbnailscontainer>div.productimg>div#magnify {
+        /* height: 5em;
+        width: 5em; */
+        display: none;
+    }
+
+    /*product details product text body arrangement*/
+    main>section.product>div.productdetailsorder>div.productdetails {
+        margin: 0;
+        width: 100%;
+        height: 4em;
+    }
+
+    /*product details product text body spacing*/
+    main>section.product>div.productdetailsorder>div.productdetails div.producttext {
+        margin-bottom: 0;
+        /* width: 40%; */
+    }
+
+    /*product details product name*/
+    main>section.product>div.productdetailsorder>div.productdetails div.producttext h4.productname {
+        font-family: var(--serif);
+        font-size: 0.8em;
+        /* margin-bottom: 0.3em; */
+    }
+
+    /*product details product price*/
+    body>main>section.product>div.productdetailsorder>div.productdetails div.producttext div.price {
+        line-height: 0.9em;
+    }
+
+    /*product details product actual price*/
+    main>section.product>div.productdetailsorder>div.productdetails>div.producttext>div>p.actualprice {
+        text-decoration: line-through;
+        font-size: 0.7em;
+        margin: 0;
+        padding: 0;
+    }
+
+    /*product details product discount price*/
+    main>section.product>div.productdetailsorder>div.productdetails>div.producttext>div>p.discountprice {
+        font-size: 0.7em;
+        margin: 0;
+        padding: 0;
+    }
+
+    /*product details product bookmark container*/
+    main>section.product>div.productdetailsorder>div.productdetails>div.bookmarkbutton {
+        width: 12%;
+        position: relative;
+        transform: translate(0.3em, 0);
+    }
+
+    /*product details product bookmark*/
+    main>section.product>div.productdetailsorder>div.productdetails>div.bookmarkbutton img {
+        position: absolute;
+        width: 100%;
+        object-fit: contain;
+    }
+
+    /*product details product bookmark cursor*/
+    main>section.product>div.productdetailsorder>div.productdetails>div.bookmarkbutton img:hover {
+        cursor: pointer;
+    }
+
+    /*product details product bookmark animation toggle classes: before, hover, clicked*/
+    main section div.slider div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.before {
+        display: block;
+        transition: 0.2s ease;
+    }
+
+    main section div.slider div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.before.gone {
+        display: none;
+    }
+
+    main section div.slider div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.clicked {
+        display: none;
+        transition: 0.2s ease;
+    }
+
+    main section div.slider div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.clicked.appear {
+        display: block;
+    }
+
+
+
+
+    /*product details product detail header*/
+    main>section.product>div.productdetailsorder>div h4.detailheader {
+        font-family: var(--sansserif);
+        font-size: 0.7em;
+        font-weight: bold;
+        margin-bottom: 0.4em;
+    }
+
+    /*product details product detail small text*/
+    main>section.product>div.productdetailsorder>div.productdetailscontent>div p.detailtitle {
+        font-size: 0.65em;
+        line-height: 1.2em;
+        margin-top: 0.3em;
+    }
+
+    /*product details product detail bullet list*/
+    main>section.product>div.productdetailsorder>div.productdetailscontent>div ul {
+        font-size: 0.65em;
+        padding-left: 1.1em;
+        line-height: 1.3em;
+    }
+
+    /*product details width*/
+    main>section.product>div.productdetailsorder {
+        width: 45vw;
+    }
+
+    main>section.product>div.productdetailsorder>div.productdetailscontent,
+    main>section.product>div.productdetailsorder>div.productsize,
+    main>section.product>div.productdetailsorder>div.productcolour,
+    main>section.product>div.productdetailsorder>div.productquantity {
+        margin-bottom: 1em;
+    }
+
+    /*product details: colour width*/
+    main>section.product>div.productdetailsorder>div.productcolour {
+        display: block;
+        width: 100%;
+    }
+
+    /*product details: colour label arrangement*/
+    main>section.product>div.productdetailsorder>div.productcolour label.colourradio {
+        display: inline;
+        cursor: pointer;
+    }
+
+    /*product details: size width*/
+    main>section.product>div.productdetailsorder>div.productsize {
+        width: 100%;
+    }
+
+    /*product details: size label arrangement*/
+    body>main>section.product>div.productdetailsorder>div.productsize>div.sizebtns {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    /*product details: size label height*/
+    body>main>section.product>div.productdetailsorder>div.productsize>div.sizebtns label {
+        height: 2em;
+        cursor: pointer;
+    }
+
+
+    /*product details: setting radio default*/
+    input[type="radio"] {
+        appearance: none;
+        background-color: #fff;
+        margin: 0.2em;
+        cursor: pointer;
+    }
+
+    /*product details: colour label for black*/
+    input[type="radio"]#black {
+        background-color: black;
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        outline: 1px solid white;
+        outline-offset: 3px;
+    }
+
+    /*product details: colour label for blue*/
+    input[type="radio"]#blue {
+        background-color: #335abf;
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        outline: 1px solid white;
+        outline-offset: 3px;
+    }
+
+    /*product details: colour label for dark brown*/
+    input[type="radio"]#darkbrown {
+        background-color: #5c4747;
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        outline: 1px solid white;
+        outline-offset: 3px;
+    }
+
+    /*product details: colour label for gray*/
+    input[type="radio"]#gray {
+        background-color: #6f6c79;
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        outline: 1px solid white;
+        outline-offset: 3px;
+    }
+
+    /*product details: colour label for lightbrown*/
+    input[type="radio"]#lightbrown {
+        background-color: #a37961;
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        outline: 1px solid white;
+        outline-offset: 3px;
+    }
+
+    /*product details: colour label checked looks*/
+    input[type="radio"]#black:checked,
+    input[type="radio"]#blue:checked,
+    input[type="radio"]#gray:checked,
+    input[type="radio"]#darkbrown:checked,
+    input[type="radio"]#lightbrown:checked {
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        outline: 1px solid black;
+        outline-offset: 3px;
+    }
+
+    /*product details: size label text*/
+    main>section.product>div.productdetailsorder>div.productsize>div.sizebtns label span {
+        top: -26px;
+        left: 0px;
+        width: 100%;
+        font-size: 0.7em;
+    }
+
+    /*product details: size label look*/
+    input[type="radio"]#xs,
+    input[type="radio"]#s,
+    input[type="radio"]#m,
+    input[type="radio"]#l,
+    input[type="radio"]#xl,
+    input[type="radio"]#xxl {
+        color: white;
+        border: 1px solid black;
+        width: 2em;
+        height: 2.2em;
+    }
+
+    /*product details: size label checked look*/
+    input[type="radio"]#xs:checked,
+    input[type="radio"]#s:checked,
+    input[type="radio"]#m:checked,
+    input[type="radio"]#l:checked,
+    input[type="radio"]#xl:checked,
+    input[type="radio"]#xxl:checked {
+        width: 2em;
+        height: 2.2em;
+        background-color: black;
+    }
+
+    main>section.product>div.productdetailsorder>div.productsize>div.sizeguide>a:link,
+    main>section.product>div.productdetailsorder>div.productsize>div.sizeguide>a:hover,
+    main>section.product>div.productdetailsorder>div.productsize>div.sizeguide>a:active,
+    main>section.product>div.productdetailsorder>div.productsize>div.sizeguide>a:visited {
+        font-size: 0.7em;
+    }
+
+
+    /*product quantity input stepper container*/
+    main>section.product>div.productdetailsorder>div.productquantity>div.inputstepper {
+        text-align: center;
+        grid-column: 4;
+        height: 13%;
+        margin: 0.3em 0;
+        width: 45%;
+    }
+
+    main>section.product>div.productdetailsorder>div.productquantity>p {
+        font-size: 0.6em;
+    }
+
+    /*add to bag button container*/
+    main>section.product>div.productdetailsorder>div.orderbtn {
+        text-align: left;
+        width: 100%;
+    }
+
+    /*add to bag button*/
+    main>section.product>div.productdetailsorder>div.orderbtn>div.buttonwrap>button {
+        font-size: 0.7em;
+        letter-spacing: 0.1em;
+        width: 100%;
+    }
+
+
+
+    main>section.product>div.productdetailsorder>div.productquantity>div.inputstepper>div.inputwrap>input[type="number"] {
+        font-size: 0.7em;
+    }
+
+}
+
+/*max-width: 300px*/
+@media screen and (max-width: 300px) {
+    body {
+        max-width: 100vw;
+    }
+
+    /*background color of main section*/
+    main {
+        padding: 2em;
+        margin: 0;
+    }
+
+    /*product content width*/
+    main>section.product {
+        display: block;
+    }
+
+    /*thumbnails container width*/
+    main>section.product>div.productthumbnailscontainer {
+        width: 100%;
+        display: block;
+        margin: 0;
+        padding: 0;
+    }
+
+    /*thumbnails sidebar*/
+    main>section.product>div.productthumbnailscontainer>div.thumbnailsidewrap {
+        width: 100%;
+        border-bottom: rgba(0, 42, 42, 0.4);
+        border-right: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    /*thumbnails sidebar no bullet*/
+    main>section.product>div.productthumbnailscontainer>div.thumbnailsidewrap>ul.thumbnailsidethumbs {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    /*thumbnails spacing*/
+    main>section.product>div.productthumbnailscontainer>div.thumbnailsidewrap>ul.thumbnailsidethumbs>li img.thumbs {
+        width: 100%;
+        margin: 0 0 0.3em 0;
+        padding: 0;
+    }
+
+    main>section.product>div.productthumbnailscontainer>div.thumbnailsidewrap>ul>li {
+        width: 23%;
+    }
+
+    /*thumbnails container highlight image*/
+    main>section.product>div.productthumbnailscontainer>div.productimg {
+        display: block;
+        max-width: 14.83em;
+        object-fit: cover;
+    }
+
+    /*thumbnails container highlight image*/
+    main>section.product>div.productthumbnailscontainer>div.productimg>img.producthighlight {
+        display: block;
+        max-width: 14.83em;
+        object-fit: cover;
+    }
+
+    /*thumbnails container highlight image container for zoom*/
+    main>section.product>div.productthumbnailscontainer>div.productimg>img#productzoomcontainer {
+        max-width: 100%;
+        max-height: auto;
+        display: block;
+        position: relative;
+    }
+
+    /*thumbnails container highlight image zoom lens*/
+    main>section.product>div.productthumbnailscontainer>div.productimg>div#magnify {
+        /* height: 5em;
+        width: 5em; */
+        display: none;
+    }
+
+    /*product details product text body arrangement*/
+    main>section.product>div.productdetailsorder>div.productdetails {
+        margin: 1em 0 0 0;
+        width: 100%;
+        height: 5em;
+    }
+
+    /*product details product text body spacing*/
+    main>section.product>div.productdetailsorder>div.productdetails div.producttext {
+        margin-bottom: 0;
+        /* width: 40%; */
+    }
+
+    /*product details product name*/
+    main>section.product>div.productdetailsorder>div.productdetails div.producttext h4.productname {
+        font-family: var(--serif);
+        font-size: 0.9em;
+        /* margin-bottom: 0.3em; */
+    }
+
+    /*product details product price*/
+    body>main>section.product>div.productdetailsorder>div.productdetails div.producttext div.price {
+        line-height: 1em;
+    }
+
+    /*product details product actual price*/
+    main>section.product>div.productdetailsorder>div.productdetails>div.producttext>div>p.actualprice {
+        text-decoration: line-through;
+        font-size: 0.8em;
+        margin: 0;
+        padding: 0;
+    }
+
+    /*product details product discount price*/
+    main>section.product>div.productdetailsorder>div.productdetails>div.producttext>div>p.discountprice {
+        font-size: 0.8em;
+        margin: 0;
+        padding: 0;
+    }
+
+    /*product details product bookmark container*/
+    main>section.product>div.productdetailsorder>div.productdetails>div.bookmarkbutton {
+        width: 9%;
+        position: relative;
+        transform: translate(0.3em, 0);
+    }
+
+    /*product details product bookmark*/
+    main>section.product>div.productdetailsorder>div.productdetails>div.bookmarkbutton img {
+        position: absolute;
+        width: 100%;
+        object-fit: contain;
+    }
+
+    /*product details product bookmark cursor*/
+    main>section.product>div.productdetailsorder>div.productdetails>div.bookmarkbutton img:hover {
+        cursor: pointer;
+    }
+
+    /*product details product bookmark animation toggle classes: before, hover, clicked*/
+    main section div.slider div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.before {
+        display: block;
+        transition: 0.2s ease;
+    }
+
+    main section div.slider div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.before.gone {
+        display: none;
+    }
+
+    main section div.slider div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.clicked {
+        display: none;
+        transition: 0.2s ease;
+    }
+
+    main section div.slider div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.clicked.appear {
+        display: block;
+    }
+
+
+
+
+    /*product details product detail header*/
+    main>section.product>div.productdetailsorder>div h4.detailheader {
+        font-family: var(--sansserif);
+        font-size: 0.8em;
+        font-weight: bold;
+        margin-bottom: 0.5em;
+    }
+
+    /*product details product detail small text*/
+    main>section.product>div.productdetailsorder>div.productdetailscontent>div p.detailtitle {
+        font-size: 0.7em;
+        line-height: 1.2em;
+        margin-top: 0.3em;
+    }
+
+    /*product details product detail bullet list*/
+    main>section.product>div.productdetailsorder>div.productdetailscontent>div ul {
+        font-size: 0.7em;
+        padding-left: 1.1em;
+        line-height: 1.3em;
+    }
+
+    /*product details width*/
+    main>section.product>div.productdetailsorder {
+        width: 100%;
+    }
+
+    main>section.product>div.productdetailsorder>div.productdetailscontent,
+    main>section.product>div.productdetailsorder>div.productsize,
+    main>section.product>div.productdetailsorder>div.productcolour,
+    main>section.product>div.productdetailsorder>div.productquantity {
+        margin-bottom: 1em;
+    }
+
+    /*product details: colour width*/
+    main>section.product>div.productdetailsorder>div.productcolour {
+        display: block;
+        width: 100%;
+    }
+
+    /*product details: colour label arrangement*/
+    main>section.product>div.productdetailsorder>div.productcolour label.colourradio {
+        display: inline;
+        cursor: pointer;
+    }
+
+    /*product details: size width*/
+    main>section.product>div.productdetailsorder>div.productsize {
+        width: 100%;
+    }
+
+    /*product details: size label arrangement*/
+    body>main>section.product>div.productdetailsorder>div.productsize>div.sizebtns {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    /*product details: size label height*/
+    body>main>section.product>div.productdetailsorder>div.productsize>div.sizebtns label {
+        height: 2.5em;
+        cursor: pointer;
+    }
+
+
+    /*product details: setting radio default*/
+    input[type="radio"] {
+        appearance: none;
+        background-color: #fff;
+        margin: 0.2em;
+        cursor: pointer;
+    }
+
+    /*product details: colour label for black*/
+    input[type="radio"]#black {
+        background-color: black;
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        outline: 1px solid white;
+        outline-offset: 3px;
+    }
+
+    /*product details: colour label for blue*/
+    input[type="radio"]#blue {
+        background-color: #335abf;
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        outline: 1px solid white;
+        outline-offset: 3px;
+    }
+
+    /*product details: colour label for dark brown*/
+    input[type="radio"]#darkbrown {
+        background-color: #5c4747;
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        outline: 1px solid white;
+        outline-offset: 3px;
+    }
+
+    /*product details: colour label for gray*/
+    input[type="radio"]#gray {
+        background-color: #6f6c79;
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        outline: 1px solid white;
+        outline-offset: 3px;
+    }
+
+    /*product details: colour label for lightbrown*/
+    input[type="radio"]#lightbrown {
+        background-color: #a37961;
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        outline: 1px solid white;
+        outline-offset: 3px;
+    }
+
+    /*product details: colour label checked looks*/
+    input[type="radio"]#black:checked,
+    input[type="radio"]#blue:checked,
+    input[type="radio"]#gray:checked,
+    input[type="radio"]#darkbrown:checked,
+    input[type="radio"]#lightbrown:checked {
+        width: 2em;
+        height: 2em;
+        border-radius: 50%;
+        outline: 1px solid black;
+        outline-offset: 3px;
+    }
+
+    /*product details: size label text*/
+    main>section.product>div.productdetailsorder>div.productsize>div.sizebtns label span {
+        top: -26px;
+        left: 0px;
+        width: 100%;
+        font-size: 0.7em;
+    }
+
+    /*product details: size label look*/
+    input[type="radio"]#xs,
+    input[type="radio"]#s,
+    input[type="radio"]#m,
+    input[type="radio"]#l,
+    input[type="radio"]#xl,
+    input[type="radio"]#xxl {
+        color: white;
+        border: 1px solid black;
+        width: 2.5em;
+        height: 2.2em;
+    }
+
+    /*product details: size label checked look*/
+    input[type="radio"]#xs:checked,
+    input[type="radio"]#s:checked,
+    input[type="radio"]#m:checked,
+    input[type="radio"]#l:checked,
+    input[type="radio"]#xl:checked,
+    input[type="radio"]#xxl:checked {
+        width: 2.5em;
+        height: 2.2em;
+        background-color: black;
+    }
+
+    main>section.product>div.productdetailsorder>div.productsize>div.sizeguide>a:link,
+    main>section.product>div.productdetailsorder>div.productsize>div.sizeguide>a:hover,
+    main>section.product>div.productdetailsorder>div.productsize>div.sizeguide>a:active,
+    main>section.product>div.productdetailsorder>div.productsize>div.sizeguide>a:visited {
+        font-size: 0.7em;
+    }
+
+
+    /*product quantity input stepper container*/
+    main>section.product>div.productdetailsorder>div.productquantity>div.inputstepper {
+        text-align: center;
+        grid-column: 4;
+        height: 13%;
+        margin: 0.3em 0;
+        width: 45%;
+    }
+
+    main>section.product>div.productdetailsorder>div.productquantity>p {
+        font-size: 0.7em;
+    }
+
+    /*add to bag button container*/
+    main>section.product>div.productdetailsorder>div.orderbtn {
+        text-align: left;
+        width: 100%;
+    }
+
+    /*add to bag button*/
+    main>section.product>div.productdetailsorder>div.orderbtn>div.buttonwrap>button {
+        font-size: 0.9em;
+        letter-spacing: 0.1em;
+        width: 100%;
+    }
+
+}
+
+
+
+/*reviews container*/
+main>section.reviews {
+    margin-top: 3em;
+    padding-top: 3em;
+}
+
+/*reviews container title*/
+main>section.reviews>h4.reviewtitle {
+    font-family: var(--serif);
+    font-weight: 150;
+    font-size: 1.1em;
+    margin-bottom: 3em;
+}
+
+/*reviews: single review container*/
+main>section.reviews div.review {
+    margin-bottom: 2em;
+    border-bottom: 1px solid rgba(0, 42, 42, 0.1);
+    padding-bottom: 2em;
+}
+
+/*reviews: single review details*/
+main>section.reviews div.review div.reviewdetails {
+    display: flex;
+    justify-content: space-between;
+}
+
+/*reviews: single review stars*/
+main>section.reviews div.review div.reviewdetails div.reviewgroup div.stars {
+    width: 100%;
+    margin-bottom: 0.2em;
+}
+
+/*reviews: single review name*/
+section.reviews div.review div.reviewdetails div.reviewname {
+    font-family: var(--sansserif);
+    font-size: 0.8em;
+    margin-bottom: 1em;
+}
+
+/*reviews: single review date*/
+section.reviews div.review div.reviewdetails div.reviewdate {
+    font-family: var(--sansserif);
+    font-size: 0.8em;
+    margin-bottom: 1em;
+}
+
+/*reviews: single review text body*/
+section.reviews div.review div.reviewtext {
+    font-family: var(--sansserif);
+    font-size: 0.9em;
+    margin-bottom: 1em;
+    line-height: 1.3em;
+}
+
+/*reviews: single review product details small text*/
+section.reviews div.review p.reviewproductdetails {
+    font-family: var(--sansserif);
+    font-size: 0.8em;
+    margin-bottom: 1em;
+    line-height: 1.3em;
+}
+
+
+
+
+
+/*you might like this section title*/
+main>section>div.categoryheader>h3.category {
+    font-family: var(--serif);
+    font-size: 1.2em;
+    font-weight: 100;
+    letter-spacing: 0.1rem;
+    color: black;
+    text-align: left;
+}
+
+/*you might like this section title alignment*/
+main>section>div.categoryheader {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5em;
+    margin-bottom: 2em;
+    align-items: center;
+    width: 80%;
+}
+
+/*you might like this section slider*/
+main>section>div.slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+/*you might like this section slider width and scroll*/
+main>section>div.slider div.productgroup {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    width: 100%;
+    margin: 0;
+}
+
+/*you might like this section hide certain browsers' scrollbar*/
+main section div.slider div.productgroup::-webkit-scrollbar {
+    display: none;
+}
+
+/*you might like this section individual product width*/
+main section div.slider div.productgroup div.singleproduct {
+    flex: 0 0 auto;
+    width: 25.5%;
+    margin-right: 2%;
+    object-fit: contain;
+}
+
+/*you might like this section single image body*/
+main section div.slider div.productgroup div.singleproduct div.productimage {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+/*you might like this section single image container*/
+main section div.slider div.productgroup div.singleproduct div.productimage div.imagecontainer {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*you might like this section single image */
+main section div.slider div.productgroup div.singleproduct div.productimage div.imagecontainer a img {
+    display: block;
+    max-width: 100%;
+}
+
+/*you might like this section single image hover*/
+main section div.slider div.productgroup div.singleproduct div.productimage div.imagecontainer a img.thumb2 {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+main section div.slider div.productgroup div.singleproduct div.productimage div.imagecontainer a img.thumb2:hover {
+    opacity: 1;
+}
+
+/*you might like this section discount tag*/
+main section div.slider div.productgroup div.singleproduct div.productimage span.discount {
+    position: absolute;
+    top: 0.5em;
+    right: 0.5em;
+    background-color: var(--color);
+    border-radius: 0.2em;
+    padding: 0.6em;
+    color: var(--bgcolor);
+    font-size: 1em;
+    font-family: var(--sansserif);
+    font-weight: bold;
+    z-index: 9;
+    text-transform: capitalize;
+}
+
+/*you might like this section single product text body*/
+main section div.slider div.productgroup div.singleproduct div.productdetails {
+    display: flex;
+    justify-content: space-between;
+    margin: 1em 0;
+}
+
+/*you might like this section single product text body color*/
+main section div.slider div.productgroup div.singleproduct div.productdetails div.producttext {
+    color: black;
+}
+
+/*you might like this section single product name*/
+main section div.slider div.productgroup div.singleproduct div.productdetails div.producttext h4.productname {
+    font-family: var(--serif);
+    font-size: 1em;
+    letter-spacing: 0.1em;
+    font-weight: 100;
+    text-align: left;
+}
+
+/*you might like this section single product price text body*/
+main section div.slider div.productgroup div.singleproduct div.productdetails div.producttext div.price {
+    margin-top: 0.5em;
+}
+
+/*you might like this section single product text*/
+main section div.slider div.productgroup div.singleproduct div.productdetails div.producttext div.price p {
+    font-family: var(--sansserif);
+    font-size: 0.8em;
+    letter-spacing: 0.1em;
+    text-align: left;
+    margin: 0.1em;
+}
+
+/*you might like this section single product actual price text*/
+main section div.slider div.productgroup div.singleproduct div.productdetails div.producttext div.price p.actualprice {
+    text-decoration: line-through;
+}
+
+/*you might like this section single product discount price text*/
+main section div.slider div.productgroup div.singleproduct div.productdetails div.producttext div.price p.discountprice {
+    font-size: 0.9em;
+    margin-top: 0.2em;
+}
+
+/*you might like this section single product bookmark container*/
+main section div.slider div.productgroup div.singleproduct div.productdetails div.bookmarkbutton {
+    width: 11%;
+    position: relative;
+    transform: translate(0.5em, 0);
+}
+
+/*you might like this section single product bookmark*/
+main section div.slider div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img {
+    position: absolute;
+    width: 100%;
+    object-fit: contain;
+}
+
+/*you might like this section single product bookmark cursor*/
+main section div.slider div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img:hover {
+    cursor: pointer;
+}
+
+/*you might like this section single product bookmark animation toggle classes: before, hover, clicked*/
+main section div.slider div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.before {
+    display: block;
+    transition: 0.2s ease;
+}
+
+main section div.slider div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.before.gone {
+    display: none;
+}
+
+main section div.slider div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.clicked {
+    display: none;
+    transition: 0.2s ease;
+}
+
+main section div.slider div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.clicked.appear {
+    display: block;
+}
+
+/*you might like this section slider button body*/
+main section div.slider button {
+    border: none;
+    width: 10%;
+    height: 80%;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+    background: transparent;
+}
+
+/*you might like this section slider left button*/
+main section div.slider button.leftbtn {
+    left: -0.5%;
+}
+
+/*you might like this section slider right button*/
+main section div.slider button.rightbtn {
+    right: -0.5%;
+}
+
+/*you might like this section slider button img*/
+main section div.slider button.leftbtn img,
+main section div.slider button.rightbtn img {
+    opacity: 0.8;
+}
+
+/*you might like this section slider button hover effect*/
+main section div.slider button.leftbtn:hover img {
+    opacity: 1;
+    transform: translate(-10px, 0);
+}
+
+main section div.slider button.rightbtn:hover img {
+    opacity: 1;
+    transform: translate(10px, 0);
+}
+
+
+
+
+
+
+
+
+/* footer */
+footer {
+    background-color: var(--color);
+    width: 100%;
+}
+
+/* footer width and centered */
+div.footercontainer {
+    width: 80%;
+    margin: 0 auto;
+    padding: 3em 0;
+    display: grid;
+    grid-template-columns: 3fr 3fr 2fr;
+    grid-template-rows: auto auto;
+}
+
+/* footer titles */
+div.footercontainer>div h3.footertitle {
+    font-family: var(--serif);
+    letter-spacing: 0.1em;
+    font-size: 1em;
+    text-transform: uppercase;
+    color: var(--bgcolor);
+    margin-bottom: 1em;
+}
+
+/* footer titles */
+div.footercontainer>div.companyfooter ul {
+    list-style-type: none;
+}
+
+/* footer list items */
+div.footercontainer>div.companyfooter ul li {
+    font-family: var(--sansserif);
+    letter-spacing: 0.1em;
+    font-size: 0.9em;
+    line-height: 1.75em;
+    font-weight: 150;
+}
+
+div.footercontainer>div.companyfooter ul li a {
+    color: var(--bgcolor);
+    transition: opacity 0.1s ease;
+}
+
+/* footer list items link look */
+div.footercontainer>div.companyfooter ul li a:link,
+div.footercontainer>div.companyfooter ul li a:visited,
+div.footercontainer>div.companyfooter ul li a:active {
+    text-decoration: none;
+}
+
+div.footercontainer>div.companyfooter ul li a:hover {
+    opacity: 0.5;
+}
+
+div.footercontainer>div.subscribefooter {
+    margin-right: 6em;
+}
+
+div.footercontainer>div.subscribefooter>form {
+    position: relative;
+    width: 100%;
+}
+
+
+/* footer paragraph text */
+div.footercontainer>div.subscribefooter>form>p {
+    font-family: var(--sansserif);
+    letter-spacing: 0.1em;
+    font-size: 0.9em;
+    font-weight: 150;
+    width: 80%;
+    margin: 0 auto 1em 0;
+}
+
+/* footer input email subscription */
+div.footercontainer>div.subscribefooter>form>input {
+    background-color: var(--bgcolor);
+    color: var(--color);
+    padding: 1em;
+    width: 100%;
+    border: none;
+    border-radius: 0.2em;
+}
+
+/* footer input email placeholder */
+div.footercontainer>div.subscribefooter>form>input::-webkit-input-placeholder {
+    color: var(--color);
+    opacity: 0.5;
+    letter-spacing: 0.1em;
+}
+
+div.footercontainer>div.subscribefooter>form>input:-moz-placeholder {
+    color: var(--color);
+    opacity: 0.5;
+    letter-spacing: 0.1em;
+}
+
+div.footercontainer>div.subscribefooter>form>input::-ms-placeholder {
+    color: var(--color);
+    opacity: 0.5;
+    letter-spacing: 0.1em;
+}
+
+
+div.footercontainer>div.subscribefooter>form>input::placeholder {
+    color: var(--color);
+    opacity: 0.5;
+    letter-spacing: 0.1em;
+}
+
+/* footer input email required */
+div.footercontainer>div.subscribefooter>form>input:required {
+    background: url("../images/icons_emailrequired-01.svg") no-repeat right;
+    background-color: var(--bgcolor);
+    color: var(--color);
+}
+
+/* footer input email focus */
+div.footercontainer>div.subscribefooter>form>input:focus {
+    background-color: var(--bgcolor);
+    color: var(--color);
+}
+
+/* footer input email autofill */
+div.footercontainer>div.subscribefooter>form>input:autofill {
+    background-color: var(--bgcolor);
+    color: var(--color);
+}
+
+div.footercontainer>div.subscribefooter>form>input:-webkit-autofill {
+    background-color: var(--bgcolor);
+    color: var(--color);
+}
+
+/* footer input email valid */
+div.footercontainer>div.subscribefooter>form>input:valid {
+    background: url("../images/icons_emailvalid.svg") no-repeat right;
+    background-color: var(--bgcolor);
+    color: var(--color);
+}
+
+/* footer input email invalid */
+div.footercontainer>div.subscribefooter>form>input:invalid {
+    background: url("../images/icons_emailinvalid-01.svg") no-repeat right;
+    background-color: var(--bgcolor);
+    color: var(--color);
+}
+
+/* footer input email subscribe button */
+div.footercontainer>div.subscribefooter>form>button {
+    margin-top: 1.5em;
+    border: 2px solid var(--bgcolor);
+    border-radius: 0.2em;
+    color: var(--color);
+    background: var(--bgcolor);
+    padding: 1em;
+    width: 30%;
+    font-size: 0.7em;
+    letter-spacing: 0.1em;
+    font-family: var(--sansserif);
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* footer input email button shine creation first layer */
+div.footercontainer>div.subscribefooter>form>button::before {
+    content: '';
+    display: block;
+    position: absolute;
+    background: rgba(255, 255, 255, 1);
+    width: 9px;
+    height: 100%;
+    top: 0;
+    filter: blur(12px);
+    transform: translateX(-100px) skewX(-20deg);
+}
+
+/* footer input email button shine creation second layer */
+div.footercontainer>div.subscribefooter>form>button::after {
+    content: '';
+    display: block;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.5);
+    width: 12px;
+    height: 100%;
+    top: 0;
+    filter: blur(6px);
+    transform: translateX(-100px) skewX(-20deg);
+}
+
+/* footer input email button hover */
+div.footercontainer>div.subscribefooter>form>button:hover {
+    background-color: var(--bgcolor);
+    border: 2px solid var(--bgcolor);
+    color: var(--color);
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    box-shadow: 3px 3px 5px rgba(0, 42, 42, 0.4);
+    -webkit-box-shadow: 3px 3px 5px rgba(0, 42, 42, 0.4);
+    -moz-box-shadow: 3px 3px 5px rgba(0, 42, 42, 0.4);
+
+}
+
+/* footer input email button hover shine effect*/
+div.footercontainer>div.subscribefooter>form>button:hover::before,
+div.footercontainer>div.subscribefooter>form>button:hover::after {
+    transform: translateX(250px) skewX(-20deg);
+    transition: 1s ease;
+}
+
+/* footer subscription button will not work until form is valid */
+div.footercontainer>div.subscribefooter>form:invalid [type="submit"] {
+    pointer-events: none;
+    border: 2px solid var(--bgcolor);
+    border-radius: 0.2em;
+    color: var(--color);
+    background: var(--bgcolor);
+    padding: 1em;
+    font-size: 0.7em;
+    letter-spacing: 0.1em;
+    font-family: var(--sansserif);
+    transition: all 0.2s ease;
+}
+
+/* footer social width */
+div.footercontainer>div.socials>div.socialcontainer {
+    width: 30%;
+    display: flex;
+    justify-content: start;
+}
+
+/* footer social image width */
+div.footercontainer>div.socials>div.socialcontainer a.linkedin img {
+    display: block;
+    width: 100%;
+}
+
+/* footer social image width */
+div.footercontainer>div.socials>div.socialcontainer a.facebook img {
+    display: block;
+    width: 100%;
+    height: 45%;
+}
+
+/* footer social hover effect */
+div.footercontainer>div.socials>div.socialcontainer a:hover {
+    opacity: 50%;
+}
+
+/* footer social image width */
+div.footercontainer>div.copyright {
+    font-family: var(--sansserif);
+    letter-spacing: 0.1em;
+    font-size: 0.8em;
+    line-height: 1em;
+    color: var(--bgcolor);
+    margin-top: 3em;
+}
+
+/*footer to be responsive*/
+
+/*max-width: 1080px*/
+@media screen and (max-width: 1080px) {
+
+    /* footer titles */
+    div.footercontainer>div h3.footertitle {
+        font-size: 1.1em;
+    }
+
+    /* footer paragraph text */
+    div.footercontainer>div.subscribefooter>form>p {
+        width: 100%;
+        font-size: 0.8em;
+    }
+
+    /* footer input email subscribe button */
+    div.footercontainer>div.subscribefooter>form>button {
+        margin-top: 0.9em;
+        width: 50%;
+    }
+
+    /* footer social width */
+    div.footercontainer>div.socials>div.socialcontainer {
+        width: 35%;
+        display: flex;
+        justify-content: start;
+    }
+
+
+    /* footer list items */
+    div.footercontainer>div.companyfooter ul li {
+        font-size: 0.8em;
+    }
+}
+
+/*max-width: 992px*/
+@media screen and (max-width: 992px) {
+
+    /*subscribe footer*/
+    div.footercontainer>div.subscribefooter {
+        margin-right: 3em;
+    }
+
+    /* footer titles */
+    div.footercontainer>div h3.footertitle {
+        font-size: 1.1em;
+        line-height: 1.2em;
+    }
+
+    /* footer paragraph text */
+    div.footercontainer>div.subscribefooter>form>p {
+        width: 100%;
+        line-height: 1.3em;
+        font-size: 1em;
+    }
+
+    /* footer input email subscribe button */
+    div.footercontainer>div.subscribefooter>form>button {
+        margin-top: 1em;
+        width: 40%;
+    }
+
+    /* footer social image width */
+    div.footercontainer>div.copyright {
+        margin-top: 3em;
+        width: 100%;
+        line-height: 1.2em;
+        grid-column: 1/3;
+        font-size: 0.7em;
+    }
+
+
+    /* footer social width */
+    div.footercontainer>div.socials>div.socialcontainer {
+        width: 50%;
+        display: flex;
+        justify-content: start;
+    }
+
+
+    /* footer list items */
+    div.footercontainer>div.companyfooter ul li {
+        font-size: 1em;
+    }
+}
+
+/*max-width: 720px*/
+@media screen and (max-width: 720px) {
+
+    /* footer titles */
+    div.footercontainer>div h3.footertitle {
+        margin: 2em 0 1em 0;
+        font-size: 0.9em;
+        line-height: 1.3em;
+    }
+
+    /*subscribe footer*/
+    div.footercontainer>div.subscribefooter {
+        margin-right: 3em;
+    }
+
+
+    /* footer paragraph text */
+    div.footercontainer>div.subscribefooter>form>p {
+        width: 100%;
+        line-height: 1.3em;
+        font-size: 0.8em;
+    }
+
+    /* footer input email subscribe button */
+    div.footercontainer>div.subscribefooter>form>button {
+        margin-top: 1em;
+        width: 60%;
+    }
+
+    /* footer social image width */
+    div.footercontainer>div.copyright {
+        margin-top: 3em;
+        width: 100%;
+        line-height: 1.2em;
+        grid-column: 1/3;
+        font-size: 0.6em;
+    }
+
+
+    /* footer social width */
+    div.footercontainer>div.socials>div.socialcontainer {
+        width: 50%;
+        display: flex;
+        justify-content: start;
+    }
+
+
+    /* footer list items */
+    div.footercontainer>div.companyfooter ul li {
+        font-size: 0.8em;
+    }
+}
+
+/*max-width: 540px*/
+@media screen and (max-width: 540px) {
+
+    /* footer width and centered */
+    div.footercontainer {
+        width: 85%;
+        margin: 0 auto;
+        padding: 3em 0;
+        display: block;
+    }
+
+    /* footer titles */
+    div.footercontainer>div h3.footertitle {
+        margin: 3em 0 1em 0;
+        font-size: 0.9em;
+        line-height: 1.2em;
+    }
+
+    /*subscribe footer*/
+    div.footercontainer>div.subscribefooter {
+        margin-right: 2em;
+    }
+
+
+    /* footer paragraph text */
+    div.footercontainer>div.subscribefooter>form>p {
+        width: 100%;
+        line-height: 1.3em;
+        font-size: 0.8em;
+    }
+
+    /* footer input email subscribe button */
+    div.footercontainer>div.subscribefooter>form>button {
+        margin-top: 1.1em;
+        width: 30%;
+    }
+
+    /* footer social image width */
+    div.footercontainer>div.copyright {
+        margin-top: 0em;
+        width: 60%;
+        line-height: 1.2em;
+        font-size: 0.7em;
+    }
+
+    /* footer social width */
+    div.footercontainer>div.socials>div.socialcontainer {
+        width: 25%;
+        display: flex;
+        justify-content: start;
+    }
+
+
+    /* footer list items */
+    div.footercontainer>div.companyfooter ul li {
+        font-size: 0.8em;
+    }
+}
+
+/*max-width: 300px*/
+@media screen and (max-width: 300px) {
+
+    /* footer width and centered */
+    div.footercontainer {
+        width: 85%;
+        margin: 0 auto;
+        padding: 3em 0;
+        display: block;
+    }
+
+    /* footer titles */
+    div.footercontainer>div h3.footertitle {
+        margin: 2em 0 1em 0;
+        line-height: 1.2em;
+    }
+
+    /*subscribe footer*/
+    div.footercontainer>div.subscribefooter {
+        margin-right: 2em;
+    }
+
+
+    /* footer paragraph text */
+    div.footercontainer>div.subscribefooter>form>p {
+        width: 100%;
+        line-height: 1.5em;
+    }
+
+    /* footer input email subscribe button */
+    div.footercontainer>div.subscribefooter>form>button {
+        margin-top: 1.1em;
+        width: 50%;
+    }
+
+    /* footer social image width */
+    div.footercontainer>div.copyright {
+        margin-top: 0em;
+        width: 60%;
+        line-height: 1.2em;
+        font-size: 0.6em;
+    }
+}

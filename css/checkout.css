@@ -1,0 +1,1568 @@
+/*background color of webpage*/
+html {
+    scroll-behavior: smooth;
+    background-color: var(--color);
+}
+
+/* width of body to be full screen to device width and centralised */
+body {
+    max-width: 100vw;
+}
+
+/* header full width of body */
+header {
+    width: 100%;
+    display: block;
+    background-color: var(--bgcolor);
+}
+
+/* navbar to be at the front of image header and at top of header. */
+header section.navbar nav {
+    padding: 0.5em 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 3;
+    width: 100%;
+    border-bottom: 0.4px solid rgba(221, 193, 147, 0.3);
+}
+
+/*LEFT NAV MENU*/
+/*align left nav menu with hamburger and close icon*/
+header section.navbar>nav>div.menuleft {
+    display: flex;
+    /* justify-content: flex-start; */
+    justify-content: start;
+    align-items: center;
+    width: 35%;
+    margin-left: 0.5em;
+}
+
+/*resize hamburger icon*/
+header section.navbar>nav>div.menuleft>div.menu-hamburger {
+    width: 6%;
+    display: none;
+}
+
+/*align left nav menu items excluding icons*/
+header section.navbar>nav>div.menuleft>ul.navleft {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    margin-left: 0.5em;
+    background: transparent;
+    transition: all 0.3 ease;
+    text-align: center;
+}
+
+/*font properties for left nav menu*/
+header section.navbar>nav>div.menuleft>ul.navleft>li a {
+    font-family: var(--sansserif);
+    font-size: 0.8em;
+    margin: 0.6em;
+    letter-spacing: 0.1em;
+    transition: opacity 0.2s ease;
+}
+
+/*properties for a href: link, visited*/
+header section.navbar>nav>div.menuleft>ul.navleft>li a:link,
+header section.navbar>nav>div.menuleft>ul.navleft>li a:visited {
+    color: var(--color);
+}
+
+/*properties for a href: hover*/
+header section.navbar>nav>div.menuleft>ul.navleft>li a:hover {
+    opacity: 0.6;
+}
+
+/*navleft bar to appear at max-width 720px and lower*/
+@media screen and (max-width: 720px) {
+    header section.navbar>nav>div.menuleft>div.menu-hamburger {
+        display: block;
+        width: 15%;
+        position: relative;
+        top: 0;
+        left: 0;
+        z-index: 9;
+    }
+
+    header section.navbar>nav>div.menuleft>div.menu-hamburger>img.openmenu {
+        display: block;
+    }
+
+    header section.navbar>nav>div.menuleft>div.menu-hamburger>#menuopen.hide {
+        display: none;
+    }
+
+    header section.navbar>nav>div.menuleft>div.menu-hamburger>img.openmenu:hover {
+        cursor: pointer;
+    }
+
+    header section.navbar>nav>div.menuleft>div.menu-hamburger>#menuclose {
+        display: none;
+        width: 100%;
+    }
+
+    header section.navbar>nav>div.menuleft>div.menu-hamburger>#menuclose.show {
+        display: block;
+    }
+
+    header section.navbar>nav>div.menuleft>div.menu-hamburger>img.closemenu:hover {
+        cursor: pointer;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar {
+        background: var(--color);
+        position: fixed;
+        z-index: 8;
+        top: 0%;
+        height: 100vh;
+        left: -100%;
+        width: 25%;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        padding-top: 3em;
+        margin: 0;
+        transition: 0.2s;
+    }
+
+    header section.navbar>nav>div.menuleft>ul.navleft>li.top {
+        padding-top: 2em;
+    }
+
+    header section.navbar>nav>div.menuleft>ul.navleft>li {
+        margin: 0.7em;
+    }
+
+    header section.navbar>nav>div.menuleft>ul.navleft>li a {
+        transition: opacity 0.2s ease;
+    }
+
+    header section.navbar>nav>div.menuleft>ul.navleft>li a:link,
+    header section.navbar>nav>div.menuleft>ul.navleft>li a:visited {
+        color: #0c2c24;
+    }
+
+    header section.navbar>nav>div.menuleft>ul.navleft>li a:hover {
+        opacity: 0.3;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar.open {
+        background: var(--color);
+        position: fixed;
+        top: 0%;
+        height: 100vh;
+        left: 0%;
+        width: 25%;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        padding-top: 3em;
+        margin: 0;
+        transition: 0.2s;
+    }
+}
+
+/*RIGHT NAV BAR MENU*/
+/*align right nav menu*/
+header section.navbar>nav>ul.navright {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 33.3%;
+    margin-right: 0.5em;
+}
+
+/*resize right nav menu icons*/
+header section.navbar>nav>ul.navright li {
+    padding: 0.5em;
+    width: 5%;
+    transition: opacity 0.2s ease;
+}
+
+/*properties for right nav menu icons: hover*/
+header section.navbar>nav>ul.navright li:hover {
+    opacity: 0.6;
+}
+
+/*header h1 title*/
+header>section.pagetitle>h1 {
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    padding: 3em;
+    color: var(--color);
+    font-family: var(--serif);
+    letter-spacing: 0.1em;
+    font-weight: 150;
+    font-size: 1.3em;
+}
+
+
+/* nav bar to be responsive*/
+/*max-width: 2048px*/
+@media screen and (max-width: 2048px) {
+    header section.BookAppt>div {
+        width: 90%;
+        top: 140px;
+        left: 50%;
+        z-index: 1;
+    }
+
+    header section.BookAppt>div>button {
+        margin-top: 40px;
+    }
+
+    header section.BookAppt>div>div.scroll-wrapper {
+        margin: 70px auto 0px auto;
+        width: 3%;
+    }
+
+}
+
+/*max-width: 1080px*/
+@media screen and (max-width: 1080px) {
+    header section.navbar>nav>div.logo>a>img {
+        display: block;
+        max-width: 100%;
+    }
+
+    header section.navbar>nav>div.menuleft>div.menu-hamburger {
+        width: 10%;
+        position: relative;
+        z-index: 9;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar.open {
+        z-index: 8;
+        width: 45%;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar li {
+        display: block;
+        width: 100%;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar li a {
+        margin: 0;
+    }
+
+    header section.navbar>nav>ul.navright li {
+        width: 6%;
+        margin: 0.2em;
+        padding: 0.1em;
+    }
+}
+
+/*max-width: 992px*/
+@media screen and (max-width: 992px) {
+    header section.navbar>nav>div.logo>a>img {
+        display: block;
+        max-width: 100%;
+    }
+
+    header section.navbar>nav>div.menuleft>div.menu-hamburger {
+        width: 10%;
+        position: relative;
+        z-index: 9;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar.open {
+        z-index: 8;
+        width: 45%;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar li {
+        display: block;
+        width: 100%;
+    }
+
+    header section.navbar>nav>ul.navright li {
+        width: 6%;
+        margin: 0.2em;
+        padding: 0.1em;
+    }
+}
+
+/*max-width: 720px*/
+@media screen and (max-width: 720px) {
+    header section.navbar>nav>div.logo>a>img {
+        display: block;
+        max-width: 100%;
+    }
+
+    header section.navbar>nav>div.menuleft>div.menu-hamburger {
+        width: 15%;
+        position: relative;
+        z-index: 9;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar.open {
+        z-index: 8;
+        width: 45%;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar li {
+        display: block;
+        width: 100%;
+    }
+
+    header section.navbar>nav>ul.navright li {
+        width: 9%;
+        margin: 0.2em;
+        padding: 0.1em;
+    }
+}
+
+/*max-width: 540px*/
+@media screen and (max-width: 540px) {
+    header section.navbar>nav>div.logo>a>img {
+        display: block;
+        max-width: 80%;
+    }
+
+    header section.navbar>nav>div.menuleft>div.menu-hamburger {
+        width: 20%;
+        position: relative;
+        z-index: 9;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar.open {
+        z-index: 8;
+        width: 45%;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar li {
+        display: block;
+        width: 100%;
+    }
+
+    header section.navbar>nav>ul.navright li {
+        width: 10%;
+        margin: 0.2em;
+    }
+}
+
+/*max-width: 300px*/
+@media screen and (max-width: 300px) {
+    header section.navbar>nav>div.logo>a>img {
+        display: block;
+        max-width: 80%;
+    }
+
+
+    header section.navbar>nav>div.menuleft>div.menu-hamburger {
+        width: 25%;
+        position: relative;
+        z-index: 9;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar.open {
+        z-index: 8;
+        width: 45%;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar li {
+        display: block;
+        width: 100%;
+    }
+
+    header section.navbar>nav>ul.navright li {
+        width: 35%;
+        margin: 0.2em;
+    }
+}
+
+/*background color of main section*/
+main {
+    background-color: white;
+}
+
+main>form>section.checkoutinfo {
+    padding: 0 3em 0 3em;
+}
+
+main>form>section.purchaseinfo {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+main>form>section.checkoutinfo>section.message {
+    margin: 4em 0;
+}
+
+/*main section: back to shopping link*/
+main>form>section.checkoutinfo>section.message>div.backtoprevious a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    margin: 0;
+    text-align: left;
+    font-family: var(--serif);
+    color: var(--bgcolor);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+}
+
+/*main section: back to shopping image*/
+main>form>section.checkoutinfo>section.message>div.backtoprevious img {
+    width: 4%;
+}
+
+/*main section: back to shopping link's link, visited, active*/
+main>form>section.checkoutinfo>section.message>div.backtoprevious a:link,
+main>form>section.checkoutinfo>section.message>div.backtoprevious a:visited,
+main>form>section.checkoutinfo>section.message>div.backtoprevious a:active {
+    text-align: left;
+    font-family: var(--serif);
+    color: var(--bgcolor);
+    text-decoration: none;
+}
+
+/*main section: back to shopping link hover effect*/
+main>form>section.checkoutinfo>section.message>div.backtoprevious a:hover {
+    text-align: left;
+    font-family: var(--serif);
+    color: var(--bgcolor);
+    text-decoration: none;
+    transform: translateX(-0.7em);
+    opacity: 0.5;
+}
+
+/*go back arrow to be responsive*/
+/*min-width: 2048px*/
+@media screen and (min-width: 2048px) {
+
+    main>form>section.checkoutinfo>section.message>div.backtoprevious a {
+        font-size: 1.7em;
+    }
+
+    main>form>section.checkoutinfo>section.message>div.backtoprevious img {
+        width: 3%;
+    }
+
+    main>form>section.checkoutinfo>section.message>div.backtoprevious a:hover {
+        transform: translateX(-0.5em);
+    }
+}
+
+/*max-width: 1080px*/
+@media screen and (max-width: 1080px) {
+
+    main>form>section.checkoutinfo>section.message>div.backtoprevious a {
+        font-size: 1.1em;
+    }
+
+    main>form>section.checkoutinfo>section.message>div.backtoprevious img {
+        width: 5%;
+    }
+
+    main>form>section.checkoutinfo>section.message>div.backtoprevious a:hover {
+        transform: translateX(-0.5em);
+    }
+}
+
+/*max-width: 992px*/
+@media screen and (max-width: 992px) {
+
+    main>form>section.checkoutinfo>section.message>div.backtoprevious a {
+        font-size: 1.1em;
+    }
+
+    main>form>section.checkoutinfo>section.message>div.backtoprevious img {
+        width: 5%;
+    }
+
+    main>form>section.checkoutinfo>section.message>div.backtoprevious a:hover {
+        transform: translateX(-0.5em);
+    }
+}
+
+/*max-width: 720px*/
+@media screen and (max-width: 720px) {
+
+    main>form>section.checkoutinfo>section.message>div.backtoprevious a {
+        font-size: 0.8em;
+    }
+
+    main>form>section.checkoutinfo>section.message>div.backtoprevious img {
+        width: 4%;
+    }
+
+    main>form>section.checkoutinfo>section.message>div.backtoprevious a:hover {
+        transform: translateX(-0.5em);
+    }
+}
+
+/*max-width: 540px*/
+@media screen and (max-width: 540px) {
+
+    main>form>section.checkoutinfo>section.message>div.backtoprevious a {
+        font-size: 0.8em;
+    }
+
+    main>form>section.checkoutinfo>section.message>div.backtoprevious img {
+        width: 7%;
+    }
+
+    main>section.checkoutinfo>section.message>div.backtoprevious a:hover {
+        transform: translateX(-0.5em);
+    }
+}
+
+/*max-width: 300px*/
+@media screen and (max-width: 300px) {
+
+    main>form>section.checkoutinfo>section.message>div.backtoprevious a {
+        font-size: 0.8em;
+    }
+
+    main>form>section.checkoutinfo>section.message>div.backtoprevious img {
+        width: 9%;
+    }
+
+    main>form>section.checkoutinfo>section.message>div.backtoprevious a:hover {
+        opacity: 0.5;
+        transform: translateX(-0.5em);
+    }
+}
+
+
+
+/*main section arrangement*/
+main>form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 0 auto;
+}
+
+/*main section: width of checkout column*/
+main>form>section.checkoutinfo {
+    grid-column: 1;
+}
+
+/*main section: width of purchase column*/
+main>form>section.purchaseinfo {
+    grid-column: 2;
+    padding: 3em 3em 0 3em;
+    background-color: #e2e2e2;
+}
+
+/*main section: checkout column -- field title*/
+form fieldset legend.legendtitle {
+    font-family: var(--serif);
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    font-size: 0.9em;
+    padding-bottom: 0.5em;
+}
+
+/*main section: fieldset margin*/
+form fieldset {
+    border: 0 none;
+    margin: 2em 0;
+}
+
+/*main section: field spacing*/
+form fieldset div.infowrapper {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.5em;
+}
+
+/*main section: subscribe checkbox sizing*/
+form fieldset div.infowrapper div.subscribecheckbox {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 0.3em;
+    padding: 0;
+}
+
+/*main section: subscribe checkbox spacing*/
+form fieldset div.infowrapper div.subscribecheckbox>input#subscribe {
+    width: 5%;
+    margin: 0.3em 0;
+}
+
+/*main section: subscribe checkbox text*/
+form fieldset div.infowrapper label {
+    font-family: var(--sansserif);
+    font-size: 0.8em;
+    line-height: 2em;
+}
+
+/*main section: all input settings*/
+form fieldset div.infowrapper input {
+    width: 97%;
+    display: block;
+    padding: 0.5em;
+}
+
+
+/* input textfield placeholder */
+form fieldset div.infowrapper input::-webkit-input-placeholder {
+    color: var(--bgcolor);
+    opacity: 0.8;
+    letter-spacing: 0.1em;
+    font-size: 0.9em;
+}
+
+form fieldset div.infowrapper input:-moz-placeholder {
+    color: var(--bgcolor);
+    opacity: 0.8;
+    letter-spacing: 0.1em;
+    font-size: 0.9em;
+}
+
+form fieldset div.infowrapper input::-ms-placeholder {
+    color: var(--bgcolor);
+    opacity: 0.8;
+    letter-spacing: 0.1em;
+    font-size: 0.9em;
+}
+
+
+form fieldset div.infowrapper input::placeholder {
+    color: var(--bgcolor);
+    opacity: 0.8;
+    letter-spacing: 0.1em;
+    font-size: 0.9em;
+}
+
+/* input textfield required */
+form fieldset div.infowrapper input:required {
+    background: url("../images/icons_emailrequired-green-01.svg") no-repeat right;
+    background-color: var(--color);
+    color: var(--bgcolor);
+}
+
+/* input textfield focus */
+form fieldset div.infowrapper input:focus {
+    background-color: var(--color);
+    color: var(--bgcolor);
+}
+
+/* input textfield autofill */
+form fieldset div.infowrapper input:autofill {
+    background-color: var(--color);
+    color: var(--bgcolor);
+}
+
+form fieldset div.infowrapper input:-webkit-autofill {
+    background-color: var(--color);
+    color: var(--bgcolor);
+}
+
+/* input textfield valid */
+form fieldset div.infowrapper input:valid {
+    background: url("../images/icons_emailvalid-green-01.svg") no-repeat right;
+    background-color: var(--color);
+    color: var(--bgcolor);
+}
+
+/* input textfield invalid */
+form fieldset div.infowrapper input:invalid {
+    background: url("../images/icons_emailinvalid-green-01.svg") no-repeat right;
+    background-color: var(--color);
+    color: var(--bgcolor);
+}
+
+/* select your country/region settings */
+form fieldset div.infowrapper>select#countryinfo {
+    font-family: var(--sansserif);
+    width: 100%;
+    padding: 0.5em;
+    background-color: var(--color);
+    border: 2px solid var(--bgcolor);
+}
+
+/* select your country/region: disabled first option */
+form fieldset div.infowrapper>select#countryinfo option:disabled {
+    color: rgba(0, 42, 42, 0.6);
+}
+
+/* fields which are half of width of info column */
+form fieldset div.infowrapper.half {
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-between;
+    width: 98%;
+}
+
+/* width of unit info */
+form fieldset div.infowrapper div.unitinfo {
+    width: 48%;
+
+}
+
+/* width of name info */
+form fieldset div.infowrapper div.names {
+    width: 48%;
+
+}
+
+/* title of 'add your note' */
+form>section.checkoutinfo>section.contactinfo>fieldset>div.infowrapper>label.noteinfo {
+    font-family: var(--serif);
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    font-size: 0.9em;
+}
+
+/* 'add your note' text area settings */
+form>section.checkoutinfo>section.contactinfo>fieldset>div.infowrapper>textarea {
+    background-color: var(--color);
+    color: var(--bgcolor);
+    font-family: var(--sansserif);
+    padding: 0.5em;
+    width: 97%;
+    height: 12em;
+    border: 2px solid var(--bgcolor);
+}
+
+/*textarea placeholder*/
+form>section.checkoutinfo>section.contactinfo>fieldset>div.infowrapper>textarea::-webkit-input-placeholder {
+    color: var(--bgcolor);
+    opacity: 0.8;
+    letter-spacing: 0.1em;
+    font-size: 0.9em;
+}
+
+
+form>section.checkoutinfo>section.contactinfo>fieldset>div.infowrapper>textarea:-moz-placeholder {
+    color: var(--bgcolor);
+    opacity: 0.8;
+    letter-spacing: 0.1em;
+    font-size: 0.9em;
+}
+
+form>section.checkoutinfo>section.contactinfo>fieldset>div.infowrapper>textarea::-ms-placeholder {
+    color: var(--bgcolor);
+    opacity: 0.8;
+    letter-spacing: 0.1em;
+    font-size: 0.9em;
+}
+
+
+form>section.checkoutinfo>section.contactinfo>fieldset>div.infowrapper>textarea::placeholder {
+    color: var(--bgcolor);
+    opacity: 0.8;
+    letter-spacing: 0.1em;
+    font-size: 0.9em;
+}
+
+/*purchase column title*/
+form>section.purchaseinfo>div.product>h4 {
+    font-family: var(--serif);
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    font-size: 0.9em;
+    margin-bottom: 2em;
+}
+
+/*purchase column: product item*/
+form>section.purchaseinfo>div.product>div.productwrapper {
+    display: grid;
+    grid-template-columns: 30% 50% 20%;
+    column-gap: 1em;
+    width: 100%;
+    padding-bottom: 2em;
+    border-bottom: 1px solid rgba(0, 42, 42, 0.1);
+}
+
+/*purchase column: product image container*/
+form>section.purchaseinfo>div.product>div.productwrapper>div.productimage {
+    grid-column: 1;
+}
+
+/*purchase column: product image*/
+form>section.purchaseinfo>div.product>div.productwrapper>div.productimage>img {
+    width: 100%;
+}
+
+/*purchase column: item details*/
+form>section.purchaseinfo>div.product>div.productwrapper>div.item {
+    grid-column: 2;
+}
+
+/*purchase column: product price*/
+form>section.purchaseinfo>div.product>div.productwrapper>div.pricecontainer {
+    grid-column: 3;
+}
+
+/*purchase column: product name*/
+form>section.purchaseinfo>div.product>div.productwrapper>div.item>h3.productname {
+    font-family: var(--serif);
+    font-size: 1em;
+    color: var(--bgcolor);
+    margin-bottom: 0.8em;
+}
+
+/*purchase column: product detail small text*/
+form>section.purchaseinfo>div.product>div.productwrapper>div.item>p {
+    font-family: var(--sansserif);
+    font-size: 0.9em;
+    line-height: 1.3em;
+}
+
+/*purchase column: price container*/
+form>section.purchaseinfo>div.product>div.productwrapper>div.pricecontainer {
+    font-family: var(--sansserif);
+    font-size: 0.9em;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: var(--bgcolor);
+}
+
+/*purchase column: payment method*/
+form>section.purchaseinfo>div.paymentcontainer {
+    width: 100%;
+    display: block;
+}
+
+/*purchase column: payment method text*/
+form>section.purchaseinfo>div.paymentcontainer>fieldset.payments label {
+    font-family: var(--sansserif);
+    font-size: 0.9em;
+    line-height: 1.2em;
+}
+
+form>section.purchaseinfo>div.paymentcontainer>fieldset.voucher {
+    font-family: var(--serif);
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    font-size: 0.9em;
+    padding-bottom: 2.5em;
+    border-bottom: 1px solid rgba(0, 42, 42, 0.1);
+}
+
+form>section.purchaseinfo>div.paymentcontainer>fieldset.voucher h3 {
+    margin-bottom: 0.6em;
+    display: block;
+    width: 100%;
+}
+
+
+
+
+/* voucher input */
+form>section.purchaseinfo>div.paymentcontainer>fieldset.voucher>div.voucherinput>input {
+    background-color: var(--color);
+    color: var(--bgcolor);
+    padding: 1em;
+    width: 50%;
+    border: 2px solid var(--bgcolor);
+}
+
+/* voucher input placeholder */
+form>section.purchaseinfo>div.paymentcontainer>fieldset.voucher>div.voucherinput>input::-webkit-input-placeholder {
+    color: var(--bgcolor);
+    opacity: 0.8;
+    letter-spacing: 0.1em;
+    font-size: 0.9em;
+}
+
+form>section.purchaseinfo>div.paymentcontainer>fieldset.voucher>div.voucherinput>input:-moz-placeholder {
+    color: var(--bgcolor);
+    opacity: 0.8;
+    letter-spacing: 0.1em;
+    font-size: 0.9em;
+}
+
+form>section.purchaseinfo>div.paymentcontainer>fieldset.voucher>div.voucherinput>input::-ms-placeholder {
+    color: var(--bgcolor);
+    opacity: 0.8;
+    letter-spacing: 0.1em;
+    font-size: 0.9em;
+}
+
+
+form>section.purchaseinfo>div.paymentcontainer>fieldset.voucher>div.voucherinput>input::placeholder {
+    color: var(--bgcolor);
+    opacity: 0.8;
+    letter-spacing: 0.1em;
+    font-size: 0.9em;
+}
+
+/* voucher focus */
+form>section.purchaseinfo>div.paymentcontainer>fieldset.voucher>div.voucherinput>input:focus {
+    background-color: var(--color);
+    color: var(--bgcolor);
+}
+
+/* voucher autofill */
+form>section.purchaseinfo>div.paymentcontainer>fieldset.voucher>div.voucherinput>input:autofill {
+    background-color: var(--color);
+    color: var(--bgcolor);
+}
+
+form>section.purchaseinfo>div.paymentcontainer>fieldset.voucher>div.voucherinput>input:-webkit-autofill {
+    background-color: var(--color);
+    color: var(--bgcolor);
+}
+
+/* voucher apply button */
+form>section.purchaseinfo>div.paymentcontainer>fieldset.voucher>div.voucherinput>button {
+    margin-top: 1.5em;
+    border: 2px solid var(--bgcolor);
+    border-radius: 0.2em;
+    color: var(--color);
+    background: var(--bgcolor);
+    padding: 1em;
+    width: 30%;
+    font-size: 0.9em;
+    letter-spacing: 0.1em;
+    font-family: var(--sansserif);
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* voucher button shine creation first layer */
+form>section.purchaseinfo>div.paymentcontainer>fieldset.voucher>div.voucherinput>button::before {
+    content: '';
+    display: block;
+    position: absolute;
+    background: rgba(255, 255, 255, 1);
+    width: 9px;
+    height: 100%;
+    top: 0;
+    filter: blur(12px);
+    transform: translateX(-100px) skewX(-20deg);
+}
+
+/* voucher button shine creation second layer */
+form>section.purchaseinfo>div.paymentcontainer>fieldset.voucher>div.voucherinput>button::after {
+    content: '';
+    display: block;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.5);
+    width: 12px;
+    height: 100%;
+    top: 0;
+    filter: blur(6px);
+    transform: translateX(-100px) skewX(-20deg);
+}
+
+/* voucher button hover */
+form>section.purchaseinfo>div.paymentcontainer>fieldset.voucher>div.voucherinput>button:hover {
+    background-color: var(--bgcolor);
+    border: 2px solid var(--bgcolor);
+    color: var(--color);
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    box-shadow: 3px 3px 5px rgba(0, 42, 42, 0.4);
+    -webkit-box-shadow: 3px 3px 5px rgba(0, 42, 42, 0.4);
+    -moz-box-shadow: 3px 3px 5px rgba(0, 42, 42, 0.4);
+
+}
+
+/* voucher button hover shine effect*/
+form>section.purchaseinfo>div.paymentcontainer>fieldset.voucher>div.voucherinput>button:hover::before,
+form>section.purchaseinfo>div.paymentcontainer>fieldset.voucher>div.voucherinput>button:hover::after {
+    transform: translateX(250px) skewX(-20deg);
+    transition: 1s ease;
+}
+
+/*subtotal container*/
+form>section.purchaseinfo>div.paymentcontainer>div.subtotal {
+    padding:0.3em;
+    text-align: right;
+    line-height: 1.3em;
+}
+
+/*subtotal titles*/
+form>section.purchaseinfo>div.paymentcontainer>div.subtotal>div.pricewrapper p.title {
+    font-family: var(--sansserif);
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    font-size: 0.9em;
+    text-align: right;
+}
+
+/*subtotal prices*/
+form>section.purchaseinfo>div.paymentcontainer>div.subtotal>div.pricewrapper p.price {
+    font-family: var(--sansserif);
+    letter-spacing: 0.05em;
+    font-size: 0.9em;
+    text-align: right;
+}
+
+
+
+/*place order button */
+form>section.purchaseinfo>div.buttonwrap>button#placeorderbtn {
+    margin-top: 1.5em;
+    border: 2px solid var(--bgcolor);
+    border-radius: 0.2em;
+    color: var(--color);
+    background: var(--bgcolor);
+    padding: 1em;
+    width: 100%;
+    font-size: 0.9em;
+    letter-spacing: 0.1em;
+    font-family: var(--sansserif);
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/*place order button shine creation first layer */
+form>section.purchaseinfo>div.buttonwrap>button#placeorderbtn::before {
+    content: '';
+    display: block;
+    position: absolute;
+    background: rgba(255, 255, 255, 1);
+    width: 9px;
+    height: 100%;
+    top: 0;
+    filter: blur(12px);
+    transform: translateX(-100px) skewX(-20deg);
+}
+
+/*place order button shine creation second layer */
+form>section.purchaseinfo>div.buttonwrap>button#placeorderbtn::after {
+    content: '';
+    display: block;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.5);
+    width: 12px;
+    height: 100%;
+    top: 0;
+    filter: blur(6px);
+    transform: translateX(-100px) skewX(-20deg);
+}
+
+/*place order button hover */
+form>section.purchaseinfo>div.buttonwrap>button#placeorderbtn:hover {
+    background-color: var(--bgcolor);
+    border: 2px solid var(--bgcolor);
+    color: var(--color);
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    box-shadow: 3px 3px 5px rgba(0, 42, 42, 0.4);
+    -webkit-box-shadow: 3px 3px 5px rgba(0, 42, 42, 0.4);
+    -moz-box-shadow: 3px 3px 5px rgba(0, 42, 42, 0.4);
+
+}
+
+/*place order button hover shine effect*/
+form>section.purchaseinfo>div.buttonwrap>button#placeorderbtn:hover::before,
+form>section.purchaseinfo>div.buttonwrap>button#placeorderbtn:hover::after {
+    transform: translateX(2000px) skewX(-20deg);
+    transition: 1s ease;
+}
+
+
+
+/* footer */
+footer {
+    background-color: var(--color);
+    width: 100%;
+}
+
+/* footer width and centered */
+div.footercontainer {
+    width: 80%;
+    margin: 0 auto;
+    padding: 3em 0;
+    display: grid;
+    grid-template-columns: 3fr 3fr 2fr;
+    grid-template-rows: auto auto;
+}
+
+/* footer titles */
+div.footercontainer>div h3.footertitle {
+    font-family: var(--serif);
+    letter-spacing: 0.1em;
+    font-size: 1em;
+    text-transform: uppercase;
+    color: var(--bgcolor);
+    margin-bottom: 1em;
+}
+
+/* footer titles */
+div.footercontainer>div.companyfooter ul {
+    list-style-type: none;
+}
+
+/* footer list items */
+div.footercontainer>div.companyfooter ul li {
+    font-family: var(--sansserif);
+    letter-spacing: 0.1em;
+    font-size: 0.9em;
+    line-height: 1.75em;
+    font-weight: 150;
+}
+
+div.footercontainer>div.companyfooter ul li a {
+    color: var(--bgcolor);
+    transition: opacity 0.1s ease;
+}
+
+/* footer list items link look */
+div.footercontainer>div.companyfooter ul li a:link,
+div.footercontainer>div.companyfooter ul li a:visited,
+div.footercontainer>div.companyfooter ul li a:active {
+    text-decoration: none;
+}
+
+div.footercontainer>div.companyfooter ul li a:hover {
+    opacity: 0.5;
+}
+
+div.footercontainer>div.subscribefooter {
+    margin-right: 6em;
+}
+
+div.footercontainer>div.subscribefooter>form {
+    position: relative;
+    width: 100%;
+}
+
+
+/* footer paragraph text */
+div.footercontainer>div.subscribefooter>form>p {
+    font-family: var(--sansserif);
+    letter-spacing: 0.1em;
+    font-size: 0.9em;
+    font-weight: 150;
+    width: 80%;
+    margin: 0 auto 1em 0;
+}
+
+/* footer input email subscription */
+div.footercontainer>div.subscribefooter>form>input {
+    background-color: var(--bgcolor);
+    color: var(--color);
+    padding: 1em;
+    width: 100%;
+    border: none;
+    border-radius: 0.2em;
+}
+
+/* footer input email placeholder */
+div.footercontainer>div.subscribefooter>form>input::-webkit-input-placeholder {
+    color: var(--color);
+    opacity: 0.5;
+    letter-spacing: 0.1em;
+}
+
+div.footercontainer>div.subscribefooter>form>input:-moz-placeholder {
+    color: var(--color);
+    opacity: 0.5;
+    letter-spacing: 0.1em;
+}
+
+div.footercontainer>div.subscribefooter>form>input::-ms-placeholder {
+    color: var(--color);
+    opacity: 0.5;
+    letter-spacing: 0.1em;
+}
+
+
+div.footercontainer>div.subscribefooter>form>input::placeholder {
+    color: var(--color);
+    opacity: 0.5;
+    letter-spacing: 0.1em;
+}
+
+/* footer input email required */
+div.footercontainer>div.subscribefooter>form>input:required {
+    background: url("../images/icons_emailrequired-01.svg") no-repeat right;
+    background-color: var(--bgcolor);
+    color: var(--color);
+}
+
+/* footer input email focus */
+div.footercontainer>div.subscribefooter>form>input:focus {
+    background-color: var(--bgcolor);
+    color: var(--color);
+}
+
+/* footer input email autofill */
+div.footercontainer>div.subscribefooter>form>input:autofill {
+    background-color: var(--bgcolor);
+    color: var(--color);
+}
+
+div.footercontainer>div.subscribefooter>form>input:-webkit-autofill {
+    background-color: var(--bgcolor);
+    color: var(--color);
+}
+
+/* footer input email valid */
+div.footercontainer>div.subscribefooter>form>input:valid {
+    background: url("../images/icons_emailvalid.svg") no-repeat right;
+    background-color: var(--bgcolor);
+    color: var(--color);
+}
+
+/* footer input email invalid */
+div.footercontainer>div.subscribefooter>form>input:invalid {
+    background: url("../images/icons_emailinvalid-01.svg") no-repeat right;
+    background-color: var(--bgcolor);
+    color: var(--color);
+}
+
+/* footer input email subscribe button */
+div.footercontainer>div.subscribefooter>form>button {
+    margin-top: 1.5em;
+    border: 2px solid var(--bgcolor);
+    border-radius: 0.2em;
+    color: var(--color);
+    background: var(--bgcolor);
+    padding: 1em;
+    width: 30%;
+    font-size: 0.7em;
+    letter-spacing: 0.1em;
+    font-family: var(--sansserif);
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* footer input email button shine creation first layer */
+div.footercontainer>div.subscribefooter>form>button::before {
+    content: '';
+    display: block;
+    position: absolute;
+    background: rgba(255, 255, 255, 1);
+    width: 9px;
+    height: 100%;
+    top: 0;
+    filter: blur(12px);
+    transform: translateX(-100px) skewX(-20deg);
+}
+
+/* footer input email button shine creation second layer */
+div.footercontainer>div.subscribefooter>form>button::after {
+    content: '';
+    display: block;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.5);
+    width: 12px;
+    height: 100%;
+    top: 0;
+    filter: blur(6px);
+    transform: translateX(-100px) skewX(-20deg);
+}
+
+/* footer input email button hover */
+div.footercontainer>div.subscribefooter>form>button:hover {
+    background-color: var(--bgcolor);
+    border: 2px solid var(--bgcolor);
+    color: var(--color);
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    box-shadow: 3px 3px 5px rgba(0, 42, 42, 0.4);
+    -webkit-box-shadow: 3px 3px 5px rgba(0, 42, 42, 0.4);
+    -moz-box-shadow: 3px 3px 5px rgba(0, 42, 42, 0.4);
+
+}
+
+/* footer input email button hover shine effect*/
+div.footercontainer>div.subscribefooter>form>button:hover::before,
+div.footercontainer>div.subscribefooter>form>button:hover::after {
+    transform: translateX(250px) skewX(-20deg);
+    transition: 1s ease;
+}
+
+/* footer subscription button will not work until form is valid */
+div.footercontainer>div.subscribefooter>form:invalid [type="submit"] {
+    pointer-events: none;
+    border: 2px solid var(--bgcolor);
+    border-radius: 0.2em;
+    color: var(--color);
+    background: var(--bgcolor);
+    padding: 1em;
+    font-size: 0.7em;
+    letter-spacing: 0.1em;
+    font-family: var(--sansserif);
+    transition: all 0.2s ease;
+}
+
+/* footer social width */
+div.footercontainer>div.socials>div.socialcontainer {
+    width: 30%;
+    display: flex;
+    justify-content: start;
+}
+
+/* footer social image width */
+div.footercontainer>div.socials>div.socialcontainer a.linkedin img {
+    display: block;
+    width: 100%;
+}
+
+/* footer social image width */
+div.footercontainer>div.socials>div.socialcontainer a.facebook img {
+    display: block;
+    width: 100%;
+    height: 45%;
+}
+
+/* footer social hover effect */
+div.footercontainer>div.socials>div.socialcontainer a:hover {
+    opacity: 50%;
+}
+
+/* footer social image width */
+div.footercontainer>div.copyright {
+    font-family: var(--sansserif);
+    letter-spacing: 0.1em;
+    font-size: 0.8em;
+    line-height: 1em;
+    color: var(--bgcolor);
+    margin-top: 3em;
+}
+
+/*footer to be responsive*/
+
+/*max-width: 1080px*/
+@media screen and (max-width: 1080px) {
+
+    /* footer titles */
+    div.footercontainer>div h3.footertitle {
+        font-size: 1.1em;
+    }
+
+    /* footer paragraph text */
+    div.footercontainer>div.subscribefooter>form>p {
+        width: 100%;
+        font-size: 0.8em;
+    }
+
+    /* footer input email subscribe button */
+    div.footercontainer>div.subscribefooter>form>button {
+        margin-top: 0.9em;
+        width: 50%;
+    }
+
+    /* footer social width */
+    div.footercontainer>div.socials>div.socialcontainer {
+        width: 35%;
+        display: flex;
+        justify-content: start;
+    }
+
+
+    /* footer list items */
+    div.footercontainer>div.companyfooter ul li {
+        font-size: 0.8em;
+    }
+}
+
+/*max-width: 992px*/
+@media screen and (max-width: 992px) {
+
+    /*subscribe footer*/
+    div.footercontainer>div.subscribefooter {
+        margin-right: 3em;
+    }
+
+    /* footer titles */
+    div.footercontainer>div h3.footertitle {
+        font-size: 1.1em;
+        line-height: 1.2em;
+    }
+
+    /* footer paragraph text */
+    div.footercontainer>div.subscribefooter>form>p {
+        width: 100%;
+        line-height: 1.3em;
+        font-size: 1em;
+    }
+
+    /* footer input email subscribe button */
+    div.footercontainer>div.subscribefooter>form>button {
+        margin-top: 1em;
+        width: 40%;
+    }
+
+    /* footer social image width */
+    div.footercontainer>div.copyright {
+        margin-top: 3em;
+        width: 100%;
+        line-height: 1.2em;
+        grid-column: 1/3;
+        font-size: 0.7em;
+    }
+
+
+    /* footer social width */
+    div.footercontainer>div.socials>div.socialcontainer {
+        width: 50%;
+        display: flex;
+        justify-content: start;
+    }
+
+
+    /* footer list items */
+    div.footercontainer>div.companyfooter ul li {
+        font-size: 1em;
+    }
+}
+
+/*max-width: 720px*/
+@media screen and (max-width: 720px) {
+
+    /* footer titles */
+    div.footercontainer>div h3.footertitle {
+        margin: 2em 0 1em 0;
+        font-size: 0.9em;
+        line-height: 1.3em;
+    }
+
+    /*subscribe footer*/
+    div.footercontainer>div.subscribefooter {
+        margin-right: 3em;
+    }
+
+
+    /* footer paragraph text */
+    div.footercontainer>div.subscribefooter>form>p {
+        width: 100%;
+        line-height: 1.3em;
+        font-size: 0.8em;
+    }
+
+    /* footer input email subscribe button */
+    div.footercontainer>div.subscribefooter>form>button {
+        margin-top: 1em;
+        width: 60%;
+    }
+
+    /* footer social image width */
+    div.footercontainer>div.copyright {
+        margin-top: 3em;
+        width: 100%;
+        line-height: 1.2em;
+        grid-column: 1/3;
+        font-size: 0.6em;
+    }
+
+
+    /* footer social width */
+    div.footercontainer>div.socials>div.socialcontainer {
+        width: 50%;
+        display: flex;
+        justify-content: start;
+    }
+
+
+    /* footer list items */
+    div.footercontainer>div.companyfooter ul li {
+        font-size: 0.8em;
+    }
+}
+
+/*max-width: 540px*/
+@media screen and (max-width: 540px) {
+
+    /* footer width and centered */
+    div.footercontainer {
+        width: 85%;
+        margin: 0 auto;
+        padding: 3em 0;
+        display: block;
+    }
+
+    /* footer titles */
+    div.footercontainer>div h3.footertitle {
+        margin: 3em 0 1em 0;
+        font-size: 0.9em;
+        line-height: 1.2em;
+    }
+
+    /*subscribe footer*/
+    div.footercontainer>div.subscribefooter {
+        margin-right: 2em;
+    }
+
+
+    /* footer paragraph text */
+    div.footercontainer>div.subscribefooter>form>p {
+        width: 100%;
+        line-height: 1.3em;
+        font-size: 0.8em;
+    }
+
+    /* footer input email subscribe button */
+    div.footercontainer>div.subscribefooter>form>button {
+        margin-top: 1.1em;
+        width: 30%;
+    }
+
+    /* footer social image width */
+    div.footercontainer>div.copyright {
+        margin-top: 0em;
+        width: 60%;
+        line-height: 1.2em;
+        font-size: 0.7em;
+    }
+
+    /* footer social width */
+    div.footercontainer>div.socials>div.socialcontainer {
+        width: 25%;
+        display: flex;
+        justify-content: start;
+    }
+
+
+    /* footer list items */
+    div.footercontainer>div.companyfooter ul li {
+        font-size: 0.8em;
+    }
+}
+
+/*max-width: 300px*/
+@media screen and (max-width: 300px) {
+
+    /* footer width and centered */
+    div.footercontainer {
+        width: 85%;
+        margin: 0 auto;
+        padding: 3em 0;
+        display: block;
+    }
+
+    /* footer titles */
+    div.footercontainer>div h3.footertitle {
+        margin: 2em 0 1em 0;
+        line-height: 1.2em;
+    }
+
+    /*subscribe footer*/
+    div.footercontainer>div.subscribefooter {
+        margin-right: 2em;
+    }
+
+
+    /* footer paragraph text */
+    div.footercontainer>div.subscribefooter>form>p {
+        width: 100%;
+        line-height: 1.5em;
+    }
+
+    /* footer input email subscribe button */
+    div.footercontainer>div.subscribefooter>form>button {
+        margin-top: 1.1em;
+        width: 50%;
+    }
+
+    /* footer social image width */
+    div.footercontainer>div.copyright {
+        margin-top: 0em;
+        width: 60%;
+        line-height: 1.2em;
+        font-size: 0.6em;
+    }
+}

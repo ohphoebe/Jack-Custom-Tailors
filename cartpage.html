@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--meta data: Charset used-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--meta data: Responsive Website-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--meta data: Description of Website-->
+    <meta name="description"
+        content="You can view your items you have placed in your shopping bag. You can contineu shopping or proceed to purchase. Jack Custom Tailors specialises in high quality, individually designed and beautifully hand-sewn suits and dresses. Jack who is the founder of the company. He was first trained at Savile Row, in London's elite Mayfair district. Since then, he has acquired many years of experience. His prestigious clientele includes politicians, industry leaders and international leading figures in media. There are many selection of fabrics, colourings, patterns, weights and designs to choose from. The suits are woven with genuine quality materials which include cashmere, mohair, silk, linen, lambswool and cotton. Book an appointment today for your custom suit tailoring session.">
+    <!--meta data: Keywords of Website-->
+    <meta name="keywords"
+        content="shopping, bag, order, payment, items, cart, Jack, Custom, Tailors, bespoke, suits, tuxedo, hand-basted, tailoring, dresses, woven, high, quality, Singapore">
+    <title>Jack Custom Tailors - Your Shopping Bag</title>
+    <!--meta data: CSS of Website-->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/cartpage.css">
+    <!--meta data: Favicon of Website-->
+    <link rel="icon" type="image/png" href="images/favicon3.png">
+</head>
+
+
+<body>
+    <!--the header-->
+    <header>
+        <!--top navigation bar-->
+        <section class="navbar">
+            <nav>
+                <!--left part of navigation bar-->
+                <div class="menuleft">
+                    <!--hamburger and close icon-->
+                    <div class="menu-hamburger" id="hamburger">
+                        <img class="openmenu" id="menuopen" src="images/icons_hamburger-01.svg" alt="open menu">
+                        <img class="closemenu" id="menuclose" src="images/icons_close-01.svg" alt="close menu">
+                    </div>
+                    <!--left menu-->
+                    <ul class="navleft" id="sideBar">
+                        <li class="top"><a href="underconstruction.html">About</a></li>
+                        <li><a href="productlist.html">Shop</a></li>
+                        <li><a href="underconstruction.html">Size Guide</a></li>
+                        <li><a href="underconstruction.html">Gallery</a></li>
+                        <li><a href="underconstruction.html">Tailoring</a></li>
+                    </ul>
+                </div>
+                <!--logo-->
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="images/logo-01.svg" alt="Jack Custom Tailors"
+                            srcset="images/logo-01_3x-01.svg 3x, images/logo-01_2x-01.svg 2x">
+                    </a>
+                </div>
+                <!--right part of navigation bar-->
+                <ul class="navright">
+                    <li><a href="underconstruction.html"><img src="images/icons_search.svg" alt="search bar"></a></li>
+                    <li><a href="underconstruction.html"><img src="images/icons_profile.svg" alt="profile"></a></li>
+                    <li><a href="underconstruction.html"><img src="images/icons_bookmark_topnav.svg" alt="bookmark"></a>
+                    </li>
+                    <li><a href="underconstruction.html"><img src="images/icons_bag.svg" alt="bag"></a></li>
+                </ul>
+            </nav>
+
+        </section>
+    </header>
+
+
+
+    <!--the body content-->
+    <main>
+        <!--main section: cart bag-->
+        <section class="bag">
+            <!--the page title-->
+            <div class="bagtitle">
+                <h1>Your Shopping Bag</h1>
+            </div>
+            <div class="itemgroup">
+                <div class="itemcontainer">
+                    <div class="emptycontainer">
+                        <h3>Your Bag is Empty</h3>
+                    </div>
+                    <img src="images/icons_close-01.svg" alt="remove item" class="closeicon" id="removeitem">
+                    <img src="images/product/product01-01.jpg" alt="Classic Mandarin Suit thumbnail"
+                        class="productthumbnail">
+                    <div class="item">
+                        <h3 class="productname">Classic Mandarin Suit</h3>
+                        <p>Size: 38</p>
+                        <p>Color: Ash Brown</p>
+                    </div>
+                    <div class="inputstepper">
+                        <div class="inputwrap">
+                            <button id="minus" class="inputbtn" onclick="inputstep(this)">–</button>
+                            <input type="number" min="0" max="100" value="1" step="1" disabled id="quantity">
+                            <button id="plus" class="inputbtn" onclick="inputstep(this)">+</button>
+                        </div>
+                    </div>
+                    <div class="pricecontainer">
+                        <p class="actualprice">$465</p>
+                        <p class="discountprice">NOW $372</p>
+                    </div>
+                </div>
+            </div>
+            <div class="bagfooter">
+                <!--link back to previous page-->
+                <div class="backtoprevious">
+                    <!--javascript code to go to product list-->
+                    <script>
+                        document.write('<a href="productlist.html">' + '<img src="images/backarrow_btn-01.svg" alt="go back to previous page">' + 'Continue Shopping</a>');
+                    </script>
+                </div>
+                <div class="subtotal">
+                    <p class="subtotaltitle">Subtotal</p>
+                    <p class="subtotalprice">$372</p>
+                </div>
+                <div class="checkoutcontainer">
+                    <div class="smalltext">
+                        <p>Tax and shipping included at checkout</p>
+                    </div>
+                    <div class="buttonwrap">
+                        <button type="submit" class="checkout" id="checkoutbtn"
+                            onclick="location.href = 'checkout.html';">Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+
+
+    <!--the footer-->
+    <footer>
+        <div class="footercontainer">
+            <!--the footer: company column-->
+            <div class="companyfooter">
+                <h3 class="footertitle">Jack Custom Tailors</h3>
+                <ul>
+                    <li><a href="underconstruction.html">About</a></li>
+                    <li><a href="underconstruction.html">Shipping</a></li>
+                    <li><a href="underconstruction.html">Refund Policy</a></li>
+                    <li><a href="underconstruction.html">Terms of Service</a></li>
+                    <li><a href="underconstruction.html">Size Guide</a></li>
+                    <li><a href="underconstruction.html">FAQs</a></li>
+                    <li><a href="underconstruction.html">Careers</a></li>
+                </ul>
+            </div>
+            <!--the footer: subscription column-->
+            <div class="subscribefooter">
+                <!-- email subscription -->
+                <form action="form.php" method="post" id="subscriptionform">
+                    <h3 class="footertitle">Subscribe to Us</h3>
+                    <p>Subscribe to our newsletter and get 10% off your first online order.</p>
+                    <input required type="email" name="emailaddress" placeholder="Email Address" class="emailinput">
+                    <button type="submit" class="subscribe" id="subscribebtn">Subscribe</button>
+                </form>
+            </div>
+            <!--the footer: socials column-->
+            <div class="socials">
+                <h3 class="footertitle">Find Us On</h3>
+                <div class="socialcontainer">
+                    <a href="https://www.linkedin.com/in/jack-custom-tailors-5308a428/" class="linkedin"><img
+                            src="images/icons_linkedin-01.svg" alt="Linkedin"></a>
+                    <a href="https://www.facebook.com/jack.tailors/" class="facebook"><img
+                            src="images/icons_facebook.svg" alt="Facebook"></a>
+                </div>
+            </div>
+            <!--the footer: copyright row-->
+            <div class="copyright">
+                <p>
+                    Copyright@ 2017 Jack Custom Tailors.<br>
+                    All rights reserved,<br>
+                    Powered by - Classysys Pte Ltd
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!--meta data: javascript of Website. placed at bottom to let variables load first-->
+    <script src="js/basescript.js"></script>
+    <script src="js/cartscript.js"></script>
+</body>
+
+
+</html>

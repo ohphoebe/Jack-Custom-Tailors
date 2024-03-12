@@ -1,0 +1,2441 @@
+/*background color of webpage*/
+html {
+    scroll-behavior: smooth;
+    background-color: var(--color);
+}
+
+/* width of body to be full screen to device width and centralised */
+body {
+    max-width: 100vw;
+}
+
+/* header full width of body */
+header {
+    width: 100%;
+    display: block;
+    background-color: var(--bgcolor);
+}
+
+/* navbar to be at the front of image header and at top of header. */
+header section.navbar nav {
+    padding: 0.5em 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 3;
+    width: 100%;
+    border-bottom: 0.4px solid rgba(221, 193, 147, 0.3);
+}
+
+/*LEFT NAV MENU*/
+/*align left nav menu with hamburger and close icon*/
+header section.navbar>nav>div.menuleft {
+    display: flex;
+    /* justify-content: flex-start; */
+    justify-content: start;
+    align-items: center;
+    width: 35%;
+    margin-left: 0.5em;
+}
+
+/*resize hamburger icon*/
+header section.navbar>nav>div.menuleft>div.menu-hamburger {
+    width: 6%;
+    display: none;
+}
+
+/*align left nav menu items excluding icons*/
+header section.navbar>nav>div.menuleft>ul.navleft {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    margin-left: 0.5em;
+    background: transparent;
+    transition: all 0.3 ease;
+    text-align: center;
+}
+
+/*font properties for left nav menu*/
+header section.navbar>nav>div.menuleft>ul.navleft>li a {
+    font-family: var(--sansserif);
+    font-size: 0.8em;
+    margin: 0.6em;
+    letter-spacing: 0.1em;
+    transition: opacity 0.2s ease;
+}
+
+/*properties for a href: link, visited*/
+header section.navbar>nav>div.menuleft>ul.navleft>li a:link,
+header section.navbar>nav>div.menuleft>ul.navleft>li a:visited {
+    color: var(--color);
+}
+
+/*properties for a href: hover*/
+header section.navbar>nav>div.menuleft>ul.navleft>li a:hover {
+    opacity: 0.6;
+}
+
+/*navleft bar to appear at max-width 720px and lower*/
+@media screen and (max-width: 720px) {
+    header section.navbar>nav>div.menuleft>div.menu-hamburger {
+        display: block;
+        width: 15%;
+        position: relative;
+        top: 0;
+        left: 0;
+        z-index: 20;
+    }
+
+    header section.navbar>nav>div.menuleft>div.menu-hamburger>img.openmenu {
+        display: block;
+    }
+
+    header section.navbar>nav>div.menuleft>div.menu-hamburger>#menuopen.hide {
+        display: none;
+    }
+
+    header section.navbar>nav>div.menuleft>div.menu-hamburger>img.openmenu:hover {
+        cursor: pointer;
+    }
+
+    header section.navbar>nav>div.menuleft>div.menu-hamburger>#menuclose {
+        display: none;
+        width: 100%;
+        z-index: 20;
+    }
+
+    header section.navbar>nav>div.menuleft>div.menu-hamburger>#menuclose.show {
+        display: block;
+        z-index: 20;
+    }
+
+    header section.navbar>nav>div.menuleft>div.menu-hamburger>img.closemenu:hover {
+        cursor: pointer;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar {
+        background: var(--color);
+        position: fixed;
+        z-index: 20;
+        top: 0%;
+        height: 100vh;
+        left: -100%;
+        width: 25%;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        padding-top: 3em;
+        margin: 0;
+        transition: 0.2s;
+    }
+
+    header section.navbar>nav>div.menuleft>ul.navleft>li.top {
+        padding-top: 2em;
+    }
+
+    header section.navbar>nav>div.menuleft>ul.navleft>li {
+        margin: 0.7em;
+    }
+
+    header section.navbar>nav>div.menuleft>ul.navleft>li a {
+        transition: opacity 0.2s ease;
+    }
+
+    header section.navbar>nav>div.menuleft>ul.navleft>li a:link,
+    header section.navbar>nav>div.menuleft>ul.navleft>li a:visited {
+        color: #0c2c24;
+    }
+
+    header section.navbar>nav>div.menuleft>ul.navleft>li a:hover {
+        opacity: 0.3;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar.open {
+        background: var(--color);
+        position: fixed;
+        top: 0%;
+        height: 100vh;
+        left: 0%;
+        width: 25%;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        padding-top: 3em;
+        margin: 0;
+        transition: 0.2s;
+        z-index: 20;
+    }
+}
+
+/*RIGHT NAV BAR MENU*/
+/*align right nav menu*/
+header section.navbar>nav>ul.navright {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 33.3%;
+    margin-right: 0.5em;
+}
+
+/*resize right nav menu icons*/
+header section.navbar>nav>ul.navright li {
+    padding: 0.5em;
+    width: 5%;
+    transition: opacity 0.2s ease;
+}
+
+/*properties for right nav menu icons: hover*/
+header section.navbar>nav>ul.navright li:hover {
+    opacity: 0.6;
+}
+
+/*header h1 title*/
+header>section.pagetitle>h1 {
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+    padding: 3em;
+    color: var(--color);
+    font-family: var(--serif);
+    letter-spacing: 0.1em;
+    font-weight: 150;
+    font-size: 1.3em;
+}
+
+
+
+/* header text block to be responsive*/
+/*max-width: 1080px*/
+@media screen and (max-width: 1080px) {
+    header section.navbar>nav>div.logo>a>img {
+        display: block;
+        max-width: 100%;
+    }
+
+    header section.navbar>nav>div.menuleft>div.menu-hamburger {
+        width: 10%;
+        position: relative;
+        z-index: 9;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar.open {
+        z-index: 8;
+        width: 45%;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar li {
+        display: block;
+        width: 100%;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar li a {
+        margin: 0;
+    }
+
+    header section.navbar>nav>ul.navright li {
+        width: 6%;
+        margin: 0.2em;
+        padding: 0.1em;
+    }
+}
+
+/*max-width: 992px*/
+@media screen and (max-width: 992px) {
+    header section.navbar>nav>div.logo>a>img {
+        display: block;
+        max-width: 100%;
+    }
+
+    header section.navbar>nav>div.menuleft>div.menu-hamburger {
+        width: 10%;
+        position: relative;
+        z-index: 9;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar.open {
+        z-index: 8;
+        width: 45%;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar li {
+        display: block;
+        width: 100%;
+    }
+
+    header section.navbar>nav>ul.navright li {
+        width: 6%;
+        margin: 0.2em;
+        padding: 0.1em;
+    }
+}
+
+/*max-width: 720px*/
+@media screen and (max-width: 720px) {
+    header section.navbar>nav>div.logo>a>img {
+        display: block;
+        max-width: 100%;
+    }
+
+    header section.navbar>nav>div.menuleft>div.menu-hamburger {
+        width: 15%;
+        position: relative;
+        z-index: 9;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar.open {
+        z-index: 8;
+        width: 45%;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar li {
+        display: block;
+        width: 100%;
+    }
+
+    header section.navbar>nav>ul.navright li {
+        width: 9%;
+        margin: 0.2em;
+        padding: 0.1em;
+    }
+}
+
+/*max-width: 540px*/
+@media screen and (max-width: 540px) {
+    header section.navbar>nav>div.logo>a>img {
+        display: block;
+        max-width: 80%;
+    }
+
+    header section.navbar>nav>div.menuleft>div.menu-hamburger {
+        width: 20%;
+        position: relative;
+        z-index: 9;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar.open {
+        z-index: 8;
+        width: 45%;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar li {
+        display: block;
+        width: 100%;
+    }
+
+    header section.navbar>nav>ul.navright li {
+        width: 10%;
+        margin: 0.2em;
+    }
+}
+
+/*max-width: 300px*/
+@media screen and (max-width: 300px) {
+    header section.navbar>nav>div.logo>a>img {
+        display: block;
+        max-width: 80%;
+    }
+
+    header section.navbar>nav>div.menuleft>div.menu-hamburger {
+        width: 25%;
+        position: relative;
+        z-index: 9;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar.open {
+        z-index: 8;
+        width: 45%;
+    }
+
+    header section.navbar>nav>div.menuleft>#sideBar li {
+        display: block;
+        width: 100%;
+    }
+
+    header section.navbar>nav>ul.navright li {
+        width: 35%;
+        margin: 0.2em;
+    }
+}
+
+
+main {
+    background-color: white;
+    padding: 4em;
+    display: flex;
+    justify-items: flex-start;
+}
+
+/*filter sidebar*/
+main section.filter {
+    width: 30vw;
+    padding-right: 1em;
+    border-right: 1px solid rgba(37, 37, 37, 0.1);
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+main section.filter div.filterbtn {
+    margin: 1em 0 0.5em 0;
+    display: grid;
+    grid-template-columns: 80% 20%;
+    grid-template-rows: auto;
+    align-items: top;
+    padding: 0.5em;
+    border: 1px solid rgba(0, 42, 42, 1);
+    display: none;
+}
+
+main section.filter div.filtercontainer div.closeicon {
+    display: none;
+}
+
+main section.filter div.filterbtn img {
+    grid-column: 2;
+    grid-row: 1;
+    width: 80%;
+}
+
+main section.filter div.filterbtn p {
+    font-family: var(--serif);
+    font-size: 1em;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+
+/*filter sidebar categories*/
+main section.filter div.filterwrap {
+    margin-bottom: 2em;
+}
+
+
+/*filter sidebar categories*/
+main section.filter div.filterwrap div.filterwrap {
+    margin-bottom: 2em;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*filter sidebar categories title*/
+main section.filter div.filterwrap div.filtertitle {
+    font-family: var(--serif);
+    font-size: 1em;
+    margin: 1em 0 0.5em 0;
+}
+
+/*filter sidebar radio input container*/
+main section.filter div.filterwrap div.filterlistradio div.radioinput {
+    font-family: var(--sansserif);
+    font-size: 1em;
+    margin: 0.5em 0;
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 100%;
+    text-align: left;
+    justify-content: left;
+    align-items: start;
+}
+
+/*filter sidebar radio input radio*/
+main section.filter div.filterwrap div.filterlistradio div.radioinput input {
+    margin: 0 0.3em 0 0;
+    padding: 0;
+    grid-column: 1;
+}
+
+/*filter sidebar radio input text*/
+main section.filter div.filterwrap div.filterlistradio div.radioinput label {
+    grid-column: 2;
+}
+
+/*filter sidebar radio input item wrap*/
+main section.filter div.filterwrap div.filterwrap {
+    margin-bottom: 2em;
+}
+
+/*filter sidebar size selection checkbox list*/
+main section.filter div.filterwrap ul.filterlistsize {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    height: auto;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+/*filter sidebar size selection checkbox list items*/
+main section.filter div.filterwrap ul.filterlistsize li {
+    padding: 0.4em;
+    margin: 0 0.4em 0.2em 0;
+    border: 1px solid black;
+    width: 10%;
+    height: 25%;
+    font-size: 0.8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: var(--sansserif);
+    cursor: pointer;
+}
+
+/*filter sidebar size selection checkbox list items (clicked)*/
+main section.filter div.filterwrap ul.filterlistsize li.clicked {
+    padding: 0.4em;
+    margin: 0 0.4em 0.2em 0;
+    border: 1px solid black;
+    width: 10%;
+    height: 25%;
+    font-size: 0.8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: var(--sansserif);
+    cursor: pointer;
+    color: white;
+    background-color: var(--bgcolor);
+}
+
+/*filter sidebar colour selection checkbox list*/
+main section.filter div.filterwrap ul.filterlistcolour {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+    display: flex;
+}
+
+/*filter sidebar colour selection checkbox list items*/
+main section.filter div.filterwrap ul.filterlistcolour li {
+    padding: 0.1em;
+    margin: 0 0.2em 0 0;
+    width: 10%;
+    border: 1px solid white;
+    border-radius: 50%;
+    font-size: 0.8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: var(--sansserif);
+    cursor: pointer;
+}
+
+/*filter sidebar colour selection checkbox list items (clicked)*/
+main section.filter div.filterwrap ul.filterlistcolour li.clicked {
+    padding: 0.1em;
+    margin: 0 0.2em 0 0;
+    width: 10%;
+    border: 1px solid black;
+    border-radius: 50%;
+    font-size: 0.8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: var(--sansserif);
+    cursor: pointer;
+}
+
+
+/*main section product display width*/
+main section.productdisplay div.productgroup {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 70vw;
+    box-sizing: border-box;
+    padding-left: 2em;
+}
+
+/*main section product display individual product width*/
+main section.productdisplay div.productgroup div#firstproduct,
+main section.productdisplay div.productgroup div#secondproduct,
+main section.productdisplay div.productgroup div#thirdproduct,
+main section.productdisplay div.productgroup div#fourthproduct,
+main section.productdisplay div.productgroup div#fifthproduct,
+main section.productdisplay div.productgroup div#sixthproduct,
+main section.productdisplay div.productgroup div#seventhproduct,
+main section.productdisplay div.productgroup div#eighthproduct,
+main section.productdisplay div.productgroup div#ninethproduct,
+main section.productdisplay div.productgroup div#tenthproduct,
+main section.productdisplay div.productgroup div#eleventhproduct,
+main section.productdisplay div.productgroup div#twelvethproduct {
+    flex: 0 1 auto;
+    width: 31%;
+    margin-right: 2%;
+    justify-content: flex-start;
+    margin-bottom: 0.6em;
+}
+
+
+/*main section product display individual product (hide)*/
+main section.productdisplay div.productgroup div#firstproduct.hide {
+    display: none;
+}
+
+main section.productdisplay div.productgroup div#secondproduct.hide {
+    display: none;
+}
+
+main section.productdisplay div.productgroup div#thirdproduct.hide {
+    display: none;
+}
+
+main section.productdisplay div.productgroup div#fourthproduct.hide {
+    display: none;
+}
+
+main section.productdisplay div.productgroup div#fifthproduct.hide {
+    display: none;
+}
+
+main section.productdisplay div.productgroup div#sixthproduct.hide {
+    display: none;
+}
+
+
+main section.productdisplay div.productgroup div#seventhproduct.hide {
+    display: none;
+}
+
+main section.productdisplay div.productgroup div#eighthproduct.hide {
+    display: none;
+}
+
+main section.productdisplay div.productgroup div#ninethproduct.hide {
+    display: none;
+}
+
+main section.productdisplay div.productgroup div#tenthproduct.hide {
+    display: none;
+}
+
+main section.productdisplay div.productgroup div#eleventhproduct.hide {
+    display: none;
+}
+
+main section.productdisplay div.productgroup div#twelvethproduct.hide {
+    display: none;
+}
+
+/*main section product display single image body*/
+main section.productdisplay div.productgroup div.singleproduct div.productimage {
+    position: relative;
+    width: 100%;
+}
+
+/*main section product display single image container*/
+main section.productdisplay div.productgroup div.singleproduct div.productimage div.imagecontainer {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/*main section product display single image */
+main section.productdisplay div.productgroup div.singleproduct div.productimage div.imagecontainer a img {
+    display: block;
+    max-width: 100%;
+}
+
+/*main section product display single image hover*/
+main section.productdisplay div.productgroup div.singleproduct div.productimage div.imagecontainer a img.thumb2 {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+main section.productdisplay div.productgroup div.singleproduct div.productimage div.imagecontainer a img.thumb2:hover {
+    opacity: 1;
+}
+
+/*main section product display discount tag*/
+main section.productdisplay div.productgroup div.singleproduct div.productimage span.discount {
+    position: absolute;
+    top: 0.5em;
+    right: 0.5em;
+    background-color: var(--color);
+    border-radius: 0.2em;
+    padding: 0.6em;
+    color: var(--bgcolor);
+    font-size: 0.8em;
+    font-family: var(--sansserif);
+    font-weight: bold;
+    z-index: 9;
+    text-transform: capitalize;
+}
+
+/*main section carousel single product text body*/
+main section.productdisplay div.productgroup div.singleproduct div.productdetails {
+    display: flex;
+    justify-content: space-between;
+    margin: 1em 0;
+}
+
+/*main section carousel single product text body color*/
+main section.productdisplay div.productgroup div.singleproduct div.productdetails div.producttext {
+    color: var(--bgcolor);
+}
+
+/*main section carousel single product name*/
+main section.productdisplay div.productgroup div.singleproduct div.productdetails div.producttext h4.productname {
+    font-family: var(--serif);
+    font-size: 1em;
+    letter-spacing: 0.1em;
+    font-weight: 100;
+    text-align: left;
+}
+
+/*main section carousel single product price text body*/
+main section.productdisplay div.productgroup div.singleproduct div.productdetails div.producttext div.price {
+    margin-top: 0.5em;
+}
+
+/*main section carousel single product text*/
+main section.productdisplay div.productgroup div.singleproduct div.productdetails div.producttext div.price p {
+    font-family: var(--sansserif);
+    font-size: 0.8em;
+    letter-spacing: 0.1em;
+    text-align: left;
+    margin: 0.1em;
+}
+
+/*main section carousel single product actual price text*/
+main section.productdisplay div.productgroup div.singleproduct div.productdetails div.producttext div.price p.actualprice {
+    text-decoration: line-through;
+}
+
+/*main section carousel single product discount price text*/
+main section.productdisplay div.productgroup div.singleproduct div.productdetails div.producttext div.price p.discountprice {
+    font-size: 0.9em;
+    margin-top: 0.2em;
+}
+
+/*main section carousel single product bookmark container*/
+main section.productdisplay div.productgroup div.singleproduct div.productdetails div.bookmarkbutton {
+    width: 11%;
+    position: relative;
+    transform: translate(0.5em, 0);
+}
+
+/*main section carousel single product bookmark*/
+main section.productdisplay div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img {
+    position: absolute;
+    width: 100%;
+    object-fit: contain;
+}
+
+/*main section carousel single product bookmark cursor*/
+main section.productdisplay div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img:hover {
+    cursor: pointer;
+}
+
+/*main section carousel single product bookmark animation toggle classes: before, hover, clicked*/
+main section.productdisplay div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.before {
+    display: block;
+    transition: 0.2s ease;
+}
+
+main section.productdisplay div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.before.gone {
+    display: none;
+}
+
+main section.productdisplay div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.clicked {
+    display: none;
+    transition: 0.2s ease;
+}
+
+main section.productdisplay div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.clicked.appear {
+    display: block;
+}
+
+
+
+
+
+
+/*main to be responsive*/
+/*max-width: 1080px*/
+@media screen and (max-width: 1080px) {
+
+    main {
+        padding: 3em;
+    }
+
+    /*filter sidebar*/
+    main section.filter {
+        width: 20vw;
+    }
+
+    /*filter sidebar btn*/
+    main section.filter div.filterbtn {
+        display: none;
+    }
+
+    /*filter sidebar categories spacing*/
+    main section.filter div.filterwrap {
+        margin-bottom: 2em;
+    }
+
+    main section.filter div.filtercontainer div.filterwrap {
+        margin-bottom: 2em;
+    }
+
+    /*filter sidebar categories title*/
+    main section.filter div.filterwrap div.filtertitle {
+        font-size: 1em;
+        margin: 0.5em 0 0.8em 0;
+    }
+
+
+    /*filter sidebar radio input container*/
+    main section.filter div.filterwrap div.filterlistradio div.radioinput {
+        font-size: 1.1em;
+        margin-bottom: 0.6em;
+    }
+
+    /*filter sidebar radio input radio*/
+    main section.filter div.filterwrap div.filterlistradio div.radioinput input {
+        margin: 0 0.3em 0 0;
+    }
+
+    /*filter sidebar radio input text*/
+    main section.filter div.filterwrap div.filterlistradio div.radioinput label {
+        font-size: 0.9em;
+    }
+
+
+    /*filter sidebar size selection checkbox list items*/
+    main section.filter div.filterwrap ul.filterlistsize li {
+        width: 15%;
+        height: 20px;
+        font-size: 0.9em;
+    }
+
+    /*filter sidebar size selection checkbox list items (clicked)*/
+    main section.filter div.filterwrap ul.filterlistsize li.clicked {
+        width: 8%;
+        height: 10px;
+        font-size: 0.6em;
+    }
+
+
+    /*filter sidebar colour selection checkbox list items*/
+    main section.filter div.filterwrap ul.filterlistcolour li {
+        padding: 0.1em;
+        margin: 0 0.3em 0.3em 0;
+        width: 18%;
+    }
+
+    /*filter sidebar colour selection checkbox list items (clicked)*/
+    main section.filter div.filterwrap ul.filterlistcolour li.clicked {
+        padding: 0.1em;
+        margin: 0 0.3em 0.3em 0;
+        width: 18%;
+        border: 1px solid black;
+    }
+
+    /*main section product display width*/
+    main section.productdisplay div.productgroup {
+        padding-left: 0;
+        justify-content: space-between;
+        width: 70vw;
+        margin-left: 2em;
+    }
+
+    /*main section product display individual product width*/
+    main section.productdisplay div.productgroup div#firstproduct,
+    main section.productdisplay div.productgroup div#secondproduct,
+    main section.productdisplay div.productgroup div#thirdproduct,
+    main section.productdisplay div.productgroup div#fourthproduct,
+    main section.productdisplay div.productgroup div#fifthproduct,
+    main section.productdisplay div.productgroup div#sixthproduct,
+    main section.productdisplay div.productgroup div#seventhproduct,
+    main section.productdisplay div.productgroup div#eighthproduct,
+    main section.productdisplay div.productgroup div#ninethproduct,
+    main section.productdisplay div.productgroup div#tenthproduct,
+    main section.productdisplay div.productgroup div#eleventhproduct,
+    main section.productdisplay div.productgroup div#twelvethproduct {
+        flex: 0 1 auto;
+        width: 32%;
+        margin: 0 0 1em 0;
+    }
+
+    /*main section product display single image body*/
+    main section.productdisplay div.productgroup div.singleproduct div.productimage {
+        position: relative;
+        width: 100%;
+    }
+
+    /*main section product display discount tag*/
+    main section.productdisplay div.productgroup div.singleproduct div.productimage span.discount {
+        padding: 0.4em;
+        font-size: 0.8em;
+        z-index: 2;
+    }
+
+    /*main section carousel single product text body*/
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails {
+        margin: 0.7em 0;
+    }
+
+    /*main section carousel single product name*/
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.producttext h4.productname {
+        font-size: 0.9em;
+        letter-spacing: 0.05em;
+    }
+
+    /*main section carousel single product price text body*/
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.producttext div.price {
+        margin-top: 0.2em;
+    }
+
+    /*main section carousel single product text*/
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.producttext div.price p {
+        font-size: 0.8em;
+        margin: 0.2em;
+    }
+
+    /*main section carousel single product discount price text*/
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.producttext div.price p.discountprice {
+        font-size: 0.8em;
+        margin-top: 0.3em;
+    }
+
+    /*main section carousel single product bookmark container*/
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.bookmarkbutton {
+        position: relative;
+        transform: translate(0.2em, 0);
+    }
+
+    /*main section carousel single product bookmark*/
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img {
+        position: absolute;
+        width: 100%;
+        object-fit: contain;
+
+    }
+
+    /*main section carousel single product bookmark cursor*/
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img:hover {
+        cursor: pointer;
+    }
+
+    /*main section carousel single product bookmark animation toggle classes: before, hover, clicked*/
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.before {
+        display: block;
+        transition: 0.2s ease;
+    }
+
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.before.gone {
+        display: none;
+    }
+
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.clicked {
+        display: none;
+        transition: 0.2s ease;
+    }
+
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.clicked.appear {
+        display: block;
+    }
+}
+
+/*max-width: 992px*/
+@media screen and (max-width: 992px) {
+
+    main {
+        padding: 2.5em;
+    }
+
+    /*filter sidebar*/
+    main section.filter {
+        width: 20vw;
+    }
+
+    /*filter sidebar btn*/
+    main section.filter div.filterbtn {
+        display: none;
+    }
+
+    /*filter sidebar categories spacing*/
+    main section.filter div.filterwrap {
+        margin-bottom: 1.5em;
+    }
+
+    main section.filter div.filtercontainer div.filterwrap {
+        margin-bottom: 1.5em;
+    }
+
+    /*filter sidebar categories title*/
+    main section.filter div.filterwrap div.filtertitle {
+        font-size: 0.9em;
+        margin: 0.5em 0 0.6em 0;
+    }
+
+
+    /*filter sidebar radio input container*/
+    main section.filter div.filterwrap div.filterlistradio div.radioinput {
+        font-size: 0.9em;
+        margin-bottom: 0.6em;
+    }
+
+    /*filter sidebar radio input radio*/
+    main section.filter div.filterwrap div.filterlistradio div.radioinput input {
+        margin: 0 0.3em 0 0;
+    }
+
+    /*filter sidebar radio input text*/
+    main section.filter div.filterwrap div.filterlistradio div.radioinput label {
+        font-size: 0.9em;
+        padding-top: 0.05em;
+    }
+
+
+    /*filter sidebar size selection checkbox list items*/
+    main section.filter div.filterwrap ul.filterlistsize li {
+        width: 15%;
+        height: 13px;
+        font-size: 0.8em;
+    }
+
+    /*filter sidebar size selection checkbox list items (clicked)*/
+    main section.filter div.filterwrap ul.filterlistsize li.clicked {
+        width: 8%;
+        height: 10px;
+        font-size: 0.6em;
+    }
+
+
+    /*filter sidebar colour selection checkbox list items*/
+    main section.filter div.filterwrap ul.filterlistcolour li {
+        padding: 0.1em;
+        margin: 0 0.3em 0.3em 0;
+        width: 15%;
+    }
+
+    /*filter sidebar colour selection checkbox list items (clicked)*/
+    main section.filter div.filterwrap ul.filterlistcolour li.clicked {
+        padding: 0.1em;
+        margin: 0 0.3em 0.3em 0;
+        width: 15%;
+        border: 1px solid black;
+    }
+
+    /*main section product display width*/
+    main section.productdisplay div.productgroup {
+        padding-left: 0;
+        justify-content: space-between;
+        width: 70vw;
+        margin-left: 2em;
+    }
+
+    /*main section product display individual product width*/
+    main section.productdisplay div.productgroup div#firstproduct,
+    main section.productdisplay div.productgroup div#secondproduct,
+    main section.productdisplay div.productgroup div#thirdproduct,
+    main section.productdisplay div.productgroup div#fourthproduct,
+    main section.productdisplay div.productgroup div#fifthproduct,
+    main section.productdisplay div.productgroup div#sixthproduct,
+    main section.productdisplay div.productgroup div#seventhproduct,
+    main section.productdisplay div.productgroup div#eighthproduct,
+    main section.productdisplay div.productgroup div#ninethproduct,
+    main section.productdisplay div.productgroup div#tenthproduct,
+    main section.productdisplay div.productgroup div#eleventhproduct,
+    main section.productdisplay div.productgroup div#twelvethproduct {
+        flex: 0 1 auto;
+        width: 31%;
+        margin: 0 0 0.9em 0;
+    }
+
+    /*main section product display single image body*/
+    main section.productdisplay div.productgroup div.singleproduct div.productimage {
+        position: relative;
+        width: 100%;
+    }
+
+    /*main section product display discount tag*/
+    main section.productdisplay div.productgroup div.singleproduct div.productimage span.discount {
+        padding: 0.4em;
+        font-size: 0.7em;
+        z-index: 2;
+    }
+
+    /*main section carousel single product text body*/
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails {
+        margin: 0.6em 0;
+    }
+
+    /*main section carousel single product name*/
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.producttext h4.productname {
+        font-size: 0.8em;
+        letter-spacing: 0.05em;
+    }
+
+    /*main section carousel single product price text body*/
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.producttext div.price {
+        margin-top: 0.2em;
+    }
+
+    /*main section carousel single product text*/
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.producttext div.price p {
+        font-size: 0.7em;
+        margin: 0.2em;
+    }
+
+    /*main section carousel single product discount price text*/
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.producttext div.price p.discountprice {
+        font-size: 0.7em;
+        margin-top: 0.3em;
+    }
+
+    /*main section carousel single product bookmark container*/
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.bookmarkbutton {
+        position: relative;
+        transform: translate(0.2em, 0);
+    }
+
+    /*main section carousel single product bookmark*/
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img {
+        position: absolute;
+        width: 100%;
+        height: 2em;
+        object-fit: contain;
+
+    }
+
+    /*main section carousel single product bookmark cursor*/
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img:hover {
+        cursor: pointer;
+    }
+
+    /*main section carousel single product bookmark animation toggle classes: before, hover, clicked*/
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.before {
+        display: block;
+        transition: 0.2s ease;
+    }
+
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.before.gone {
+        display: none;
+    }
+
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.clicked {
+        display: none;
+        transition: 0.2s ease;
+    }
+
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.clicked.appear {
+        display: block;
+    }
+}
+/*max-width: 720px*/
+@media screen and (max-width: 720px) {
+
+    main {
+        padding: 2em;
+        display: block;
+
+    }
+
+    /*filter sidebar*/
+    main section.filter {
+        width: 100%;
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    /*filter sidebar btn*/
+    main section.filter div.filterbtn {
+        display: flex;
+        flex-wrap: wrap;
+        width: 8%;
+        margin: 0 0 1em 0;
+    }
+
+    main section.filter div.filterbtn p {
+        font-size: 0.8em;
+        margin-right: 0.2em;
+    }
+
+    main section.filter div.filterbtn img {
+        width: 25%;
+        transform: rotate(-90deg);
+    }
+
+    /*filter sidebar categories*/
+    main section.filter div.filtercontainer {
+        position: absolute;
+        top: 0;
+        left: -1000px;
+        padding: 1.5em;
+        background-color: var(--color);
+        width: 45%;
+        z-index: 10;
+        transition: translate 2s ease;
+    }
+
+    /*filter sidebar appear*/
+    main section.filter div.filtercontainer.appear {
+        transform: translateX(1000px);
+        height: 2000px;
+    }
+
+    /*filter sidebar close icon*/
+    main section.filter div.filtercontainer div.closeicon {
+        width: 8%;
+        margin-bottom: 1em;
+        display: block;
+    }
+
+
+    /*filter sidebar categories spacing*/
+    main section.filter div.filterwrap {
+        margin-bottom: 1em;
+    }
+
+    main section.filter div.filtercontainer div.filterwrap {
+        margin-bottom: 1em;
+    }
+
+    /*filter sidebar categories title*/
+    main section.filter div.filterwrap div.filtertitle {
+        font-size: 0.7em;
+        margin: 0.5em 0 0.5em 0;
+    }
+
+    /*filter sidebar radio input container*/
+    main section.filter div.filterwrap div.filterlistradio {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    /*filter sidebar radio input container*/
+    main section.filter div.filterwrap div.filterlistradio div.radioinput {
+        font-size: 0.75em;
+        width: 18%;
+        margin-right: 0.6em;
+        align-items: center;
+    }
+
+    /*filter sidebar radio input container*/
+    main section.filter div.filterwrap div.filterlistradio div.radioinput.radioinputall {
+        width: 13%;
+    }
+
+    /*filter sidebar radio input container: width of fabric category*/
+    main section.filter div.filterwrap div.filterlistradio div.radioinput.radiofabric {
+        width: 45%;
+        align-items: flex-start;
+        margin: 0 0.2em 0.6em 0;
+    }
+
+    /*filter sidebar radio input container: width of fabric category (text)*/
+    main section.filter div.filterwrap div.filterlistradio div.radioinput.radiofabric label {
+        padding-top: 0.2em;
+    }
+
+    /*filter sidebar radio input radio*/
+    main section.filter div.filterwrap div.filterlistradio div.radioinput input {
+        margin: 0 0.2em 0 0;
+    }
+
+    /*filter sidebar radio input text*/
+    main section.filter div.filterwrap div.filterlistradio div.radioinput label {
+        font-size: 0.9em;
+    }
+
+    /*filter sidebar size selection checkbox list items*/
+    main section.filter div.filterwrap ul.filterlistsize {
+        width: 100%;
+    }
+
+    /*filter sidebar size selection checkbox list items*/
+    main section.filter div.filterwrap ul.filterlistsize li {
+        width: 8%;
+        height: 10px;
+        font-size: 0.6em;
+    }
+
+    /*filter sidebar size selection checkbox list items (clicked)*/
+    main section.filter div.filterwrap ul.filterlistsize li.clicked {
+        width: 8%;
+        height: 10px;
+        font-size: 0.6em;
+    }
+
+
+    /*filter sidebar colour selection checkbox list items*/
+    main section.filter div.filterwrap ul.filterlistcolour li {
+        padding: 0.1em;
+        margin: 0 0.2em 0 0;
+        width: 9%;
+        border: 1px solid var(--color);
+    }
+
+    /*filter sidebar colour selection checkbox list items (clicked)*/
+    main section.filter div.filterwrap ul.filterlistcolour li.clicked {
+        padding: 0.1em;
+        margin: 0 0.2em 0 0;
+        width: 9%;
+        border: 1px solid black;
+    }
+
+
+
+
+    /*main section product display width*/
+    main section.productdisplay div.productgroup {
+        width: 100%;
+        padding-left: 0;
+        justify-content: space-between;
+    }
+
+    /*main section product display individual product width*/
+    main section.productdisplay div.productgroup div#firstproduct,
+    main section.productdisplay div.productgroup div#secondproduct,
+    main section.productdisplay div.productgroup div#thirdproduct,
+    main section.productdisplay div.productgroup div#fourthproduct,
+    main section.productdisplay div.productgroup div#fifthproduct,
+    main section.productdisplay div.productgroup div#sixthproduct,
+    main section.productdisplay div.productgroup div#seventhproduct,
+    main section.productdisplay div.productgroup div#eighthproduct,
+    main section.productdisplay div.productgroup div#ninethproduct,
+    main section.productdisplay div.productgroup div#tenthproduct,
+    main section.productdisplay div.productgroup div#eleventhproduct,
+    main section.productdisplay div.productgroup div#twelvethproduct {
+        flex: 0 1 auto;
+        width: 31%;
+        margin: 0 0 0.9em 0;
+    }
+
+    /*main section product display single image body*/
+    main section.productdisplay div.productgroup div.singleproduct div.productimage {
+        position: relative;
+        width: 100%;
+    }
+
+    /*main section product display discount tag*/
+    main section.productdisplay div.productgroup div.singleproduct div.productimage span.discount {
+        padding: 0.4em;
+        font-size: 0.6em;
+        z-index: 2;
+    }
+
+    /*main section carousel single product text body*/
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails {
+        margin: 0.6em 0;
+    }
+
+    /*main section carousel single product name*/
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.producttext h4.productname {
+        font-size: 0.8em;
+        letter-spacing: 0.05em;
+    }
+
+    /*main section carousel single product price text body*/
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.producttext div.price {
+        margin-top: 0.2em;
+    }
+
+    /*main section carousel single product text*/
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.producttext div.price p {
+        font-size: 0.6em;
+        margin: 0.1em;
+    }
+
+    /*main section carousel single product discount price text*/
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.producttext div.price p.discountprice {
+        font-size: 0.6em;
+        margin-top: 0.2em;
+    }
+
+    /*main section carousel single product bookmark container*/
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.bookmarkbutton {
+        position: relative;
+        transform: translate(0.2em, 0);
+    }
+
+    /*main section carousel single product bookmark*/
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img {
+        position: absolute;
+        width: 100%;
+        height: 2em;
+        object-fit: contain;
+
+    }
+
+    /*main section carousel single product bookmark cursor*/
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img:hover {
+        cursor: pointer;
+    }
+
+    /*main section carousel single product bookmark animation toggle classes: before, hover, clicked*/
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.before {
+        display: block;
+        transition: 0.2s ease;
+    }
+
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.before.gone {
+        display: none;
+    }
+
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.clicked {
+        display: none;
+        transition: 0.2s ease;
+    }
+
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.clicked.appear {
+        display: block;
+    }
+}
+
+/*max-width: 540px*/
+@media screen and (max-width: 540px) {
+
+    main {
+        padding: 2em;
+        display: block;
+
+    }
+
+    /*filter sidebar*/
+    main section.filter {
+        width: 100%;
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    /*filter sidebar btn*/
+    main section.filter div.filterbtn {
+        display: flex;
+        flex-wrap: wrap;
+        width: 11%;
+        margin: 0 0 1em 0;
+    }
+
+    main section.filter div.filterbtn p {
+        font-size: 0.7em;
+        margin-right: 0.2em;
+    }
+
+    main section.filter div.filterbtn img {
+        width: 25%;
+        transform: rotate(-90deg);
+    }
+
+    /*filter sidebar categories*/
+    main section.filter div.filtercontainer {
+        position: absolute;
+        top: 0;
+        left: -500px;
+        padding: 1.5em;
+        background-color: var(--color);
+        width: 70%;
+        z-index: 10;
+        transition: translate 2s ease;
+    }
+
+    /*filter sidebar appear*/
+    main section.filter div.filtercontainer.appear {
+        transform: translateX(500px);
+        height: 2000px;
+    }
+
+    /*filter sidebar close icon*/
+    main section.filter div.filtercontainer div.closeicon {
+        width: 8%;
+        margin-bottom: 1em;
+        display: block;
+    }
+
+
+    /*filter sidebar categories spacing*/
+    main section.filter div.filterwrap {
+        margin-bottom: 1em;
+    }
+
+    main section.filter div.filtercontainer div.filterwrap {
+        margin-bottom: 1em;
+    }
+
+    /*filter sidebar categories title*/
+    main section.filter div.filterwrap div.filtertitle {
+        font-size: 0.7em;
+        margin: 0.5em 0 0.5em 0;
+    }
+
+    /*filter sidebar radio input container*/
+    main section.filter div.filterwrap div.filterlistradio {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    /*filter sidebar radio input container*/
+    main section.filter div.filterwrap div.filterlistradio div.radioinput {
+        font-size: 0.75em;
+        width: 23%;
+        margin-right: 0.6em;
+        align-items: center;
+    }
+
+    /*filter sidebar radio input container*/
+    main section.filter div.filterwrap div.filterlistradio div.radioinput.radioinputall {
+        width: 13%;
+    }
+
+    /*filter sidebar radio input container: width of fabric category*/
+    main section.filter div.filterwrap div.filterlistradio div.radioinput.radiofabric {
+        width: 45%;
+        align-items: flex-start;
+        margin: 0 0.2em 0.6em 0;
+    }
+
+    /*filter sidebar radio input container: width of fabric category (text)*/
+    main section.filter div.filterwrap div.filterlistradio div.radioinput.radiofabric label {
+        padding-top: 0.2em;
+    }
+
+    /*filter sidebar radio input radio*/
+    main section.filter div.filterwrap div.filterlistradio div.radioinput input {
+        margin: 0 0.2em 0 0;
+    }
+
+    /*filter sidebar radio input text*/
+    main section.filter div.filterwrap div.filterlistradio div.radioinput label {
+        font-size: 1em;
+    }
+
+    /*filter sidebar size selection checkbox list items*/
+    main section.filter div.filterwrap ul.filterlistsize {
+        width: 100%;
+    }
+
+    /*filter sidebar size selection checkbox list items*/
+    main section.filter div.filterwrap ul.filterlistsize li {
+        width: 8%;
+        height: 10px;
+        font-size: 0.7em;
+    }
+
+    /*filter sidebar size selection checkbox list items (clicked)*/
+    main section.filter div.filterwrap ul.filterlistsize li.clicked {
+        width: 8%;
+        height: 10px;
+        font-size: 0.7em;
+    }
+
+
+    /*filter sidebar colour selection checkbox list items*/
+    main section.filter div.filterwrap ul.filterlistcolour li {
+        padding: 0.1em;
+        margin: 0 0.2em 0 0;
+        width: 9%;
+        border: 1px solid var(--color);
+    }
+
+    /*filter sidebar colour selection checkbox list items (clicked)*/
+    main section.filter div.filterwrap ul.filterlistcolour li.clicked {
+        padding: 0.1em;
+        margin: 0 0.2em 0 0;
+        width: 9%;
+        border: 1px solid black;
+    }
+
+
+
+
+    /*main section product display width*/
+    main section.productdisplay div.productgroup {
+        width: 100%;
+        padding-left: 0;
+        justify-content: space-between;
+    }
+
+    /*main section product display individual product width*/
+    main section.productdisplay div.productgroup div#firstproduct,
+    main section.productdisplay div.productgroup div#secondproduct,
+    main section.productdisplay div.productgroup div#thirdproduct,
+    main section.productdisplay div.productgroup div#fourthproduct,
+    main section.productdisplay div.productgroup div#fifthproduct,
+    main section.productdisplay div.productgroup div#sixthproduct,
+    main section.productdisplay div.productgroup div#seventhproduct,
+    main section.productdisplay div.productgroup div#eighthproduct,
+    main section.productdisplay div.productgroup div#ninethproduct,
+    main section.productdisplay div.productgroup div#tenthproduct,
+    main section.productdisplay div.productgroup div#eleventhproduct,
+    main section.productdisplay div.productgroup div#twelvethproduct {
+        flex: 0 1 auto;
+        width: 48%;
+        margin: 0 0 0.7em 0;
+    }
+
+    /*main section product display single image body*/
+    main section.productdisplay div.productgroup div.singleproduct div.productimage {
+        position: relative;
+        width: 100%;
+    }
+
+    /*main section product display discount tag*/
+    main section.productdisplay div.productgroup div.singleproduct div.productimage span.discount {
+        padding: 0.4em;
+        font-size: 0.7em;
+        z-index: 2;
+    }
+
+    /*main section carousel single product text body*/
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails {
+        margin: 0.6em 0;
+    }
+
+    /*main section carousel single product name*/
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.producttext h4.productname {
+        font-size: 0.7em;
+        letter-spacing: 0.05em;
+    }
+
+    /*main section carousel single product price text body*/
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.producttext div.price {
+        margin-top: 0.2em;
+    }
+
+    /*main section carousel single product text*/
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.producttext div.price p {
+        font-size: 0.6em;
+        margin: 0.1em;
+    }
+
+    /*main section carousel single product discount price text*/
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.producttext div.price p.discountprice {
+        font-size: 0.6em;
+        margin-top: 0.2em;
+    }
+
+    /*main section carousel single product bookmark container*/
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.bookmarkbutton {
+        width: 13%;
+        position: relative;
+        transform: translate(0.3em, 0);
+    }
+
+    /*main section carousel single product bookmark*/
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img {
+        position: absolute;
+        width: 100%;
+        height: 2em;
+        object-fit: contain;
+
+    }
+
+    /*main section carousel single product bookmark cursor*/
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img:hover {
+        cursor: pointer;
+    }
+
+    /*main section carousel single product bookmark animation toggle classes: before, hover, clicked*/
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.before {
+        display: block;
+        transition: 0.2s ease;
+    }
+
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.before.gone {
+        display: none;
+    }
+
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.clicked {
+        display: none;
+        transition: 0.2s ease;
+    }
+
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.clicked.appear {
+        display: block;
+    }
+}
+
+/*max-width: 300px*/
+@media screen and (max-width: 300px) {
+
+    main {
+        padding: 2em;
+        display: block;
+
+    }
+
+    /*filter sidebar*/
+    main section.filter {
+        width: 100%;
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    /*filter sidebar btn*/
+    main section.filter div.filterbtn {
+        display: flex;
+        flex-wrap: wrap;
+        width: 20%;
+        margin: 0 0 1em 0;
+    }
+
+    main section.filter div.filterbtn p {
+        font-size: 0.7em;
+        margin-right: 0.2em;
+    }
+
+    main section.filter div.filterbtn img {
+        width: 25%;
+        transform: rotate(-90deg);
+    }
+
+    /*filter sidebar categories*/
+    main section.filter div.filtercontainer {
+        position: absolute;
+        top: 0;
+        left: -500px;
+        padding: 1.5em;
+        background-color: var(--color);
+        width: 70%;
+        z-index: 10;
+        transition: translate 2s ease;
+    }
+
+    /*filter sidebar appear*/
+    main section.filter div.filtercontainer.appear {
+        transform: translateX(500px);
+        height: 2000px;
+    }
+
+    /*filter sidebar close icon*/
+    main section.filter div.filtercontainer div.closeicon {
+        width: 15%;
+        margin-bottom: 1em;
+        display: block;
+    }
+
+
+    /*filter sidebar categories spacing*/
+    main section.filter div.filterwrap {
+        margin-bottom: 1em;
+    }
+
+    main section.filter div.filtercontainer div.filterwrap {
+        margin-bottom: 1em;
+    }
+
+    /*filter sidebar categories title*/
+    main section.filter div.filterwrap div.filtertitle {
+        font-size: 0.7em;
+        margin: 0.5em 0 0.5em 0;
+    }
+
+    /*filter sidebar radio input container*/
+    main section.filter div.filterwrap div.filterlistradio {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    /*filter sidebar radio input container*/
+    main section.filter div.filterwrap div.filterlistradio div.radioinput {
+        font-size: 0.75em;
+        width: 23%;
+        margin-right: 0.6em;
+        align-items: center;
+    }
+
+    /*filter sidebar radio input container*/
+    main section.filter div.filterwrap div.filterlistradio div.radioinput.radioinputall {
+        width: 13%;
+    }
+
+    /*filter sidebar radio input container: width of fabric category*/
+    main section.filter div.filterwrap div.filterlistradio div.radioinput.radiofabric {
+        width: 45%;
+        align-items: flex-start;
+        margin: 0 0.2em 0.6em 0;
+    }
+
+    /*filter sidebar radio input container: width of fabric category (text)*/
+    main section.filter div.filterwrap div.filterlistradio div.radioinput.radiofabric label {
+        padding-top: 0.2em;
+    }
+
+    /*filter sidebar radio input radio*/
+    main section.filter div.filterwrap div.filterlistradio div.radioinput input {
+        margin: 0 0.2em 0 0;
+    }
+
+    /*filter sidebar radio input text*/
+    main section.filter div.filterwrap div.filterlistradio div.radioinput label {
+        font-size: 0.9em;
+    }
+
+    /*filter sidebar size selection checkbox list items*/
+    main section.filter div.filterwrap ul.filterlistsize {
+        width: 100%;
+    }
+
+    /*filter sidebar size selection checkbox list items*/
+    main section.filter div.filterwrap ul.filterlistsize li {
+        width: 8%;
+        height: 10px;
+        font-size: 0.6em;
+    }
+
+    /*filter sidebar size selection checkbox list items (clicked)*/
+    main section.filter div.filterwrap ul.filterlistsize li.clicked {
+        width: 8%;
+        height: 10px;
+        font-size: 0.6em;
+    }
+
+
+    /*filter sidebar colour selection checkbox list items*/
+    main section.filter div.filterwrap ul.filterlistcolour li {
+        padding: 0.1em;
+        margin: 0 0.2em 0 0;
+        width: 9%;
+        border: 1px solid var(--color);
+    }
+
+    /*filter sidebar colour selection checkbox list items (clicked)*/
+    main section.filter div.filterwrap ul.filterlistcolour li.clicked {
+        padding: 0.1em;
+        margin: 0 0.2em 0 0;
+        width: 9%;
+        border: 1px solid black;
+    }
+
+
+
+
+    /*main section product display width*/
+    main section.productdisplay div.productgroup {
+        width: 100%;
+        padding-left: 0;
+        justify-content: space-between;
+    }
+
+    /*main section product display individual product width*/
+    main section.productdisplay div.productgroup div#firstproduct,
+    main section.productdisplay div.productgroup div#secondproduct,
+    main section.productdisplay div.productgroup div#thirdproduct,
+    main section.productdisplay div.productgroup div#fourthproduct,
+    main section.productdisplay div.productgroup div#fifthproduct,
+    main section.productdisplay div.productgroup div#sixthproduct,
+    main section.productdisplay div.productgroup div#seventhproduct,
+    main section.productdisplay div.productgroup div#eighthproduct,
+    main section.productdisplay div.productgroup div#ninethproduct,
+    main section.productdisplay div.productgroup div#tenthproduct,
+    main section.productdisplay div.productgroup div#eleventhproduct,
+    main section.productdisplay div.productgroup div#twelvethproduct {
+        flex: 0 1 auto;
+        width: 48%;
+        margin: 0 0 0.5em 0;
+    }
+
+    /*main section product display single image body*/
+    main section.productdisplay div.productgroup div.singleproduct div.productimage {
+        position: relative;
+        width: 100%;
+    }
+
+    /*main section product display discount tag*/
+    main section.productdisplay div.productgroup div.singleproduct div.productimage span.discount {
+        padding: 0.4em;
+        font-size: 0.5em;
+        z-index: 2;
+    }
+
+    /*main section carousel single product text body*/
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails {
+        margin: 0.6em 0;
+    }
+
+    /*main section carousel single product name*/
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.producttext h4.productname {
+        font-size: 0.65em;
+        letter-spacing: 0.05em;
+    }
+
+    /*main section carousel single product price text body*/
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.producttext div.price {
+        margin-top: 0.2em;
+    }
+
+    /*main section carousel single product text*/
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.producttext div.price p {
+        font-size: 0.5em;
+        margin: 0.1em;
+    }
+
+    /*main section carousel single product discount price text*/
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.producttext div.price p.discountprice {
+        font-size: 0.5em;
+        margin-top: 0.2em;
+    }
+
+    /*main section carousel single product bookmark container*/
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.bookmarkbutton {
+        width: 18%;
+        position: relative;
+        transform: translate(0, 0);
+    }
+
+    /*main section carousel single product bookmark*/
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img {
+        position: absolute;
+        width: 100%;
+        height: 1em;
+        object-fit: contain;
+
+    }
+
+    /*main section carousel single product bookmark cursor*/
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img:hover {
+        cursor: pointer;
+    }
+
+    /*main section carousel single product bookmark animation toggle classes: before, hover, clicked*/
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.before {
+        display: block;
+        transition: 0.2s ease;
+    }
+
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.before.gone {
+        display: none;
+    }
+
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.clicked {
+        display: none;
+        transition: 0.2s ease;
+    }
+
+    main section.productdisplay div.productgroup div.singleproduct div.productdetails div.bookmarkbutton img.clicked.appear {
+        display: block;
+    }
+}
+
+
+
+
+
+
+/* footer */
+footer {
+    background-color: var(--color);
+    width: 100%;
+}
+
+/* footer width and centered */
+div.footercontainer {
+    width: 80%;
+    margin: 0 auto;
+    padding: 3em 0;
+    display: grid;
+    grid-template-columns: 3fr 3fr 2fr;
+    grid-template-rows: auto auto;
+}
+
+/* footer titles */
+div.footercontainer>div h3.footertitle {
+    font-family: var(--serif);
+    letter-spacing: 0.1em;
+    font-size: 1em;
+    text-transform: uppercase;
+    color: var(--bgcolor);
+    margin-bottom: 1em;
+}
+
+/* footer titles */
+div.footercontainer>div.companyfooter ul {
+    list-style-type: none;
+}
+
+/* footer list items */
+div.footercontainer>div.companyfooter ul li {
+    font-family: var(--sansserif);
+    letter-spacing: 0.1em;
+    font-size: 0.9em;
+    line-height: 1.75em;
+    font-weight: 150;
+}
+
+div.footercontainer>div.companyfooter ul li a {
+    color: var(--bgcolor);
+    transition: opacity 0.1s ease;
+}
+
+/* footer list items link look */
+div.footercontainer>div.companyfooter ul li a:link,
+div.footercontainer>div.companyfooter ul li a:visited,
+div.footercontainer>div.companyfooter ul li a:active {
+    text-decoration: none;
+}
+
+div.footercontainer>div.companyfooter ul li a:hover {
+    opacity: 0.5;
+}
+
+div.footercontainer>div.subscribefooter {
+    margin-right: 6em;
+}
+
+div.footercontainer>div.subscribefooter>form {
+    position: relative;
+    width: 100%;
+}
+
+
+/* footer paragraph text */
+div.footercontainer>div.subscribefooter>form>p {
+    font-family: var(--sansserif);
+    letter-spacing: 0.1em;
+    font-size: 0.9em;
+    font-weight: 150;
+    width: 80%;
+    margin: 0 auto 1em 0;
+}
+
+/* footer input email subscription */
+div.footercontainer>div.subscribefooter>form>input {
+    background-color: var(--bgcolor);
+    color: var(--color);
+    padding: 1em;
+    width: 100%;
+    border: none;
+    border-radius: 0.2em;
+}
+
+/* footer input email placeholder */
+div.footercontainer>div.subscribefooter>form>input::-webkit-input-placeholder {
+    color: var(--color);
+    opacity: 0.5;
+    letter-spacing: 0.1em;
+}
+
+div.footercontainer>div.subscribefooter>form>input:-moz-placeholder {
+    color: var(--color);
+    opacity: 0.5;
+    letter-spacing: 0.1em;
+}
+
+div.footercontainer>div.subscribefooter>form>input::-ms-placeholder {
+    color: var(--color);
+    opacity: 0.5;
+    letter-spacing: 0.1em;
+}
+
+
+div.footercontainer>div.subscribefooter>form>input::placeholder {
+    color: var(--color);
+    opacity: 0.5;
+    letter-spacing: 0.1em;
+}
+
+/* footer input email required */
+div.footercontainer>div.subscribefooter>form>input:required {
+    background: url("../images/icons_emailrequired-01.svg") no-repeat right;
+    background-color: var(--bgcolor);
+    color: var(--color);
+}
+
+/* footer input email focus */
+div.footercontainer>div.subscribefooter>form>input:focus {
+    background-color: var(--bgcolor);
+    color: var(--color);
+}
+
+/* footer input email autofill */
+div.footercontainer>div.subscribefooter>form>input:autofill {
+    background-color: var(--bgcolor);
+    color: var(--color);
+}
+
+div.footercontainer>div.subscribefooter>form>input:-webkit-autofill {
+    background-color: var(--bgcolor);
+    color: var(--color);
+}
+
+/* footer input email valid */
+div.footercontainer>div.subscribefooter>form>input:valid {
+    background: url("../images/icons_emailvalid.svg") no-repeat right;
+    background-color: var(--bgcolor);
+    color: var(--color);
+}
+
+/* footer input email invalid */
+div.footercontainer>div.subscribefooter>form>input:invalid {
+    background: url("../images/icons_emailinvalid-01.svg") no-repeat right;
+    background-color: var(--bgcolor);
+    color: var(--color);
+}
+
+/* footer input email subscribe button */
+div.footercontainer>div.subscribefooter>form>button {
+    margin-top: 1.5em;
+    border: 2px solid var(--bgcolor);
+    border-radius: 0.2em;
+    color: var(--color);
+    background: var(--bgcolor);
+    padding: 1em;
+    width: 30%;
+    font-size: 0.7em;
+    letter-spacing: 0.1em;
+    font-family: var(--sansserif);
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* footer input email button shine creation first layer */
+div.footercontainer>div.subscribefooter>form>button::before {
+    content: '';
+    display: block;
+    position: absolute;
+    background: rgba(255, 255, 255, 1);
+    width: 9px;
+    height: 100%;
+    top: 0;
+    filter: blur(12px);
+    transform: translateX(-100px) skewX(-20deg);
+}
+
+/* footer input email button shine creation second layer */
+div.footercontainer>div.subscribefooter>form>button::after {
+    content: '';
+    display: block;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.5);
+    width: 12px;
+    height: 100%;
+    top: 0;
+    filter: blur(6px);
+    transform: translateX(-100px) skewX(-20deg);
+}
+
+/* footer input email button hover */
+div.footercontainer>div.subscribefooter>form>button:hover {
+    background-color: var(--bgcolor);
+    border: 2px solid var(--bgcolor);
+    color: var(--color);
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    box-shadow: 3px 3px 5px rgba(0, 42, 42, 0.4);
+    -webkit-box-shadow: 3px 3px 5px rgba(0, 42, 42, 0.4);
+    -moz-box-shadow: 3px 3px 5px rgba(0, 42, 42, 0.4);
+
+}
+
+/* footer input email button hover shine effect*/
+div.footercontainer>div.subscribefooter>form>button:hover::before,
+div.footercontainer>div.subscribefooter>form>button:hover::after {
+    transform: translateX(250px) skewX(-20deg);
+    transition: 1s ease;
+}
+
+/* footer subscription button will not work until form is valid */
+div.footercontainer>div.subscribefooter>form:invalid [type="submit"] {
+    pointer-events: none;
+    border: 2px solid var(--bgcolor);
+    border-radius: 0.2em;
+    color: var(--color);
+    background: var(--bgcolor);
+    padding: 1em;
+    font-size: 0.7em;
+    letter-spacing: 0.1em;
+    font-family: var(--sansserif);
+    transition: all 0.2s ease;
+}
+
+/* footer social width */
+div.footercontainer>div.socials>div.socialcontainer {
+    width: 30%;
+    display: flex;
+    justify-content: start;
+}
+
+/* footer social image width */
+div.footercontainer>div.socials>div.socialcontainer a.linkedin img {
+    display: block;
+    width: 100%;
+}
+
+/* footer social image width */
+div.footercontainer>div.socials>div.socialcontainer a.facebook img {
+    display: block;
+    width: 100%;
+    height: 45%;
+}
+
+/* footer social hover effect */
+div.footercontainer>div.socials>div.socialcontainer a:hover {
+    opacity: 50%;
+}
+
+/* footer social image width */
+div.footercontainer>div.copyright {
+    font-family: var(--sansserif);
+    letter-spacing: 0.1em;
+    font-size: 0.8em;
+    line-height: 1em;
+    color: var(--bgcolor);
+    margin-top: 3em;
+}
+
+/*footer to be responsive*/
+
+/*max-width: 1080px*/
+@media screen and (max-width: 1080px) {
+
+    /* footer titles */
+    div.footercontainer>div h3.footertitle {
+        font-size: 1.1em;
+    }
+
+    /* footer paragraph text */
+    div.footercontainer>div.subscribefooter>form>p {
+        width: 100%;
+        font-size: 0.8em;
+    }
+
+    /* footer input email subscribe button */
+    div.footercontainer>div.subscribefooter>form>button {
+        margin-top: 0.9em;
+        width: 50%;
+    }
+
+    /* footer social width */
+    div.footercontainer>div.socials>div.socialcontainer {
+        width: 35%;
+        display: flex;
+        justify-content: start;
+    }
+
+
+    /* footer list items */
+    div.footercontainer>div.companyfooter ul li {
+        font-size: 0.8em;
+    }
+}
+
+/*max-width: 992px*/
+@media screen and (max-width: 992px) {
+
+    /*subscribe footer*/
+    div.footercontainer>div.subscribefooter {
+        margin-right: 3em;
+    }
+
+    /* footer titles */
+    div.footercontainer>div h3.footertitle {
+        font-size: 1.1em;
+        line-height: 1.2em;
+    }
+
+    /* footer paragraph text */
+    div.footercontainer>div.subscribefooter>form>p {
+        width: 100%;
+        line-height: 1.3em;
+        font-size: 1em;
+    }
+
+    /* footer input email subscribe button */
+    div.footercontainer>div.subscribefooter>form>button {
+        margin-top: 1em;
+        width: 40%;
+    }
+
+    /* footer social image width */
+    div.footercontainer>div.copyright {
+        margin-top: 3em;
+        width: 100%;
+        line-height: 1.2em;
+        grid-column: 1/3;
+        font-size: 0.7em;
+    }
+
+
+    /* footer social width */
+    div.footercontainer>div.socials>div.socialcontainer {
+        width: 50%;
+        display: flex;
+        justify-content: start;
+    }
+
+
+    /* footer list items */
+    div.footercontainer>div.companyfooter ul li {
+        font-size: 1em;
+    }
+}
+
+/*max-width: 720px*/
+@media screen and (max-width: 720px) {
+
+    /* footer titles */
+    div.footercontainer>div h3.footertitle {
+        margin: 2em 0 1em 0;
+        font-size: 0.9em;
+        line-height: 1.3em;
+    }
+
+    /*subscribe footer*/
+    div.footercontainer>div.subscribefooter {
+        margin-right: 3em;
+    }
+
+
+    /* footer paragraph text */
+    div.footercontainer>div.subscribefooter>form>p {
+        width: 100%;
+        line-height: 1.3em;
+        font-size: 0.8em;
+    }
+
+    /* footer input email subscribe button */
+    div.footercontainer>div.subscribefooter>form>button {
+        margin-top: 1em;
+        width: 60%;
+    }
+
+    /* footer social image width */
+    div.footercontainer>div.copyright {
+        margin-top: 3em;
+        width: 100%;
+        line-height: 1.2em;
+        grid-column: 1/3;
+        font-size: 0.6em;
+    }
+
+
+    /* footer social width */
+    div.footercontainer>div.socials>div.socialcontainer {
+        width: 50%;
+        display: flex;
+        justify-content: start;
+    }
+
+
+    /* footer list items */
+    div.footercontainer>div.companyfooter ul li {
+        font-size: 0.8em;
+    }
+}
+
+/*max-width: 540px*/
+@media screen and (max-width: 540px) {
+
+    /* footer width and centered */
+    div.footercontainer {
+        width: 85%;
+        margin: 0 auto;
+        padding: 3em 0;
+        display: block;
+    }
+
+    /* footer titles */
+    div.footercontainer>div h3.footertitle {
+        margin: 3em 0 1em 0;
+        font-size: 0.9em;
+        line-height: 1.2em;
+    }
+
+    /*subscribe footer*/
+    div.footercontainer>div.subscribefooter {
+        margin-right: 2em;
+    }
+
+
+    /* footer paragraph text */
+    div.footercontainer>div.subscribefooter>form>p {
+        width: 100%;
+        line-height: 1.3em;
+        font-size: 0.8em;
+    }
+
+    /* footer input email subscribe button */
+    div.footercontainer>div.subscribefooter>form>button {
+        margin-top: 1.1em;
+        width: 30%;
+    }
+
+    /* footer social image width */
+    div.footercontainer>div.copyright {
+        margin-top: 0em;
+        width: 60%;
+        line-height: 1.2em;
+        font-size: 0.7em;
+    }
+
+    /* footer social width */
+    div.footercontainer>div.socials>div.socialcontainer {
+        width: 25%;
+        display: flex;
+        justify-content: start;
+    }
+
+
+    /* footer list items */
+    div.footercontainer>div.companyfooter ul li {
+        font-size: 0.8em;
+    }
+}
+
+/*max-width: 300px*/
+@media screen and (max-width: 300px) {
+
+    /* footer width and centered */
+    div.footercontainer {
+        width: 85%;
+        margin: 0 auto;
+        padding: 3em 0;
+        display: block;
+    }
+
+    /* footer titles */
+    div.footercontainer>div h3.footertitle {
+        margin: 2em 0 1em 0;
+        line-height: 1.2em;
+    }
+
+    /*subscribe footer*/
+    div.footercontainer>div.subscribefooter {
+        margin-right: 2em;
+    }
+
+
+    /* footer paragraph text */
+    div.footercontainer>div.subscribefooter>form>p {
+        width: 100%;
+        line-height: 1.5em;
+    }
+
+    /* footer input email subscribe button */
+    div.footercontainer>div.subscribefooter>form>button {
+        margin-top: 1.1em;
+        width: 50%;
+    }
+
+    /* footer social image width */
+    div.footercontainer>div.copyright {
+        margin-top: 0em;
+        width: 60%;
+        line-height: 1.2em;
+        font-size: 0.6em;
+    }
+}
